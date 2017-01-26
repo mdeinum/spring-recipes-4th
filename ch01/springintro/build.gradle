@@ -1,0 +1,26 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '1.2.4'
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+defaultTasks 'clean', 'build', 'shadowJar'
+
+
+
+mainClassName = 'com.apress.springrecipes.hello.Main'
+
+repositories {
+    maven {
+        url 'https://repo.spring.io/libs-milestone'
+    }
+}
+
+// Define dependencies
+dependencies {
+    compile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-expression', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-beans', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+}

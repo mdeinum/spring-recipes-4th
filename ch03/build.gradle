@@ -1,0 +1,19 @@
+description = 'Spring Recipes :: Chapter 3 :: Spring MVC'
+
+subprojects { subproject ->
+    // Define usage of war plugin
+    apply plugin: 'war'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        // Add dependencies to add for runtime (these will be included in the WAR, in addition to those in compile group)
+        runtime group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+        // Provided Dependencies
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+    }
+
+    war { archiveName = 'court.war' }
+}

@@ -1,0 +1,13 @@
+dependencies {
+
+    compile group: 'org.springframework', name: 'spring-aop', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-instrument', version: "$springVersion"
+
+    compile group: 'org.aspectj', name: 'aspectjrt', version: "$aspectjVersion"
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+}
+
+jar {
+    manifest.attributes('Main-Class': 'com.apress.springrecipes.calculator.Main')
+}

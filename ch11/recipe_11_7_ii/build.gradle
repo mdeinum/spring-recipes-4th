@@ -1,0 +1,11 @@
+dependencies {
+    compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+    compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+
+    compile group: 'org.postgresql', name: 'postgresql', version:"$postgresVersion"
+}
+
+jar {
+    manifest.attributes("Main-Class": "com.apress.springrecipes.bookshop.Main")
+}
