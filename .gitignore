@@ -100,3 +100,5 @@ buildNumber.properties
 # Exclude maven wrapper
 !maven-wrapper.jar
 
+.DS_Store
+out/
