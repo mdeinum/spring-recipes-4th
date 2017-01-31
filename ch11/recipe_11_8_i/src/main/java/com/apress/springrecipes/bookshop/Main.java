@@ -11,19 +11,12 @@ public class Main {
 
         final BookShop bookShop = context.getBean(BookShop.class);
 
-        Thread thread1 = new Thread(new Runnable() {
-            public void run() {
-                try {
-                    bookShop.increaseStock("0001", 5);
-                } catch (RuntimeException e) {}
+        Thread thread1 = new Thread(() -> bookShop.checkStock("0001"), "Thread 1");
 
-            }
-        }, "Thread 1");
-
-        Thread thread2 = new Thread(new Runnable() {
-            public void run() {
-                    bookShop.checkStock("0001");
-            }
+        Thread thread2 = new Thread(() -> {
+            try {
+                bookShop.increaseStock("0001", 5);
+            } catch (RuntimeException e) {}
         }, "Thread 2");
 
         thread1.start();

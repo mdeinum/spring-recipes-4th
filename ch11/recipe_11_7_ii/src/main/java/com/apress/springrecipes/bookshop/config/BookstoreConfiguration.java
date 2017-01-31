@@ -4,7 +4,6 @@ import com.apress.springrecipes.bookshop.BookShop;
 import com.apress.springrecipes.bookshop.BookShopCashier;
 import com.apress.springrecipes.bookshop.Cashier;
 import com.apress.springrecipes.bookshop.JdbcBookShop;
-import org.apache.derby.jdbc.ClientDriver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -21,10 +20,10 @@ public class BookstoreConfiguration {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(ClientDriver.class.getName());
-        dataSource.setUrl("jdbc:derby://localhost:1527/bookstore;create=true");
-        dataSource.setUsername("app");
-        dataSource.setPassword("app");
+        dataSource.setDriverClassName(org.postgresql.Driver.class.getName());
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/bookstore");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("password");
         return dataSource;
     }
 

@@ -1,5 +1,6 @@
 package com.apress.springrecipes.bookshop;
 
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public class BookShopCashier implements Cashier {
         this.bookShop = bookShop;
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     public void checkout(List<String> isbns, String username) {
         for (String isbn : isbns) {
             bookShop.purchase(isbn, username);

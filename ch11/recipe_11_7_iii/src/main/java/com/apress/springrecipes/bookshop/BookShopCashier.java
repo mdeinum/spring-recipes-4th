@@ -13,7 +13,7 @@ public class BookShopCashier implements Cashier {
         this.bookShop = bookShop;
     }
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    @Transactional(propagation = Propagation.REQUIRED)
     public void checkout(List<String> isbns, String username) {
         for (String isbn : isbns) {
             bookShop.purchase(isbn, username);

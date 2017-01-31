@@ -11,23 +11,26 @@ import java.io.IOException;
 public class JdbcBookShop extends JdbcDaoSupport implements BookShop {
 
     @Transactional(
-            propagation = Propagation.REQUIRES_NEW,
+            propagation = Propagation.REQUIRED,
             rollbackFor = IOException.class,
             noRollbackFor = ArithmeticException.class)
     public void purchase(String isbn, String username) {
-        int price = getJdbcTemplate().queryForObject("SELECT PRICE FROM BOOK WHERE ISBN = ?", new Object[] { isbn }, Integer.class);
+        int price = getJdbcTemplate().queryForObject(
+                "SELECT PRICE FROM BOOK WHERE ISBN = ?", Integer.class, isbn);
 
-        getJdbcTemplate().update("UPDATE BOOK_STOCK SET STOCK = STOCK - 1 " + "WHERE ISBN = ?", new Object[] { isbn });
+        getJdbcTemplate().update(
+                "UPDATE BOOK_STOCK SET STOCK = STOCK - 1 WHERE ISBN = ?", isbn);
 
-        getJdbcTemplate().update("UPDATE ACCOUNT SET BALANCE = BALANCE - ? " + "WHERE USERNAME = ?", new Object[] { price, username });
-    }
+        getJdbcTemplate().update(
+                "UPDATE ACCOUNT SET BALANCE = BALANCE - ? WHERE USERNAME = ?", price, username);
+   }
 
     @Transactional
     public void increaseStock(String isbn, int stock) {
         String threadName = Thread.currentThread().getName();
         System.out.println(threadName + " - Prepare to increase book stock");
 
-        getJdbcTemplate().update("UPDATE BOOK_STOCK SET STOCK = STOCK + ? " + "WHERE ISBN = ?", new Object[] { stock, isbn });
+        getJdbcTemplate().update("UPDATE BOOK_STOCK SET STOCK = STOCK + ? WHERE ISBN = ?", stock, isbn );
 
         System.out.println(threadName + " - Book stock increased by " + stock);
         sleep(threadName);
@@ -41,7 +44,7 @@ public class JdbcBookShop extends JdbcDaoSupport implements BookShop {
         String threadName = Thread.currentThread().getName();
         System.out.println(threadName + " - Prepare to check book stock");
 
-        int stock = getJdbcTemplate().queryForObject("SELECT STOCK FROM BOOK_STOCK WHERE ISBN = ?", new Object[] { isbn }, Integer.class);
+        int stock = getJdbcTemplate().queryForObject("SELECT STOCK FROM BOOK_STOCK WHERE ISBN = ?", Integer.class, isbn);
 
         System.out.println(threadName + " - Book stock is " + stock);
         sleep(threadName);

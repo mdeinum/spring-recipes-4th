@@ -25,10 +25,9 @@ public class PdfReservationSummary extends AbstractPdfView {
         Table table = new Table(5);
 
         addTableHeader(table);
-        reservations.forEach(reservation -> {
+        for (Reservation reservation : reservations) {
             addContent(table, reservation);
-        });
-
+        }
         document.add(table);
     }
 

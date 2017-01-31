@@ -1,0 +1,19 @@
+description='Spring Recipes :: Chapter 11 :: Spring Transaction Management'
+
+subprojects { subproject ->
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build'
+
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+
+        compile group: 'org.postgresql', name: 'postgresql', version:"$postgresVersion"
+    }
+
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.bookshop.Main")
+    }
+}

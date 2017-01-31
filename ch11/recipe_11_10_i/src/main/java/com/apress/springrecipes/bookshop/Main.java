@@ -4,32 +4,29 @@ import com.apress.springrecipes.bookshop.config.BookstoreConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Arrays;
+import java.util.List;
 
+/**
+ *
+ * TO RUN:
+ *
+ * You need the Spring AspectJ load time weaver, spring-instrument-5.0.x.jar. If you built the source tree with Gradle,
+ * there will be a build/lib/ folder in your 'transactions' folder.
+ *
+ * Thus, you can add this to your invocation of the java command:
+ *
+ * -javaagent:build/lib/spring-instrument-5.0.x.jar
+ *
+ */
 public class Main {
     public static void main(String[] args) {
+
         ApplicationContext context = new AnnotationConfigApplicationContext(BookstoreConfiguration.class);
 
-        final BookShop bookShop = context.getBean(BookShop.class);
-
-        Thread thread1 = new Thread(new Runnable() {
-            public void run() {
-                bookShop.checkStock("0001");
-            }
-        }, "Thread 1");
-
-        Thread thread2 = new Thread(new Runnable() {
-            public void run() {
-                try {
-                    bookShop.increaseStock("0001", 5);
-                } catch (RuntimeException e) {}
-            }
-        }, "Thread 2");
-
-        thread1.start();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {}
-        thread2.start();
+        Cashier cashier = context.getBean(Cashier.class);
+        List<String> isbnList = Arrays.asList(new String[]{"0001", "0002"});
+        cashier.checkout(isbnList, "user1");
 
     }
 }

@@ -24,18 +24,14 @@ public class TransactionalJdbcBookShop extends JdbcDaoSupport implements BookSho
             protected void doInTransactionWithoutResult(
                     TransactionStatus status) {
 
-                int price = getJdbcTemplate().queryForInt(
-                        "SELECT PRICE FROM BOOK WHERE ISBN = ?",
-                        new Object[] { isbn });
+                int price = getJdbcTemplate().queryForObject(
+                        "SELECT PRICE FROM BOOK WHERE ISBN = ?", Integer.class, isbn);
 
                 getJdbcTemplate().update(
-                        "UPDATE BOOK_STOCK SET STOCK = STOCK - 1 "+
-                                "WHERE ISBN = ?", new Object[] { isbn });
+                        "UPDATE BOOK_STOCK SET STOCK = STOCK - 1 WHERE ISBN = ?", isbn );
 
                 getJdbcTemplate().update(
-                        "UPDATE ACCOUNT SET BALANCE = BALANCE - ? "+
-                                "WHERE USERNAME = ?",
-                        new Object[] { price, username });
+                        "UPDATE ACCOUNT SET BALANCE = BALANCE - ? WHERE USERNAME = ?", price, username);
             }
         });
     }

@@ -11,7 +11,7 @@ CREATE TABLE BOOK_STOCK (
     ISBN     VARCHAR(50)    NOT NULL,
     STOCK    INT            NOT NULL,
     PRIMARY KEY (ISBN),
-    CHECK (STOCK >= 0)
+    CONSTRAINT positive_stock CHECK (STOCK >= 0)
 );
 
 CREATE TABLE ACCOUNT (
