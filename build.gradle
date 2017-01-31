@@ -27,7 +27,7 @@ subprojects { subproject ->
 
     ext {
         springVersion               = '5.0.0.M4'
-        springAmqpVersion           = '1.4.1.RELEASE'
+        springAmqpVersion           = '1.7.0.RELEASE'
         springBatchVersion          = '4.0.0.M1'
         springCFVersion             = '1.1.0.RELEASE'
         springDataGemfireVersion    = '1.5.1.RELEASE'
@@ -37,6 +37,7 @@ subprojects { subproject ->
         springDataRedisVersion      = '1.8.0.RELEASE'
         springHadoopVersion         = '2.0.4.RELEASE'
         springIntegrationVersion    = '5.0.0.M2'
+        springKafkaVersion          = '1.1.2.RELEASE'
         springLdapVersion           = '2.3.1.RELEASE'
         springMobileVersion         = '2.0.0.M1'
         springSecurityVersion       = '4.2.1.RELEASE'
@@ -46,7 +47,7 @@ subprojects { subproject ->
         springWebFlowVersion        = '2.4.4.RELEASE'
         springWsVersion             = '2.4.2.RELEASE'
 
-        activemqVersion             = '5.10.0'
+        activemqVersion             = '5.14.3'
         apacheCxfVersion            = '2.7.5'
         aspectjVersion              = '1.9.0.BETA-5'
         assertjVersion              = '3.6.2'

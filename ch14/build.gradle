@@ -1,0 +1,34 @@
+description='Spring Recipes :: Chapter 14 :: Spring Messaging'
+
+subprojects { subproject ->
+
+    // Define defaultTasks, first clean then build for springintro
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-expression', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-jms', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-tx', version:"$springVersion"
+
+        compile group: 'javax.jms', name: 'javax.jms-api', version:'2.0.1'
+        compile group: 'org.apache.activemq', name: 'activemq-client',version:"$activemqVersion"
+        compile group: 'org.apache.activemq', name: 'activemq-broker',version:"$activemqVersion"
+    }
+}
+
+configure(subprojects.findAll { p -> p.name.contains('Front') } ) {
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.post.FrontDeskMain")
+    }
+
+}
+
+configure(subprojects.findAll { p -> p.name.contains('Back') }) {
+    // Define how to build final JAR for project
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.post.BackOfficeMain")
+    }
+
+}

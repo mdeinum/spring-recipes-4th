@@ -1,0 +1,54 @@
+package com.apress.springrecipes.post.config;
+
+import com.apress.springrecipes.post.MailListener;
+import com.apress.springrecipes.post.MailMessageConverter;
+import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.jms.pool.PooledConnectionFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jms.annotation.EnableJms;
+import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
+import org.springframework.jms.config.SimpleJmsListenerContainerFactory;
+import org.springframework.jms.listener.SimpleMessageListenerContainer;
+import org.springframework.jms.listener.adapter.MessageListenerAdapter;
+import org.springframework.jms.support.converter.MessageConverter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.jms.ConnectionFactory;
+
+/**
+ * Created by marten on 02-06-14.
+ */
+@Configuration
+@EnableJms
+public class BackOfficeConfiguration {
+
+    @Bean(destroyMethod = "stop")
+    public ConnectionFactory connectionFactory() {
+        ActiveMQConnectionFactory connectionFactoryToUse = new ActiveMQConnectionFactory("tcp://localhost:61616");
+        PooledConnectionFactory connectionFactory = new PooledConnectionFactory();
+        connectionFactory.setConnectionFactory(connectionFactoryToUse);
+        return connectionFactory;
+    }
+
+    @Bean
+    public MailListener mailListener() {
+        return new MailListener();
+    }
+
+    @Bean
+    public MailMessageConverter mailMessageConverter() {
+        return new MailMessageConverter();
+    }
+
+    @Bean
+    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() {
+        DefaultJmsListenerContainerFactory listenerContainerFactory = new DefaultJmsListenerContainerFactory();
+        listenerContainerFactory.setConnectionFactory(connectionFactory());
+        listenerContainerFactory.setMessageConverter(mailMessageConverter());
+        listenerContainerFactory.setSessionTransacted(true);
+        return listenerContainerFactory;
+    }
+
+
+}

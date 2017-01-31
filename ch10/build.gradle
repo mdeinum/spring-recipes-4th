@@ -1,4 +1,4 @@
-description='Spring Recipes :: Chapter 11 :: Spring Transaction Management'
+description='Spring Recipes :: Chapter 10 :: Spring Transaction Management'
 
 subprojects { subproject ->
     // Define defaulttasks, first clean, then build, then war
