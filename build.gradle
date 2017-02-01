@@ -67,6 +67,7 @@ subprojects { subproject ->
         jedisVersion                = '2.6.0'
         jodaVersion                 = '2.9.7'
         junitVersion                = '4.12'
+        kafkaVersion                = '0.10.1.1'
         logbackVersion              = '1.1.9'
         mockitoVersion              = '2.6.8'
         neo4jVersion                = '2.1.5'
