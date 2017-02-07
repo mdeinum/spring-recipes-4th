@@ -38,8 +38,4 @@ public class Mail {
 	this.weight = weight;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Mail [mailId=%s, country=%s, weight=%.3f]", mailId, country, weight);
-    }
 }

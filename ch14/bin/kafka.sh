@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
-docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=`docker-machine ip \`docker-machine active\`` --env ADVERTISED_PORT=9092 spotify/kafka
-export KAFKA=`docker-machine ip \`docker-machine active\``:9092
-kafka-console-producer.sh --broker-list $KAFKA --topic mails
-export ZOOKEEPER=`docker-machine ip \`docker-machine active\``:2181
-kafka-console-consumer.sh --zookeeper $ZOOKEEPER --topic mails
+docker run -d --name sr4-zookeeper jplock/zookeeper:3.4.6
+docker run -d --name sr4-kafka --link sr4-zookeeper:zookeeper ches/kafka
+
+ZK_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' sr4-zookeeper)
+KAFKA_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' sr4-kafka)
+
+echo "Zookeeper IP: $ZK_IP"
+echo "Kafka IP: $KAFKA_IP"
+
+docker run --rm ches/kafka kafka-topics.sh --create --topic mails --replication-factor 1 --partitions 1 --zookeeper $ZK_IP:2181

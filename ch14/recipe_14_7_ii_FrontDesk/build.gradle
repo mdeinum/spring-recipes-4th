@@ -1,0 +1,6 @@
+dependencies {
+    compile group: 'org.springframework.kafka', name: 'spring-kafka', version: "$springKafkaVersion"
+    compile group: 'org.apache.kafka', name:'kafka-clients', version: "$kafkaVersion"
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+}
