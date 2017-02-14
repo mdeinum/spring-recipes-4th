@@ -3,7 +3,6 @@ package com.apress.springrecipes.post;
 import com.apress.springrecipes.post.config.FrontOfficeConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class FrontDeskMain {
 
