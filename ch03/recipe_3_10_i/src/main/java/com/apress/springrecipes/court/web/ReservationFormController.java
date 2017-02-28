@@ -5,7 +5,6 @@ import com.apress.springrecipes.court.domain.Player;
 import com.apress.springrecipes.court.domain.Reservation;
 import com.apress.springrecipes.court.domain.SportType;
 import com.apress.springrecipes.court.service.ReservationService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,10 +23,8 @@ import java.util.List;
 @SessionAttributes("reservation") // Command name class was used in earlier Spring versions
 public class ReservationFormController {
 
-    private ReservationService reservationService;
+    private final ReservationService reservationService;
 
-    // Wire service in constructor, available in application context
-    @Autowired
     public ReservationFormController(ReservationService reservationService) {
         this.reservationService = reservationService;
     }

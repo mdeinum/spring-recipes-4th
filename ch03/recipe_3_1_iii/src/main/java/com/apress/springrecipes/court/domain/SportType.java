@@ -5,7 +5,8 @@ public class SportType {
     private int id;
     private String name;
 
-    public SportType() {}
+    public SportType() {
+    }
 
     public SportType(int id, String name) {
         this.id = id;
@@ -16,12 +17,12 @@ public class SportType {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {

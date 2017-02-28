@@ -7,9 +7,9 @@
 
 <body>
 <h2>Welcome to Court Reservation System</h2>
-Today is <fmt:formatDate value="${today}" pattern="yyyy-MM-dd" />.
+Today is <fmt:formatDate value="${today}" pattern="yyyy-MM-dd"/>.
 
-<hr />
+<hr/>
 Handling time : ${handlingTime} ms
 
 </body>

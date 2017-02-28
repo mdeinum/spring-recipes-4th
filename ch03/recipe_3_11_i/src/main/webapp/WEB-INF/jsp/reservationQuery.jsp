@@ -9,8 +9,8 @@
 <body>
 <form method="post">
     Court Name
-    <input type="text" name="courtName" value="${courtName}" />
-    <input type="submit" value="Query" />
+    <input type="text" name="courtName" value="${courtName}"/>
+    <input type="submit" value="Query"/>
 </form>
 
 
@@ -24,7 +24,7 @@
     <c:forEach items="${reservations}" var="reservation">
         <tr>
             <td>${reservation.courtName}</td>
-            <td><fmt:formatDate value="${reservation.date}" pattern="yyyy-MM-dd" /></td>
+            <td><fmt:formatDate value="${reservation.dateAsUtilDate}" pattern="yyyy-MM-dd"/></td>
             <td>${reservation.hour}</td>
             <td>${reservation.player.name}</td>
         </tr>

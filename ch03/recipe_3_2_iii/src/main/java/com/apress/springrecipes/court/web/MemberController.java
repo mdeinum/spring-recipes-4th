@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/member/*")
 public class MemberController {
 
-    private MemberService memberService;
+    private final MemberService memberService;
 
     // Wire service in constructor, available in application context
     @Autowired
@@ -25,7 +25,7 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @RequestMapping("/member/add")
+    @RequestMapping("/add")
     public String addMember(Model model) {
         model.addAttribute("member", new Member());
         model.addAttribute("guests", memberService.list());
@@ -34,9 +34,9 @@ public class MemberController {
 
 
     // Method mapped to URL /member/remove and /member/delete
-    @RequestMapping(value = {"/member/remove", "/member/delete"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/remove", "/delete"}, method = RequestMethod.GET)
     public String removeMember(@RequestParam("memberName")
-                               String memberName) {
+                                       String memberName) {
         memberService.remove(memberName);
 
         // Use redirect so list is refreshed

@@ -11,7 +11,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * Configuration class to setup Spring MVC.
  *
  * @author Marten Deinum
- *
  */
 @Configuration
 @EnableWebMvc

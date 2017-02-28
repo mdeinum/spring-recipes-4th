@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MeasurementInterceptor implements HandlerInterceptor {
 
     public boolean preHandle(HttpServletRequest request,
-            HttpServletResponse response, Object handler) throws Exception {
+                             HttpServletResponse response, Object handler) throws Exception {
         long startTime = System.currentTimeMillis();
         request.setAttribute("startTime", startTime);
         return true;

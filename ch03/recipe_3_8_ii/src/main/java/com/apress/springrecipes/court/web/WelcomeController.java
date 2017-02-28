@@ -21,10 +21,10 @@ public class WelcomeController {
     // NOTE: Model is a Java 5 interface -- newer than the older ModelMap and still older ModelAndView
     public String welcome(Model model) {
         Date today = new Date();
-	// Add date to model so it can be display in view
-	model.addAttribute("today",today);
-	// Return view welcome. Via resolver the view
-	// will be mapped to /WEB-INF/jsp/welcome.jsp
+        // Add date to model so it can be display in view
+        model.addAttribute("today", today);
+        // Return view welcome. Via resolver the view
+        // will be mapped to /WEB-INF/jsp/welcome.jsp
         return "welcome";
     }
 

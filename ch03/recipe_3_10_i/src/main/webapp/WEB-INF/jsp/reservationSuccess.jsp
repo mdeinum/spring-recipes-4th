@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Reservation Success</title>
+    <title>Reservation Success</title>
 </head>
 
 <body>

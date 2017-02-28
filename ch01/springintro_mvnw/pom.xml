@@ -6,7 +6,7 @@
     <version>4.0.0-SNAPSHOT</version>
     <name>Introduction to Spring</name>
     <properties>
-        <spring.version>5.0.0.M3</spring.version>
+        <spring.version>5.0.0.M5</spring.version>
     </properties>
     <developers>
         <developer>

@@ -9,11 +9,11 @@
         </encoder>
     </appender>
 
-    <logger name="com.apress" level="DEBUG" />
-    <logger name="org.springframework.web" level="DEBUG" />
+    <logger name="com.apress" level="DEBUG"/>
+    <logger name="org.springframework.web" level="DEBUG"/>
 
     <root level="INFO">
-        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="CONSOLE"/>
     </root>
 
 </configuration>

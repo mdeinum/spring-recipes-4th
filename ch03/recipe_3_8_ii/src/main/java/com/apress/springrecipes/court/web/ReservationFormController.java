@@ -7,7 +7,6 @@ import com.apress.springrecipes.court.domain.ReservationValidator;
 import com.apress.springrecipes.court.domain.SportType;
 import com.apress.springrecipes.court.service.ReservationNotAvailableException;
 import com.apress.springrecipes.court.service.ReservationService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,11 +24,9 @@ import java.util.List;
 @SessionAttributes("reservation") // Command name class was used in earlier Spring versions
 public class ReservationFormController {
 
-    private ReservationService reservationService;
-    private ReservationValidator validator;
+    private final ReservationService reservationService;
+    private final ReservationValidator validator;
 
-    // Wire service and validator in constructor, available in application context 
-    @Autowired
     public ReservationFormController(ReservationService reservationService,
                                      ReservationValidator validator) {
         this.reservationService = reservationService;
@@ -50,19 +47,19 @@ public class ReservationFormController {
     public String setupForm(
             @RequestParam(required = false, value = "username") String username,
             Model model) {
-	// Create inital reservation object
+        // Create inital reservation object
         Reservation reservation = new Reservation();
-	// Add player to reservation, since a Player field will be required
+        // Add player to reservation, since a Player field will be required
         // IMPORTANT - This Player instance will be saved in the Reservation session object
         //             if the Reservation object is not placed in session, the Player instance
-	//             would need to be recreated after submission
+        //             would need to be recreated after submission
         reservation.setPlayer(new Player(username, null));
-	// Add reservation to model so it can be display in view
+        // Add reservation to model so it can be display in view
         model.addAttribute("reservation", reservation);
-	// Return view as a string
-	// Based on resolver configuration the reservationForm view
-	// will be mapped to a JSP in /WEB-INF/jsp/reservationForm.jsp 
-	// NOTE: If the method would have a void return value, by default the method would have 
+        // Return view as a string
+        // Based on resolver configuration the reservationForm view
+        // will be mapped to a JSP in /WEB-INF/jsp/reservationForm.jsp
+        // NOTE: If the method would have a void return value, by default the method would have
         //       looked for the same reservationForm view, since the default URL for the 
         //       controller is this same name @RequestMapping("/reservationForm")
         return "reservationForm";
@@ -76,18 +73,18 @@ public class ReservationFormController {
     public String submitForm(
             @ModelAttribute("reservation") Reservation reservation,
             BindingResult result, SessionStatus status) {
-	// User is finished validate reservation object
-        validator.validate(reservation, result);	
+        // User is finished validate reservation object
+        validator.validate(reservation, result);
         if (result.hasErrors()) {
-	    // Errors, return to reservationForm view
+            // Errors, return to reservationForm view
             return "reservationForm";
         } else {
-	    // No errors make reservation 
+            // No errors make reservation
             reservationService.make(reservation);
-	    // Set complete, mark the handler's session processing as complete
-	    // Allowing for cleanup of session attributes.
-	    status.setComplete();
-	    // Redirect to reservationSuccess URL, defined in ReservationSuccessController
+            // Set complete, mark the handler's session processing as complete
+            // Allowing for cleanup of session attributes.
+            status.setComplete();
+            // Redirect to reservationSuccess URL, defined in ReservationSuccessController
             return "redirect:reservationSuccess";
         }
     }

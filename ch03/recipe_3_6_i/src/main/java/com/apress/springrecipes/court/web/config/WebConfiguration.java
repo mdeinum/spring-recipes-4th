@@ -24,7 +24,6 @@ import java.util.Locale;
  * Configuration class to setup Spring MVC.
  *
  * @author Marten Deinum
- *
  */
 @Configuration
 @EnableWebMvc
@@ -47,7 +46,9 @@ public class WebConfiguration extends WebMvcConfigurerAdapter implements Resourc
     }
 
     @Bean
-    public ExtensionInterceptor summaryReportInterceptor() { return new ExtensionInterceptor();}
+    public ExtensionInterceptor summaryReportInterceptor() {
+        return new ExtensionInterceptor();
+    }
 
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
@@ -82,6 +83,6 @@ public class WebConfiguration extends WebMvcConfigurerAdapter implements Resourc
 
     @Override
     public void setResourceLoader(ResourceLoader resourceLoader) {
-        this.resourceLoader=resourceLoader;
+        this.resourceLoader = resourceLoader;
     }
 }

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
@@ -32,9 +33,8 @@ public class PdfReservationSummary extends AbstractPdfView {
     }
 
     private void addContent(Table table, Reservation reservation) throws BadElementException {
-        final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         table.addCell(reservation.getCourtName());
-        table.addCell(dateFormat.format(reservation.getDate()));
+        table.addCell(reservation.getDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
         table.addCell(Integer.toString(reservation.getHour()));
         table.addCell(reservation.getPlayer().getName());
         table.addCell(reservation.getPlayer().getPhone());
