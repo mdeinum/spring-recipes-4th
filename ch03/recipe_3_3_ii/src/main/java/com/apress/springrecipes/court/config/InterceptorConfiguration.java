@@ -2,16 +2,15 @@ package com.apress.springrecipes.court.config;
 
 import com.apress.springrecipes.court.web.MeasurementInterceptor;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-public class InterceptorConfiguration extends WebMvcConfigurationSupport {
+public class InterceptorConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
-    protected void addInterceptors(InterceptorRegistry registry) {
+    public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(measurementInterceptor());
     }
 

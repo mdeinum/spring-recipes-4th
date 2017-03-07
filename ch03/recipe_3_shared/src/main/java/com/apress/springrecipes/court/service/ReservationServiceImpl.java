@@ -1,5 +1,6 @@
 package com.apress.springrecipes.court.service;
 
+import com.apress.springrecipes.court.domain.PeriodicReservation;
 import com.apress.springrecipes.court.domain.Player;
 import com.apress.springrecipes.court.domain.Reservation;
 import com.apress.springrecipes.court.domain.SportType;
@@ -76,4 +77,24 @@ class ReservationServiceImpl implements ReservationService {
     public List<Reservation> findByDate(LocalDate summaryDate) {
         return reservations.stream().filter(r -> Objects.equals(r.getDate(), summaryDate)).collect(Collectors.toList());
     }
+
+    @Override
+    public void makePeriodic(PeriodicReservation periodicReservation)
+            throws ReservationNotAvailableException {
+
+        LocalDate fromDate = periodicReservation.getFromDate();
+
+        while (fromDate.isBefore(periodicReservation.getToDate())) {
+            Reservation reservation = new Reservation();
+            reservation.setCourtName(periodicReservation.getCourtName());
+            reservation.setDate(fromDate);
+            reservation.setHour(periodicReservation.getHour());
+            reservation.setPlayer(periodicReservation.getPlayer());
+            make(reservation);
+
+            fromDate = fromDate.plusDays(periodicReservation.getPeriod());
+
+        }
+    }
+
 }

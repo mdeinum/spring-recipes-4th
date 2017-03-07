@@ -1,5 +1,7 @@
 package com.apress.springrecipes.court.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -16,6 +18,7 @@ public class Reservation {
     private String courtName;
 
     @NotNull
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate date;
 
     @Min(8)

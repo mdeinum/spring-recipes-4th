@@ -1,10 +1,10 @@
 package com.apress.springrecipes.court.service;
 
+import com.apress.springrecipes.court.domain.PeriodicReservation;
 import com.apress.springrecipes.court.domain.Reservation;
 import com.apress.springrecipes.court.domain.SportType;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public interface ReservationService {
@@ -19,4 +19,7 @@ public interface ReservationService {
     SportType getSportType(int sportTypeId);
 
     List<Reservation> findByDate(LocalDate summaryDate);
+
+    public void makePeriodic(PeriodicReservation periodicReservation)
+            throws ReservationNotAvailableException;
 }

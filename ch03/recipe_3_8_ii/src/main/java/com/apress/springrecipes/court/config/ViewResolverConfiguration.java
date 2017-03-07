@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.ResourceBundleViewResolver;
@@ -14,14 +14,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class ViewResolverConfiguration extends WebMvcConfigurationSupport {
+public class ViewResolverConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
         Map<String, MediaType> mediatypes = new HashMap<>();
         mediatypes.put("html", MediaType.TEXT_HTML);
-        mediatypes.put("pdf", new MediaType("application/pdf"));
-        mediatypes.put("xls", new MediaType("application/vnd.ms-excel"));
+        mediatypes.put("pdf", MediaType.valueOf("application/json"));
+        mediatypes.put("xls", MediaType.valueOf("application/vnd.ms-excel"));
         mediatypes.put("xml", MediaType.APPLICATION_XML);
         mediatypes.put("json", MediaType.APPLICATION_JSON);
         configurer.mediaTypes(mediatypes);

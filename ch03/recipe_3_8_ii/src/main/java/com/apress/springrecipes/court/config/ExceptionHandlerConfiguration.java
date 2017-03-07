@@ -4,7 +4,7 @@ import com.apress.springrecipes.court.service.ReservationNotAvailableException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerExceptionResolver;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Properties;
  * Created by marten on 28-02-17.
  */
 @Configuration
-public class ExceptionHandlerConfiguration extends WebMvcConfigurationSupport {
+public class ExceptionHandlerConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
