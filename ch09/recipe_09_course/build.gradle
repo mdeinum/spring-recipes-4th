@@ -1,0 +1,13 @@
+description = 'CH09 - Shared Course Code'
+
+defaultTasks 'clean', 'build'
+
+dependencies {
+    compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-orm', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-orm', version: "$springVersion"
+
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: "$hibernateVersion"
+    compile group: 'org.postgresql', name: 'postgresql', version: "$postgresVersion"
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '2.6.1'
+}
