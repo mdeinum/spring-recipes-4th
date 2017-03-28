@@ -75,7 +75,7 @@ subprojects { subproject ->
         romeVersion                 = '1.0'
         servletApiVersion           = '3.1.0'
         slf4jVersion                = '1.7.22'
-        testngVersion               = '6.10'
+        testngVersion               = '6.11'
         wsdl4jVersion               = '1.6.3'
     }
 
