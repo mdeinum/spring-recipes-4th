@@ -31,8 +31,8 @@ public class NamedJdbcVehicleDao extends NamedParameterJdbcDaoSupport implements
     public void insert(Collection<Vehicle> vehicles) {
 
         SqlParameterSource[] sources = vehicles.stream()
-                .map(v -> new BeanPropertySqlParameterSource(v))
-                .toArray(size -> new SqlParameterSource[size]);
+                .map(BeanPropertySqlParameterSource::new)
+                .toArray(SqlParameterSource[]::new);
         getNamedParameterJdbcTemplate().batchUpdate(INSERT_SQL, sources);
     }
 

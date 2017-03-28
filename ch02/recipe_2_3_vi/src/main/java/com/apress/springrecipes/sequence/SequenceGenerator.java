@@ -35,8 +35,6 @@ public class SequenceGenerator {
     }
 
     public synchronized String getSequence() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(prefixGenerator.getPrefix()).append(initial).append(counter.getAndIncrement()).append(suffix);
-        return builder.toString();
+        return prefixGenerator.getPrefix() + initial + counter.getAndIncrement() + suffix;
     }
 }

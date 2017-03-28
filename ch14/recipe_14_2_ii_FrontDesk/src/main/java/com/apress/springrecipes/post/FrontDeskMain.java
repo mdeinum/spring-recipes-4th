@@ -4,8 +4,6 @@ import com.apress.springrecipes.post.config.FrontOfficeConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.Random;
-
 public class FrontDeskMain {
 
     public static void main(String[] args) {

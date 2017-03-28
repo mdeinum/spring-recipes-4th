@@ -25,11 +25,10 @@ public class SequenceGenerator {
     }
 
     public String getSequence() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(prefix)
-                .append(initial)
-                .append(counter.getAndIncrement())
-                .append(suffix);
-        return builder.toString();
+        String builder = prefix +
+                initial +
+                counter.getAndIncrement() +
+                suffix;
+        return builder;
     }
 }

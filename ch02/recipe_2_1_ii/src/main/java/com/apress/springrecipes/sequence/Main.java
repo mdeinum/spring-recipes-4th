@@ -3,8 +3,6 @@ package com.apress.springrecipes.sequence;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.regex.Pattern;
-
 public class Main {
 
     public static void main(String[] args) {

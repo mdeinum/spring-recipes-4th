@@ -13,7 +13,7 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext(BookstoreConfiguration.class);
 
         Cashier cashier = context.getBean(Cashier.class);
-        List<String> isbnList = Arrays.asList(new String[]{"0001", "0002"});
+        List<String> isbnList = Arrays.asList("0001", "0002");
         cashier.checkout(isbnList, "user1");
 
     }

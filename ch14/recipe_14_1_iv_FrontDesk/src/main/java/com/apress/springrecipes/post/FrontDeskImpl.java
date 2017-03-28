@@ -1,12 +1,8 @@
 package com.apress.springrecipes.post;
 
-import javax.jms.JMSException;
-import javax.jms.MapMessage;
-import javax.jms.Message;
-import javax.jms.Session;
-
-import org.springframework.jms.core.MessageCreator;
 import org.springframework.jms.core.support.JmsGatewaySupport;
+
+import javax.jms.MapMessage;
 
 public class FrontDeskImpl extends JmsGatewaySupport implements FrontDesk {
 

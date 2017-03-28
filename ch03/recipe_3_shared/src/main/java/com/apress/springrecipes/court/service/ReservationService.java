@@ -20,6 +20,6 @@ public interface ReservationService {
 
     List<Reservation> findByDate(LocalDate summaryDate);
 
-    public void makePeriodic(PeriodicReservation periodicReservation)
+    void makePeriodic(PeriodicReservation periodicReservation)
             throws ReservationNotAvailableException;
 }

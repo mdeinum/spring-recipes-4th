@@ -1,9 +1,5 @@
 package com.apress.springrecipes.post;
 
-import javax.jms.JMSException;
-import javax.jms.MapMessage;
-
-import org.springframework.jms.support.JmsUtils;
 import org.springframework.jms.core.support.JmsGatewaySupport;
 
 import java.util.Map; 

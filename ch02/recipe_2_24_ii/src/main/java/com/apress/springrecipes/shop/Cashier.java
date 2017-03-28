@@ -1,16 +1,10 @@
 package com.apress.springrecipes.shop;
 
-import java.io.IOException;
-import java.io.File;
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
-import java.io.FileOutputStream;
-
-import java.util.Date;
-
-
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
+
+import java.io.IOException;
+import java.util.Date;
 
 
 public class Cashier implements ApplicationEventPublisherAware {

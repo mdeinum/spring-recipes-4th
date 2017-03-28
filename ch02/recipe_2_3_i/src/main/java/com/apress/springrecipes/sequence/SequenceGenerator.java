@@ -30,11 +30,10 @@ public class SequenceGenerator {
     }
 
     public String getSequence() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(prefixGenerator.getPrefix())
-                .append(initial)
-                .append(counter.getAndIncrement())
-                .append(suffix);
-        return builder.toString();
+        String builder = prefixGenerator.getPrefix() +
+                initial +
+                counter.getAndIncrement() +
+                suffix;
+        return builder;
     }
 }

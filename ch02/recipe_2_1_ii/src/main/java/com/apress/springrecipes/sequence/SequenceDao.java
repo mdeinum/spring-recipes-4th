@@ -2,7 +2,7 @@ package com.apress.springrecipes.sequence;
 
 public interface SequenceDao {
 
-    public Sequence getSequence(String sequenceId);
+    Sequence getSequence(String sequenceId);
 
-    public int getNextValue(String sequenceId);
+    int getNextValue(String sequenceId);
 } 

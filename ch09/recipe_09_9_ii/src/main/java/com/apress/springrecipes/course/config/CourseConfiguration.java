@@ -1,7 +1,5 @@
 package com.apress.springrecipes.course.config;
 
-import com.apress.springrecipes.course.CourseDao;
-import com.apress.springrecipes.course.jpa.JpaCourseDao;
 import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.dialect.PostgreSQL95Dialect;
 import org.springframework.context.annotation.Bean;
