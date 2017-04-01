@@ -17,8 +17,7 @@ public class AccountServiceTestNGContextTests extends AbstractTestNGSpringContex
 
     @BeforeMethod
     public void init() {
-        accountService =
-                (AccountService) applicationContext.getBean("accountService");
+        accountService = applicationContext.getBean(AccountService.class);
         accountService.createAccount(TEST_ACCOUNT_NO);
         accountService.deposit(TEST_ACCOUNT_NO, 100);
     }

@@ -10,9 +10,6 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by marten on 16-06-14.
- */
 @ContextConfiguration(classes = BankConfiguration.class)
 @Sql(scripts="classpath:/bank.sql")
 public class AccountServiceJUnit4ContextTests extends AbstractTransactionalJUnit4SpringContextTests {
@@ -24,6 +21,7 @@ public class AccountServiceJUnit4ContextTests extends AbstractTransactionalJUnit
 
     @Before
     public void init() {
+        executeSqlScript("classpath:/bank.sql",true);
         jdbcTemplate.update(
                 "INSERT INTO ACCOUNT (ACCOUNT_NO, BALANCE) VALUES (?, ?)",
                 TEST_ACCOUNT_NO, 100);

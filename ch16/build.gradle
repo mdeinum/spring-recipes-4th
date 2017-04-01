@@ -241,13 +241,13 @@ project(':ch16:recipe_16_8_ii') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
         compile group: 'org.springframework', name: 'spring-jdbc', version: "$springVersion"
-        compile 'com.h2database:h2:1.4.194'
 
         compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
 
         testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
         testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
         testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+        testCompile 'com.h2database:h2:1.4.194'
         testCompileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
 
     }

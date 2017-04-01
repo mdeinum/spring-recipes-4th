@@ -9,18 +9,19 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
 
 /**
  * Created by marten on 16-06-14.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 @ContextConfiguration(classes = BankConfiguration.class)
 public class AccountServiceJUnit4ContextTests implements ApplicationContextAware{
 
     private static final String TEST_ACCOUNT_NO = "1234";
+//    @Autowired
     private ApplicationContext applicationContext;
     private AccountService accountService;
 

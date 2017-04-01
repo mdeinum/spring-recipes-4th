@@ -1,7 +1,6 @@
 package com.apress.springrecipes.bank.web;
 
 import com.apress.springrecipes.bank.config.BankConfiguration;
-import com.apress.springrecipes.bank.web.config.BankWebConfiguration;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,18 +9,15 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.client.MockRestServiceServer;
-import org.springframework.test.web.client.match.MockRestRequestMatchers;
-import org.springframework.test.web.client.response.MockRestResponseCreators;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes= { BankWebConfiguration.class, BankConfiguration.class})
-@WebAppConfiguration
+@ContextConfiguration(classes= { BankConfiguration.class})
 public class OpenIBANValidationClientTest {
 
     @Autowired

@@ -1,11 +1,16 @@
 package com.apress.springrecipes.bank;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class InMemoryAccountDao implements AccountDao {
 
-    private Map<String, Account> accounts = new ConcurrentHashMap<>();
+    private Map<String, Account> accounts;
+
+    public InMemoryAccountDao() {
+        accounts = Collections.synchronizedMap(new HashMap<String, Account>());
+    }
 
     public boolean accountExists(String accountNo) {
         return accounts.containsKey(accountNo);
