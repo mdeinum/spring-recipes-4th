@@ -389,6 +389,7 @@ project(':ch13:recipe_13_11_SpringWS_Server') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
         compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-oxm', version: "$springVersion"
 
         compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
         compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"
@@ -422,6 +423,8 @@ project(':ch13:recipe_13_11_SpringWS_Client') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
         compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-oxm', version: "$springVersion"
+
         compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
         compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
         compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"
@@ -449,6 +452,7 @@ project(':ch13:recipe_13_12_SpringWS_Server') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
         compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-oxm', version: "$springVersion"
 
         compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
         compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"
@@ -483,6 +487,7 @@ project(':ch13:recipe_13_12_SpringWS_Client') {
     // Define dependencies
     dependencies {
         compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-oxm', version: "$springVersion"
         compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
         compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
         compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"
