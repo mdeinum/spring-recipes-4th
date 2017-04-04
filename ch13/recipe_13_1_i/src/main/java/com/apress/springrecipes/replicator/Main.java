@@ -1,5 +1,6 @@
 package com.apress.springrecipes.replicator;
 
+import com.apress.springrecipes.replicator.config.FileReplicatorConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -15,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         ApplicationContext context =
-                new AnnotationConfigApplicationContext("com.apress.springrecipes.replicator.config");
+                new AnnotationConfigApplicationContext(FileReplicatorConfig.class);
 
         FileReplicator documentReplicator = context.getBean(FileReplicator.class);
 

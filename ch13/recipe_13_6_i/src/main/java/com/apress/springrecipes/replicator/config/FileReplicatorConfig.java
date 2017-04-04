@@ -22,8 +22,7 @@ public class FileReplicatorConfig {
 
     @Bean
     public FileCopier fileCopier() {
-        FileCopier fCop = new FileCopierImpl();
-        return fCop;
+        return new FileCopierImpl();
     }
 
     @Bean

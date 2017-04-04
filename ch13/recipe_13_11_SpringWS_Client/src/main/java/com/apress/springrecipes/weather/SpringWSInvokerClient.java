@@ -1,5 +1,6 @@
 package com.apress.springrecipes.weather;
 
+import com.apress.springrecipes.weather.config.SpringWsClientConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -7,7 +8,7 @@ public class SpringWSInvokerClient {
 
     public static void main(String[] args) {
         ApplicationContext context =
-            new AnnotationConfigApplicationContext("com.apress.springrecipes.weather.config");
+            new AnnotationConfigApplicationContext(SpringWsClientConfiguration.class);
 
         WeatherServiceClient client = context.getBean(WeatherServiceClient.class);
         TemperatureInfo temperature = client.getTodayTemperature("Houston");

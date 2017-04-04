@@ -12,9 +12,6 @@ import java.io.IOException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-/**
- * Created by marten on 26-05-14.
- */
 @Configuration
 @EnableScheduling
 public class SchedulingConfiguration implements SchedulingConfigurer {
@@ -25,19 +22,16 @@ public class SchedulingConfiguration implements SchedulingConfigurer {
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
         taskRegistrar.setScheduler(scheduler());
-        taskRegistrar.addFixedDelayTask(new Runnable(){
-            @Override
-            public void run() {
-                try {
-                    fileReplicator.replicate();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        taskRegistrar.addFixedDelayTask(() -> {
+            try {
+                fileReplicator.replicate();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }, 60000);
     }
 
-    @Bean(destroyMethod = "shutdown")
+    @Bean
     public Executor scheduler() {
         return Executors.newScheduledThreadPool(10);
     }

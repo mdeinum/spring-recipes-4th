@@ -6,9 +6,10 @@ import java.util.List;
 
 
 public class WeatherServiceClient {
-    private WeatherService weatherService;
 
-    public void setWeatherService(WeatherService weatherService) {
+    private final WeatherService weatherService;
+
+    public WeatherServiceClient(WeatherService weatherService) {
         this.weatherService = weatherService;
     }
 

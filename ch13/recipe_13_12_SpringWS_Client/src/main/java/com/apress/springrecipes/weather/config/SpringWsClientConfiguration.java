@@ -1,32 +1,25 @@
 package com.apress.springrecipes.weather.config;
 
+import com.apress.springrecipes.weather.WeatherService;
 import com.apress.springrecipes.weather.WeatherServiceClient;
 import com.apress.springrecipes.weather.WeatherServiceProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.oxm.Marshaller;
 import org.springframework.oxm.castor.CastorMarshaller;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
-/**
- * Created by marten on 26-05-14.
- */
 @Configuration
 public class SpringWsClientConfiguration {
 
     @Bean
-    public WeatherServiceClient weatherServiceClient() throws Exception {
-        WeatherServiceClient weatherServiceClient = new WeatherServiceClient();
-        weatherServiceClient.setWeatherService(weatherServiceProxy());
-        return weatherServiceClient;
+    public WeatherServiceClient weatherServiceClient(WeatherService weatherService) throws Exception {
+        return new WeatherServiceClient(weatherService);
     }
 
     @Bean
-    public WeatherServiceProxy weatherServiceProxy() throws Exception {
-        WeatherServiceProxy weatherServiceProxy = new WeatherServiceProxy();
-        weatherServiceProxy.setWebServiceTemplate(webServiceTemplate());
-        return weatherServiceProxy;
+    public WeatherServiceProxy weatherServiceProxy(WebServiceTemplate webServiceTemplate) throws Exception {
+        return new WeatherServiceProxy(webServiceTemplate);
     }
 
     @Bean
@@ -37,7 +30,7 @@ public class SpringWsClientConfiguration {
     }
 
     @Bean
-    public Marshaller marshaller() {
+    public CastorMarshaller marshaller() {
         CastorMarshaller marshaller = new CastorMarshaller();
         marshaller.setMappingLocation(new ClassPathResource("/mapping.xml"));
         return marshaller;

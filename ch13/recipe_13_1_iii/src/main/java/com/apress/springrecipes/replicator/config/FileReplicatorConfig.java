@@ -17,13 +17,13 @@ public class FileReplicatorConfig {
 
     @Value("#{systemProperties['user.home']}/docs")
     private String srcDir;
+
     @Value("#{systemProperties['user.home']}/docs_backup")
     private String destDir;
 
     @Bean
     public FileCopier fileCopier() {
-        FileCopier fCop = new FileCopierJMXImpl();
-        return fCop;
+        return new FileCopierJMXImpl();
     }
 
     @Bean

@@ -11,8 +11,7 @@ public class WeatherConfigServer {
 
     @Bean
     public WeatherService weatherService() {
-        WeatherService wService = new WeatherServiceImpl();
-        return wService;
+        return new WeatherServiceImpl();
     }
 
     @Bean

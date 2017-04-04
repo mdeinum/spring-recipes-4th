@@ -15,9 +15,6 @@ import java.rmi.registry.Registry;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by marten on 21-05-14.
- */
 @Configuration
 public class JmxConfig {
 

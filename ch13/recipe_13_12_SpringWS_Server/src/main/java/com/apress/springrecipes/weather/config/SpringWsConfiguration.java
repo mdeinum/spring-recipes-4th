@@ -17,9 +17,6 @@ import org.springframework.xml.xsd.XsdSchema;
 
 import java.util.List;
 
-/**
- * Created by marten on 26-05-14.
- */
 @Configuration
 @EnableWs
 @ComponentScan("com.apress.springrecipes.weather")

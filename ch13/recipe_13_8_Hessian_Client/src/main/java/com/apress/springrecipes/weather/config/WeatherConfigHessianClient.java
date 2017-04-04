@@ -8,19 +8,18 @@ import org.springframework.remoting.caucho.HessianProxyFactoryBean;
 
 @Configuration
 public class WeatherConfigHessianClient {
-    
+
     @Bean
     public HessianProxyFactoryBean weatherService() {
-	HessianProxyFactoryBean factory = new HessianProxyFactoryBean();
-	factory.setServiceUrl("http://localhost:8080/hessian/weather");
-	factory.setServiceInterface(WeatherService.class);
-	return factory;
+        HessianProxyFactoryBean factory = new HessianProxyFactoryBean();
+        factory.setServiceUrl("http://localhost:8080/hessian/weather");
+        factory.setServiceInterface(WeatherService.class);
+        return factory;
     }
 
     @Bean
-    public WeatherServiceClient weatherClient() { 
-	WeatherServiceClient wServiceClient = new WeatherServiceClient();
-	return wServiceClient;
+    public WeatherServiceClient weatherClient() {
+        return new WeatherServiceClient();
     }
-    
+
 }

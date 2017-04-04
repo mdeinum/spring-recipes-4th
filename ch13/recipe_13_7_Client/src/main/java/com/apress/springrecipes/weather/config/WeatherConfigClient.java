@@ -1,5 +1,6 @@
 package com.apress.springrecipes.weather.config;
 
+import com.apress.springrecipes.weather.WeatherService;
 import com.apress.springrecipes.weather.WeatherServiceClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,15 +13,12 @@ public class WeatherConfigClient {
     public RmiProxyFactoryBean weatherService() {
         RmiProxyFactoryBean rmiProxy = new RmiProxyFactoryBean();
         rmiProxy.setServiceUrl("rmi://localhost:1099/WeatherService");
-        rmiProxy.setServiceInterface(com.apress.springrecipes.weather.WeatherService.class);
+        rmiProxy.setServiceInterface(WeatherService.class);
         return rmiProxy;
     }
 
     @Bean
-    public WeatherServiceClient weatherClient() {
-        WeatherServiceClient wServiceClient = new WeatherServiceClient();
-        return wServiceClient;
+    public WeatherServiceClient weatherClient(WeatherService weatherService) {
+        return new WeatherServiceClient(weatherService);
     }
-
-
 }

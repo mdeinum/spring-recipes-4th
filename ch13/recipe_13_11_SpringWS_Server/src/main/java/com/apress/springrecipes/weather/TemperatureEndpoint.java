@@ -5,7 +5,6 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.XPath;
 import org.dom4j.xpath.DefaultXPath;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -14,19 +13,18 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
- 
+
 @Endpoint
 public class TemperatureEndpoint {
 
     private static final String namespaceUri = "http://springrecipes.apress.com/weather/schemas";
     private XPath cityPath;
     private XPath datePath;
-    private DateFormat dateFormat;
-    @Autowired
-    private WeatherService weatherService;
 
+    private final WeatherService weatherService;
 
-    public TemperatureEndpoint() { 
+    public TemperatureEndpoint(WeatherService weatherService) {
+        this.weatherService = weatherService;
         // Create the XPath objects, including the namespace
         Map<String, String> namespaceUris = new HashMap<String, String>();
         namespaceUris.put("weather", namespaceUri);
@@ -34,16 +32,12 @@ public class TemperatureEndpoint {
         cityPath.setNamespaceURIs(namespaceUris);
         datePath = new DefaultXPath("/weather:GetTemperaturesRequest/weather:date");
         datePath.setNamespaceURIs(namespaceUris);
-        dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     }
 
-    public void setWeatherService(WeatherService weatherService) {
-        this.weatherService = weatherService;
-    }
-
-    @PayloadRoot(localPart="GetTemperaturesRequest",namespace=namespaceUri)
+    @PayloadRoot(localPart = "GetTemperaturesRequest", namespace = namespaceUri)
     @ResponsePayload
     public Element getTemperature(@RequestPayload Element requestElement) throws Exception {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         // Extract the service parameters from the request message
         String city = cityPath.valueOf(requestElement);
         List<Date> dates = new ArrayList<Date>();
@@ -54,16 +48,16 @@ public class TemperatureEndpoint {
 
         // Invoke the back-end service to handle the request
         List<TemperatureInfo> temperatures =
-            weatherService.getTemperatures(city, dates);
+                weatherService.getTemperatures(city, dates);
 
         // Build the response message from the result of back-end service
-	Document responseDocument = DocumentHelper.createDocument();
+        Document responseDocument = DocumentHelper.createDocument();
         Element responseElement = responseDocument.addElement(
                 "GetTemperaturesResponse", namespaceUri);
         for (TemperatureInfo temperature : temperatures) {
             Element temperatureElement = responseElement.addElement(
                     "TemperatureInfo");
-	    temperatureElement.addAttribute("city", temperature.getCity());
+            temperatureElement.addAttribute("city", temperature.getCity());
             temperatureElement.addAttribute(
                     "date", dateFormat.format(temperature.getDate()));
             temperatureElement.addElement("min").setText(
@@ -73,7 +67,7 @@ public class TemperatureEndpoint {
             temperatureElement.addElement("average").setText(
                     Double.toString(temperature.getAverage()));
         }
-        return responseElement;	
+        return responseElement;
     }
 
 }

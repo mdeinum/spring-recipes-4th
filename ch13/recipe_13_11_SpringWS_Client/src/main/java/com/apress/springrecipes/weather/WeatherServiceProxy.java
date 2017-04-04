@@ -18,19 +18,14 @@ import java.util.List;
 public class WeatherServiceProxy implements WeatherService {
 
     private static final String namespaceUri = "http://springrecipes.apress.com/weather/schemas";
+    private final WebServiceTemplate webServiceTemplate;
 
-    private DateFormat dateFormat;
-    private WebServiceTemplate webServiceTemplate;
-
-    public WeatherServiceProxy() throws Exception {
-        dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    }
-
-    public void setWebServiceTemplate(WebServiceTemplate webServiceTemplate) {
+    public WeatherServiceProxy(WebServiceTemplate webServiceTemplate) throws Exception {
         this.webServiceTemplate = webServiceTemplate;
     }
 
     public List<TemperatureInfo> getTemperatures(String city, List<Date> dates) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         // Build the request document from the method arguments
         Document requestDocument = DocumentHelper.createDocument();
