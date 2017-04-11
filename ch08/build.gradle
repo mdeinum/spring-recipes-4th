@@ -24,14 +24,14 @@ subprojects { subproject ->
     }
 
     dependencies {
-        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
-        compile group: 'org.springframework', name: 'spring-webmvc', version:"$springVersion"
-        compile group: 'org.springframework.mobile', name: 'spring-mobile-device', version:"$springMobileVersion"
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework.mobile', name: 'spring-mobile-device'
 
-        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec', version: '1.2.1'
-        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl', version: '1.2.1'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec'
+        compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl'
 
-        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
     }
 
     task buildDocker(type: Docker, dependsOn: build) {

@@ -1,7 +1,7 @@
 dependencies {
 
-    compile group: 'org.springframework', name: 'spring-aop', version: "$springVersion"
-    compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-aop'
+    compile group: 'org.springframework', name: 'spring-context'
 
     compile group: 'org.aspectj', name: 'aspectjrt', version: "$aspectjVersion"
     compile group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"

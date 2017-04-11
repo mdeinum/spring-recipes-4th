@@ -6,14 +6,14 @@ subprojects { subproject ->
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-expression', version:"$springVersion"
-        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
-        compile group: 'org.springframework', name: 'spring-jms', version:"$springVersion"
-        compile group: 'org.springframework', name: 'spring-tx', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-expression'
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-jms'
+        compile group: 'org.springframework', name: 'spring-tx'
 
-        compile group: 'javax.jms', name: 'javax.jms-api', version:'2.0.1'
-        compile group: 'org.apache.activemq', name: 'activemq-client',version:"$activemqVersion"
-        compile group: 'org.apache.activemq', name: 'activemq-broker',version:"$activemqVersion"
+        compile group: 'javax.jms', name: 'javax.jms-api'
+        compile group: 'org.apache.activemq', name: 'activemq-client'
+        compile group: 'org.apache.activemq', name: 'activemq-broker'
     }
 }
 

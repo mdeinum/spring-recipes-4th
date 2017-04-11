@@ -17,11 +17,11 @@ project(':ch03:recipe_3_shared') {
     defaultTasks 'clean', 'build'
 
     dependencies {
-        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-webmvc'
 
-        compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
-        compileOnly group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
-        compileOnly group: 'org.hibernate', name: 'hibernate-validator', version: "$hibValVersion"
+        compileOnly group: 'javax.servlet', name: 'javax.servlet-api'
+        compileOnly group: 'javax.validation', name: 'validation-api'
+        compileOnly group: 'org.hibernate', name: 'hibernate-validator'
     }
 }
 
@@ -36,7 +36,7 @@ subprojects { subproject ->
         // Define dependencies
         dependencies {
             compile project(':ch03:recipe_3_shared')
-            compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+            compile group: 'org.springframework', name: 'spring-webmvc'
             // Add dependencies to add for runtime (these will be included in the WAR, in addition to those in compile group)
             runtime group: 'javax.servlet', name: 'jstl', version: '1.2'
 

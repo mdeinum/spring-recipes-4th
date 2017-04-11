@@ -19,8 +19,8 @@ repositories {
 
 // Define dependencies
 dependencies {
-    compile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
-    compile group: 'org.springframework', name: 'spring-expression', version: "$springVersion"
-    compile group: 'org.springframework', name: 'spring-beans', version: "$springVersion"
-    compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-core'
+    compile group: 'org.springframework', name: 'spring-expression'
+    compile group: 'org.springframework', name: 'spring-beans'
+    compile group: 'org.springframework', name: 'spring-context'
 }

@@ -16,12 +16,12 @@ subprojects { subproject ->
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-expression', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-beans', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-context-support', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-aop', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-core'
+        compile group: 'org.springframework', name: 'spring-expression'
+        compile group: 'org.springframework', name: 'spring-beans'
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-context-support'
+        compile group: 'org.springframework', name: 'spring-aop'
     }
     // Define how to build final JAR for project
     jar {
@@ -110,7 +110,7 @@ project(':ch13:recipe_13_5_iii') {
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-tx', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-tx'
         compile group: 'org.quartz-scheduler', name: 'quartz', version: "$quartzVersion"
     }
     // Define how to build final JAR for project
@@ -119,7 +119,7 @@ project(':ch13:recipe_13_5_iii') {
 // Define 15_5_iv project
 project(':ch13:recipe_13_5_iv') {
     dependencies {
-        compile group: 'org.springframework', name: 'spring-tx', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-tx'
         compile group: 'org.quartz-scheduler', name: 'quartz', version: "$quartzVersion"
     }
 } // End 15_5_iv
@@ -181,8 +181,8 @@ project(':ch13:recipe_13_8_Hessian_Server') {
         archiveName = 'hessian.war'
     }
     dependencies {
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web'
+        compile group: 'org.springframework', name: 'spring-webmvc'
         compile group: 'com.caucho', name: 'hessian', version: "$hessianVersion"
         providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
     }
@@ -209,7 +209,7 @@ project(':ch13:recipe_13_8_Hessian_Client') {
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
         compile group: 'com.caucho', name: 'hessian', version: "$hessianVersion"
     }
@@ -233,8 +233,8 @@ project(':ch13:recipe_13_8_HTTPInvoker_Server') {
         archiveName = 'httpinvoker.war'
     }
     dependencies {
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web'
+        compile group: 'org.springframework', name: 'spring-webmvc'
         providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
     }
 
@@ -260,7 +260,7 @@ project(':ch13:recipe_13_8_HTTPInvoker_Client') {
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
     }
     // Define how to build final JAR for project
@@ -278,7 +278,7 @@ project(':ch13:recipe_13_9_JDK_Server') {
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web'
         compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
         compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
     }
@@ -304,8 +304,8 @@ project(':ch13:recipe_13_9_CXF_Server') {
         archiveName = 'cxf.war'
     }
     dependencies {
-        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: "$apacheCxfVersion"
         providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
@@ -334,7 +334,7 @@ project(':ch13:recipe_13_9_CXF_Client') {
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: "$apacheCxfVersion"
@@ -362,7 +362,7 @@ project(':ch13:recipe_13_9_SpringJaxWs_Client') {
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
     }
     // Define how to build final JAR for project
@@ -387,9 +387,9 @@ project(':ch13:recipe_13_11_SpringWS_Server') {
         archiveName = 'springws.war'
     }
     dependencies {
-        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-oxm', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-web'
+        compile group: 'org.springframework', name: 'spring-oxm'
 
         compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
         compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"
@@ -421,9 +421,9 @@ project(':ch13:recipe_13_11_SpringWS_Client') {
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-oxm', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web'
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-oxm'
 
         compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
         compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
@@ -450,9 +450,9 @@ project(':ch13:recipe_13_12_SpringWS_Server') {
         archiveName = 'springws.war'
     }
     dependencies {
-        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-oxm', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-webmvc'
+        compile group: 'org.springframework', name: 'spring-web'
+        compile group: 'org.springframework', name: 'spring-oxm'
 
         compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
         compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"
@@ -486,8 +486,8 @@ project(':ch13:recipe_13_12_SpringWS_Client') {
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-oxm', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web'
+        compile group: 'org.springframework', name: 'spring-oxm'
         compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
         compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
         compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"

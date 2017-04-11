@@ -1,5 +1,5 @@
 dependencies {
-    compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+    compile group: 'org.springframework', name: 'spring-context'
 }
 
 jar {
