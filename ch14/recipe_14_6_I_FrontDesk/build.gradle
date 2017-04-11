@@ -1,4 +1,4 @@
 dependencies {
-    compile group: 'org.springframework.amqp', name: 'spring-rabbit', version: "$springAmqpVersion"
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson2Version"
+    compile group: 'org.springframework.amqp', name: 'spring-rabbit'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
 }

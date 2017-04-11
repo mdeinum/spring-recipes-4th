@@ -41,7 +41,7 @@ project(':ch13:recipe_13_3_i') {
 project(':ch13:recipe_13_3_ii') {
     // Define dependencies
     dependencies {
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
+        compile group: 'org.aspectj', name: 'aspectjtools'
     }
     // Define how to build final JAR for project
     jar {
@@ -52,14 +52,14 @@ project(':ch13:recipe_13_3_ii') {
 // Define 15_4_i project
 project(':ch13:recipe_13_4_i') {
     dependencies {
-        compile group: 'com.sun.mail', name: 'javax.mail', version: "$javaMailVersion"
+        compile group: 'com.sun.mail', name: 'javax.mail'
     }
 } // End 15_4_i project 
 
 // Define 15_4_ii project
 project(':ch13:recipe_13_4_ii') {
     dependencies {
-        compile group: 'com.sun.mail', name: 'javax.mail', version: "$javaMailVersion"
+        compile group: 'com.sun.mail', name: 'javax.mail'
     }
     // Define how to build final JAR for project
 } // End 15_4_ii project 
@@ -67,7 +67,7 @@ project(':ch13:recipe_13_4_ii') {
 // Define 15_4_iii project
 project(':ch13:recipe_13_4_iii') {
     dependencies {
-        compile group: 'com.sun.mail', name: 'javax.mail', version: "$javaMailVersion"
+        compile group: 'com.sun.mail', name: 'javax.mail'
     }
     // Define how to build final JAR for project
 } // End 15_4_iii project 
@@ -75,21 +75,21 @@ project(':ch13:recipe_13_4_iii') {
 // Define 15_4_iv project
 project(':ch13:recipe_13_4_iv') {
     dependencies {
-        compile group: 'com.sun.mail', name: 'javax.mail', version: "$javaMailVersion"
+        compile group: 'com.sun.mail', name: 'javax.mail'
     }
 } // End 15_4_iv project 
 
 // Define 15_4_v project
 project(':ch13:recipe_13_4_v') {
     dependencies {
-        compile group: 'com.sun.mail', name: 'javax.mail', version: "$javaMailVersion"
+        compile group: 'com.sun.mail', name: 'javax.mail'
     }
 } // End 15_4_v project 
 
 // Define 15_5_i project
 project(':ch13:recipe_13_5_i') {
     dependencies {
-        compile group: 'org.quartz-scheduler', name: 'quartz', version: "$quartzVersion"
+        compile group: 'org.quartz-scheduler', name: 'quartz'
     }
 } // End 15_5_i
 
@@ -99,7 +99,7 @@ project(':ch13:recipe_13_5_ii') {
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
-        compile group: 'org.quartz-scheduler', name: 'quartz', version: "$quartzVersion"
+        compile group: 'org.quartz-scheduler', name: 'quartz'
     }
     // Define how to build final JAR for project
 } // End 15_5_ii
@@ -111,7 +111,7 @@ project(':ch13:recipe_13_5_iii') {
     // Define dependencies
     dependencies {
         compile group: 'org.springframework', name: 'spring-tx'
-        compile group: 'org.quartz-scheduler', name: 'quartz', version: "$quartzVersion"
+        compile group: 'org.quartz-scheduler', name: 'quartz'
     }
     // Define how to build final JAR for project
 } // End 15_5_iii
@@ -120,14 +120,14 @@ project(':ch13:recipe_13_5_iii') {
 project(':ch13:recipe_13_5_iv') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-tx'
-        compile group: 'org.quartz-scheduler', name: 'quartz', version: "$quartzVersion"
+        compile group: 'org.quartz-scheduler', name: 'quartz'
     }
 } // End 15_5_iv
 
 // Define 15_6_i project
 project(':ch13:recipe_13_6_i') {
     dependencies {
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
+        compile group: 'org.aspectj', name: 'aspectjtools'
     }
 } // End 15_6_i
 
@@ -135,7 +135,7 @@ project(':ch13:recipe_13_6_i') {
 project(':ch13:recipe_13_6_ii') {
     // Define dependencies
     dependencies {
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
+        compile group: 'org.aspectj', name: 'aspectjtools'
     }
 } // End 15_6_ii
 
@@ -143,7 +143,7 @@ project(':ch13:recipe_13_6_ii') {
 project(':ch13:recipe_13_7_Client') {
     // Define dependencies
     dependencies {
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
+        compile group: 'org.aspectj', name: 'aspectjtools'
     }
     // Define how to build final JAR for project
     jar {
@@ -158,7 +158,7 @@ project(':ch13:recipe_13_7_Client') {
 project(':ch13:recipe_13_7_Server') {
     // Define dependencies
     dependencies {
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
+        compile group: 'org.aspectj', name: 'aspectjtools'
     }
     // Define how to build final JAR for project
     jar {
@@ -183,8 +183,8 @@ project(':ch13:recipe_13_8_Hessian_Server') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.springframework', name: 'spring-webmvc'
-        compile group: 'com.caucho', name: 'hessian', version: "$hessianVersion"
-        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        compile group: 'com.caucho', name: 'hessian'
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
     }
 
     task buildDocker(type: Docker, dependsOn: build) {
@@ -210,8 +210,8 @@ project(':ch13:recipe_13_8_Hessian_Client') {
     // Define dependencies
     dependencies {
         compile group: 'org.springframework', name: 'spring-web'
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
-        compile group: 'com.caucho', name: 'hessian', version: "$hessianVersion"
+        compile group: 'org.aspectj', name: 'aspectjtools'
+        compile group: 'com.caucho', name: 'hessian'
     }
     // Define how to build final JAR for project
     jar {
@@ -235,7 +235,7 @@ project(':ch13:recipe_13_8_HTTPInvoker_Server') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.springframework', name: 'spring-webmvc'
-        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
     }
 
     task buildDocker(type: Docker, dependsOn: build) {
@@ -261,7 +261,7 @@ project(':ch13:recipe_13_8_HTTPInvoker_Client') {
     // Define dependencies
     dependencies {
         compile group: 'org.springframework', name: 'spring-web'
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
+        compile group: 'org.aspectj', name: 'aspectjtools'
     }
     // Define how to build final JAR for project
     jar {
@@ -279,8 +279,8 @@ project(':ch13:recipe_13_9_JDK_Server') {
     // Define dependencies
     dependencies {
         compile group: 'org.springframework', name: 'spring-web'
-        compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
+        compile group: 'org.aspectj', name: 'aspectjtools'
     }
     // Define how to build final JAR for project
     jar {
@@ -308,7 +308,7 @@ project(':ch13:recipe_13_9_CXF_Server') {
         compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: "$apacheCxfVersion"
-        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
 
     }
 
@@ -335,17 +335,17 @@ project(':ch13:recipe_13_9_CXF_Client') {
     // Define dependencies
     dependencies {
         compile group: 'org.springframework', name: 'spring-web'
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
+        compile group: 'org.aspectj', name: 'aspectjtools'
         compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-bindings-soap', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-simple', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-common-utilities', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-databinding-jaxb', version: "$apacheCxfVersion"
-        compile group: 'org.apache.ws.xmlschema', name: 'xmlschema-core', version: '2.0.3'
+        compile group: 'org.apache.ws.xmlschema', name: 'xmlschema-core'
         compile group: 'org.codehaus.woodstox', name: 'woodstox-core-lgpl', version: '4.2.0'
         compile group: 'org.codehaus.woodstox', name: 'stax2-api', version: '3.1.3'
-        compile group: 'wsdl4j', name: 'wsdl4j', version: "$wsdl4jVersion"
+        compile group: 'wsdl4j', name: 'wsdl4j'
     }
     // Define how to build final JAR for project
     jar {
@@ -363,7 +363,7 @@ project(':ch13:recipe_13_9_SpringJaxWs_Client') {
     // Define dependencies
     dependencies {
         compile group: 'org.springframework', name: 'spring-web'
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
+        compile group: 'org.aspectj', name: 'aspectjtools'
     }
     // Define how to build final JAR for project
     jar {
@@ -391,12 +391,12 @@ project(':ch13:recipe_13_11_SpringWS_Server') {
         compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.springframework', name: 'spring-oxm'
 
-        compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
-        compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"
-        compile group: 'wsdl4j', name: 'wsdl4j', version: "$wsdl4jVersion"
-        compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
-        compile group: 'jaxen', name: 'jaxen', version: '1.1.4'
-        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        compile group: 'org.springframework.ws', name: 'spring-ws-core'
+        compile group: 'org.springframework.ws', name: 'spring-xml'
+        compile group: 'wsdl4j', name: 'wsdl4j'
+        compile group: 'dom4j', name: 'dom4j'
+        compile group: 'jaxen', name: 'jaxen'
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
     }
 
     task buildDocker(type: Docker, dependsOn: build) {
@@ -425,10 +425,10 @@ project(':ch13:recipe_13_11_SpringWS_Client') {
         compile group: 'org.springframework', name: 'spring-webmvc'
         compile group: 'org.springframework', name: 'spring-oxm'
 
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
-        compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
-        compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"
-        compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+        compile group: 'org.aspectj', name: 'aspectjtools'
+        compile group: 'org.springframework.ws', name: 'spring-ws-core'
+        compile group: 'org.springframework.ws', name: 'spring-xml'
+        compile group: 'dom4j', name: 'dom4j'
     }
     // Define how to build final JAR for project
     jar {
@@ -454,13 +454,13 @@ project(':ch13:recipe_13_12_SpringWS_Server') {
         compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.springframework', name: 'spring-oxm'
 
-        compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
-        compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"
-        compile group: 'wsdl4j', name: 'wsdl4j', version: "$wsdl4jVersion"
-        compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
-        compile group: 'jaxen', name: 'jaxen', version: '1.1.4'
-        compile group: 'org.codehaus.castor', name: 'castor-xml', version: "$castorVersion"
-        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        compile group: 'org.springframework.ws', name: 'spring-ws-core'
+        compile group: 'org.springframework.ws', name: 'spring-xml'
+        compile group: 'wsdl4j', name: 'wsdl4j'
+        compile group: 'dom4j', name: 'dom4j'
+        compile group: 'jaxen', name: 'jaxen'
+        compile group: 'org.codehaus.castor', name: 'castor-xml'
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
 
     }
 
@@ -488,13 +488,13 @@ project(':ch13:recipe_13_12_SpringWS_Client') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-web'
         compile group: 'org.springframework', name: 'spring-oxm'
-        compile group: 'org.aspectj', name: 'aspectjtools', version: "$aspectjVersion"
-        compile group: 'org.springframework.ws', name: 'spring-ws-core', version: "$springWsVersion"
-        compile group: 'org.springframework.ws', name: 'spring-xml', version: "$springWsVersion"
-        compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
-        compile group: 'org.codehaus.castor', name: 'castor-xml', version: "$castorVersion"
-        compile group: 'org.codehaus.castor', name: 'castor-core', version: "$castorVersion"
-        compile group: 'commons-lang', name: 'commons-lang', version: "$commonsLangVersion"
+        compile group: 'org.aspectj', name: 'aspectjtools'
+        compile group: 'org.springframework.ws', name: 'spring-ws-core'
+        compile group: 'org.springframework.ws', name: 'spring-xml'
+        compile group: 'dom4j', name: 'dom4j'
+        compile group: 'org.codehaus.castor', name: 'castor-xml'
+        compile group: 'org.codehaus.castor', name: 'castor-core'
+        compile group: 'commons-lang', name: 'commons-lang'
     }
     // Define how to build final JAR for project
     jar {

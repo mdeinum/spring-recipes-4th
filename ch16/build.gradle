@@ -23,7 +23,7 @@ project("recipe_16_1_i") {
 project(':ch16:recipe_16_1_ii') {
     // Define dependencies
     dependencies {
-        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
+        testCompile group: 'org.testng', name: 'testng'
     }
 } // End
 
@@ -32,7 +32,7 @@ project(':ch16:recipe_16_1_iii') {
 
     // Define dependencies
     dependencies {
-        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
+        testCompile group: 'org.testng', name: 'testng'
     }
 } // End
 
@@ -57,7 +57,7 @@ project(':ch16:recipe_16_2_iii') {
     // Define dependencies
     dependencies {
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
     }
 } // End
 
@@ -66,7 +66,7 @@ project(':ch16:recipe_16_2_iv') {
     // Define dependencies
     dependencies {
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
     }
 } // End
 
@@ -76,7 +76,7 @@ project(':ch16:recipe_16_3_i') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc'
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
     }
 } // End
 
@@ -86,7 +86,7 @@ project(':ch16:recipe_16_4_i') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc'
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -97,7 +97,7 @@ project(':ch16:recipe_16_4_ii') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc'
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -107,8 +107,8 @@ project(':ch16:recipe_16_4_iii') {
     // Define dependencies
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc'
-        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -119,7 +119,7 @@ project(':ch16:recipe_16_5_i') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc'
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -130,7 +130,7 @@ project(':ch16:recipe_16_5_ii') {
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc'
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -140,8 +140,8 @@ project(':ch16:recipe_16_5_iii') {
     // Define dependencies
     dependencies {
         compile group: 'org.springframework', name: 'spring-webmvc'
-        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -155,7 +155,7 @@ project(':ch16:recipe_16_6_i') {
         compile 'com.h2database:h2:1.4.194'
 
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -169,7 +169,7 @@ project(':ch16:recipe_16_6_ii') {
         compile 'com.h2database:h2:1.4.194'
 
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -182,8 +182,8 @@ project(':ch16:recipe_16_6_iii') {
         compile group: 'org.springframework', name: 'spring-jdbc'
         compile 'com.h2database:h2:1.4.194'
 
-        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -197,7 +197,7 @@ project(':ch16:recipe_16_7_i') {
         compile 'com.h2database:h2:1.4.194'
 
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -212,8 +212,8 @@ project(':ch16:recipe_16_7_ii') {
         compile group: 'org.springframework', name: 'spring-jdbc'
         compile 'com.h2database:h2:1.4.194'
 
-        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
     }
 } // End
@@ -226,10 +226,10 @@ project(':ch16:recipe_16_8_i') {
         compile group: 'org.springframework', name: 'spring-jdbc'
         compile 'com.h2database:h2:1.4.194'
 
-        compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
 
         testCompile group: 'junit', name: 'junit'
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
 
     }
@@ -242,13 +242,13 @@ project(':ch16:recipe_16_8_ii') {
         compile group: 'org.springframework', name: 'spring-webmvc'
         compile group: 'org.springframework', name: 'spring-jdbc'
 
-        compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
 
-        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
         testCompile 'com.h2database:h2:1.4.194'
-        testCompileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        testCompileOnly group: 'javax.servlet', name: 'javax.servlet-api'
 
     }
 } // End
@@ -262,12 +262,12 @@ project(':ch16:recipe_16_9_i') {
         compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
         compile 'com.h2database:h2:1.4.194'
 
-        compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
 
-        testCompile group: 'org.testng', name: 'testng', version: "$testngVersion"
-        testCompile group: 'org.mockito', name: 'mockito-core', version: "$mockitoVersion"
+        testCompile group: 'org.testng', name: 'testng'
+        testCompile group: 'org.mockito', name: 'mockito-core'
         testCompile group: 'org.springframework', name: 'spring-test'
-        testCompileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+        testCompileOnly group: 'javax.servlet', name: 'javax.servlet-api'
 
     }
 } // End

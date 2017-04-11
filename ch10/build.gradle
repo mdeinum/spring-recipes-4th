@@ -6,10 +6,10 @@ subprojects { subproject ->
 
     // Define dependencies
     dependencies {
-        compile group: 'org.springframework', name: 'spring-context', version:"$springVersion"
-        compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.springframework', name: 'spring-jdbc'
 
-        compile group: 'org.postgresql', name: 'postgresql', version:"$postgresVersion"
+        compile group: 'org.postgresql', name: 'postgresql'
     }
 
     // Define how to build final JAR for project

@@ -38,10 +38,10 @@ subprojects { subproject ->
             compile project(':ch03:recipe_3_shared')
             compile group: 'org.springframework', name: 'spring-webmvc'
             // Add dependencies to add for runtime (these will be included in the WAR, in addition to those in compile group)
-            runtime group: 'javax.servlet', name: 'jstl', version: '1.2'
+            runtime group: 'javax.servlet', name: 'jstl'
 
             // Provided Dependencies
-            providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$servletApiVersion"
+            providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
         }
 
         war { archiveName = 'court.war' }

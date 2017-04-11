@@ -6,6 +6,6 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context'
     compile group: 'org.springframework', name: 'spring-jdbc'
 
-    compile group: 'org.postgresql', name: 'postgresql', version: "$postgresVersion"
-    compile group: 'com.zaxxer', name: 'HikariCP', version: '2.6.1'
+    compile group: 'org.postgresql', name: 'postgresql'
+    compile group: 'com.zaxxer', name: 'HikariCP'
 }
