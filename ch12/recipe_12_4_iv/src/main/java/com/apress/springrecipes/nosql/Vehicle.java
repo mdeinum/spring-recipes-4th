@@ -25,7 +25,6 @@ public class Vehicle implements Serializable{
     }
 
     public Vehicle(String vehicleNo, String color, int wheel, int seat) {
-        this.id=UUID.randomUUID().toString();
         this.vehicleNo = vehicleNo;
         this.color = color;
         this.wheel = wheel;
@@ -62,14 +61,6 @@ public class Vehicle implements Serializable{
 
     public void setWheel(int wheel) {
         this.wheel = wheel;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    void setId(String id) {
-        this.id = id;
     }
 
     @Override
