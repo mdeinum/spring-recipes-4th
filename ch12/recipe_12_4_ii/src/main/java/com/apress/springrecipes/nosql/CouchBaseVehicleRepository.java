@@ -1,7 +1,10 @@
 package com.apress.springrecipes.nosql;
 
 import com.couchbase.client.java.Bucket;
+import com.couchbase.client.java.document.RawJsonDocument;
 import com.couchbase.client.java.document.SerializableDocument;
+import com.couchbase.client.java.document.json.JsonArray;
+import com.couchbase.client.java.query.N1qlQuery;
 
 class CouchBaseVehicleRepository implements VehicleRepository {
 
@@ -24,7 +27,13 @@ class CouchBaseVehicleRepository implements VehicleRepository {
 
     @Override
     public Vehicle findByVehicleNo(String vehicleNo) {
-        return (Vehicle) bucket.get(vehicleNo,SerializableDocument.class).content();
+        N1qlQuery query = N1qlQuery.parameterized("select default.* from default where vehicleNo=$1", JsonArray.from(vehicleNo));
+        return bucket.query(query).allRows().stream().findFirst()
+                .map(row -> row.value())
+                .map(jsonObject -> jsonObject.toString())
+                .map(json -> RawJsonDocument.)
+                .orElse(null);
+
 
     }
 }
