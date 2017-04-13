@@ -31,14 +31,18 @@ subprojects { subproject ->
     apply plugin: "io.spring.dependency-management"
 
     ext['spring.version'] = '5.0.0.M5'
-    ext['spring-data-releasetrain.version'] = 'Kay-M1'
+    ext['spring-data-releasetrain.version'] = 'Kay-M2'
     ext['spring-integration.version'] = '5.0.0.M3'
+    ext['spring-mobile-device.version'] = '2.0.0.M1'
     ext['hibernate.version'] = '5.2.9.Final'
     ext['assertj.version'] = '3.6.2'
 
     ext {
         springIOPlatform            = 'Brussels-SR1'
         apacheCxfVersion            = '3.1.10'
+        hadoopVersion               = '2.7.3'
+        neo4jVersion                = '3.1.3'
+        springDataHadoop            = '2.5.0.M1'
     }
 
 
@@ -68,9 +72,6 @@ subprojects { subproject ->
     dependencyManagement {
         imports {
             mavenBom "io.spring.platform:platform-bom:$springIOPlatform"
-//            mavenBom "org.springframework:spring-framework-bom:$springVersion"
-//            mavenBom "org.springframework.data:spring-data-releasetrain:$springDataRelease"
-//            mavenBom "org.springframework.integration:spring-integration-bom:$springIntegrationVersion"
         }
     }
 
@@ -101,5 +102,5 @@ subprojects { subproject ->
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.4.1'
+    gradleVersion = '3.5'
 }
