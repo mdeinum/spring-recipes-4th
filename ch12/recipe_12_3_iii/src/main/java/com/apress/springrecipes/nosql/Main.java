@@ -1,77 +1,67 @@
 package com.apress.springrecipes.nosql;
 
-import org.neo4j.cypher.javacompat.ExecutionEngine;
-import org.neo4j.cypher.javacompat.ExecutionResult;
 import org.neo4j.graphdb.GraphDatabaseService;
+import org.neo4j.graphdb.Result;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
-import java.util.Map;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
 
-/**
- * Created by marten on 03-10-14.
- */
 public class Main {
 
     public static void main(String[] args) {
         final String DB_PATH = System.getProperty("user.home") + "/starwars";
-        final GraphDatabaseService db = new GraphDatabaseFactory().newEmbeddedDatabase(DB_PATH);
+        final GraphDatabaseService db = new GraphDatabaseFactory().newEmbeddedDatabase(Paths.get(DB_PATH).toFile());
 
         StarwarsRepository repository = new Neo4jStarwarsRepository(db);
 
-        Transaction tx = db.beginTx();
+        try (Transaction tx = db.beginTx()) {
 
-        // Planets
-        Planet dagobah = new Planet();
-        dagobah.setName("Dagobah");
+            // Planets
+            Planet dagobah = new Planet();
+            dagobah.setName("Dagobah");
 
-        Planet alderaan = new Planet();
-        alderaan.setName("Alderaan");
+            Planet alderaan = new Planet();
+            alderaan.setName("Alderaan");
 
-        Planet tatooine = new Planet();
-        tatooine.setName("Tatooine");
+            Planet tatooine = new Planet();
+            tatooine.setName("Tatooine");
 
-        dagobah = repository.save(dagobah);
-        repository.save(alderaan);
-        repository.save(tatooine);
+            Stream.of(dagobah, alderaan, tatooine).forEach(repository::save);
 
-        // Characters
-        Character han = new Character();
-        han.setName("Han Solo");
+            // Characters
+            Character han = new Character();
+            han.setName("Han Solo");
 
-        Character leia = new Character();
-        leia.setName("Leia Organa");
-        leia.setLocation(alderaan);
-        leia.addFriend(han);
+            Character leia = new Character();
+            leia.setName("Leia Organa");
+            leia.setLocation(alderaan);
+            leia.addFriend(han);
 
-        Character luke = new Character();
-        luke.setName("Luke Skywalker");
-        luke.setLocation(tatooine);
-        luke.addFriend(han);
-        luke.addFriend(leia);
+            Character luke = new Character();
+            luke.setName("Luke Skywalker");
+            luke.setLocation(tatooine);
+            luke.addFriend(han);
+            luke.addFriend(leia);
 
-        Character yoda = new Character();
-        yoda.setName("Yoda");
-        yoda.setLocation(dagobah);
-        yoda.setApprentice(luke);
+            Character yoda = new Character();
+            yoda.setName("Yoda");
+            yoda.setLocation(dagobah);
+            yoda.setApprentice(luke);
 
-        repository.save(han);
-        repository.save(luke);
-        repository.save(leia);
-        repository.save(yoda);
+            Stream.of(han, luke, leia, yoda).forEach(repository::save);
 
-        tx.success();
-
-        ExecutionEngine engine = new ExecutionEngine(db);
-        ExecutionResult result = engine.execute("MATCH (n) RETURN n.name as name");
-        String rows = "";
-        for ( Map<String, Object> row : result ) {
-            for ( Map.Entry<String, Object> column : row.entrySet() ) {
-                rows += column.getKey() + ": " + column.getValue() + "; ";
-            }
-            rows += "\n";
+            tx.success();
         }
-        System.out.println(rows);
+
+        Result result = db.execute("MATCH (n) RETURN n.name as name");
+        result.stream()
+                .flatMap(m -> m.entrySet().stream())
+                .map(row -> row.getKey() + " : " + row.getValue() + ";")
+                .forEach(System.out::println);
+
+        db.shutdown();
 
     }
 }

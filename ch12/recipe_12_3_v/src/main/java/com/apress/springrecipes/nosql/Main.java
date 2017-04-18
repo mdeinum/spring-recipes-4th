@@ -1,17 +1,13 @@
 package com.apress.springrecipes.nosql;
 
-import com.apress.springrecipes.nosql.config.StarwarsConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-/**
- * Created by marten on 03-10-14.
- */
 public class Main {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(StarwarsConfig.class);
 
-        StarwarsService service = context.getBean(StarwarsService.class);
+        StarwarsRepository repository = context.getBean(StarwarsRepository.class);
 
         // Planets
         Planet dagobah = new Planet();
@@ -23,9 +19,9 @@ public class Main {
         Planet tatooine = new Planet();
         tatooine.setName("Tatooine");
 
-        dagobah = service.save(dagobah);
-        service.save(alderaan);
-        service.save(tatooine);
+        dagobah = repository.save(dagobah);
+        repository.save(alderaan);
+        repository.save(tatooine);
 
         // Characters
         Character han = new Character();
@@ -47,12 +43,12 @@ public class Main {
         yoda.setLocation(dagobah);
         yoda.setApprentice(luke);
 
-        service.save(han);
-        service.save(luke);
-        service.save(leia);
-        service.save(yoda);
+        repository.save(han);
+        repository.save(luke);
+        repository.save(leia);
+        repository.save(yoda);
 
-        service.printAll();
+        repository.printAll();
 
         context.close();
     }

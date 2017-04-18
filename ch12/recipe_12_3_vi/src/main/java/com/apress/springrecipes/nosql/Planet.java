@@ -1,11 +1,8 @@
 package com.apress.springrecipes.nosql;
 
-import org.springframework.data.neo4j.annotation.GraphId;
-import org.springframework.data.neo4j.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.GraphId;
+import org.neo4j.ogm.annotation.NodeEntity;
 
-/**
- * Created by marten on 10-10-14.
- */
 @NodeEntity
 public class Planet {
 

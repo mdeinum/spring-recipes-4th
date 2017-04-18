@@ -1,58 +1,61 @@
 package com.apress.springrecipes.nosql;
 
+import org.neo4j.ogm.model.Result;
+import org.neo4j.ogm.session.Session;
+import org.neo4j.ogm.session.SessionFactory;
+import org.neo4j.ogm.transaction.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.neo4j.conversion.Result;
-import org.springframework.data.neo4j.support.Neo4jTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PreDestroy;
-import java.util.Map;
+import java.util.Collections;
 
-/**
- * Created by marten on 10-10-14.
- */
 @Repository
-@Transactional
 public class Neo4jStarwarsRepository implements StarwarsRepository {
 
-    private final Neo4jTemplate template;
+    private final SessionFactory sessionFactory;
 
     @Autowired
-    public Neo4jStarwarsRepository(Neo4jTemplate template) {
-        this.template = template;
+    public Neo4jStarwarsRepository(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
 
     @Override
     public Planet save(Planet planet) {
-        template.save(planet);
-        return planet;
+
+        Session session = sessionFactory.openSession();
+        try (Transaction tx = session.beginTransaction()) {
+            session.save(planet);
+            return planet;
+        }
     }
 
     @Override
     public Character save(Character character) {
-        template.save(character);
-        return character;
+
+        Session session = sessionFactory.openSession();
+        try (Transaction tx = session.beginTransaction()) {
+            session.save(character);
+            return character;
+        }
     }
 
     @Override
     public void printAll() {
-        Result<Map<String, Object>> result = template.queryEngineFor().query("MATCH (n) RETURN n.name as name", null);
-        String rows = "";
-        for ( Map<String, Object> row : result ) {
-            for ( Map.Entry<String, Object> column : row.entrySet() ) {
-                rows += column.getKey() + ": " + column.getValue() + "; ";
-            }
-            rows += "\n";
-        }
-        System.out.println(rows);
+
+        Session session = sessionFactory.openSession();
+        Result result = session.query("MATCH (n) RETURN n.name as name", Collections.emptyMap(), true);
+        result.forEach(m -> m.entrySet().stream()
+                .map(row -> row.getKey() + " : " + row.getValue() + ";")
+                .forEach(System.out::println));
     }
 
     @PreDestroy
     public void cleanUp() {
         // Clean up when shutdown
-        template.query("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r", null);
+        Session session = sessionFactory.openSession();
+        session.query("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r", null);
     }
 
 }

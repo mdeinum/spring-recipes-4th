@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(CloudBaseConfiguration.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(CouchbaseConfiguration.class);
         VehicleRepository vehicleRepository =context.getBean(VehicleRepository.class);
 
         vehicleRepository.save(new Vehicle("TEM0001", "GREEN", 3, 1));
@@ -19,6 +19,4 @@ public class Main {
         vehicleRepository.delete(vehicleRepository.findByVehicleNo("TEM0001"));
         vehicleRepository.delete(vehicleRepository.findByVehicleNo("TEM0004"));
     }
-
-
 }

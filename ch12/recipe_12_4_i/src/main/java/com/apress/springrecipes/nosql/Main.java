@@ -11,7 +11,7 @@ public class Main {
         Cluster cluster = CouchbaseCluster.create();
         Bucket bucket = cluster.openBucket();
 
-        CouchBaseVehicleRepository vehicleRepository = new CouchBaseVehicleRepository(bucket);
+        CouchbaseVehicleRepository vehicleRepository = new CouchbaseVehicleRepository(bucket);
         vehicleRepository.save(new Vehicle("TEM0001", "GREEN", 3, 1));
         vehicleRepository.save(new Vehicle("TEM0004", "RED", 4, 2));
 

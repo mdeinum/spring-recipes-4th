@@ -5,14 +5,14 @@ import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
-/**
- * Created by marten on 03-10-14.
- */
+import java.nio.file.Paths;
+
 public class Main {
 
     public static void main(String[] args) {
         final String DB_PATH = System.getProperty("user.home") + "/friends";
-        GraphDatabaseService db = new GraphDatabaseFactory().newEmbeddedDatabase(DB_PATH);
+
+        GraphDatabaseService db = new GraphDatabaseFactory().newEmbeddedDatabase(Paths.get(DB_PATH).toFile());
 
         Transaction tx1 = db.beginTx();
 
@@ -24,11 +24,11 @@ public class Main {
         tx1.success();
 
 
-        Iterable<Node> nodes = db.getAllNodes();
-        for (Node n : nodes) {
-            System.out.println("Msg: " + n.getProperty("msg"));
-        }
+        db.getAllNodes().stream()
+                .map(n -> n.getProperty("msg"))
+                .forEach(m -> System.out.println("Msg: " + m));
 
-        // Remove all nodes
+        db.shutdown();
+
     }
 }

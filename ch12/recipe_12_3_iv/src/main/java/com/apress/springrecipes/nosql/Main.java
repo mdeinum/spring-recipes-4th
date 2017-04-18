@@ -1,17 +1,13 @@
 package com.apress.springrecipes.nosql;
 
-import com.apress.springrecipes.nosql.config.StarwarsConfig;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.neo4j.ogm.session.SessionFactory;
 
-/**
- * Created by marten on 03-10-14.
- */
 public class Main {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(StarwarsConfig.class);
+        SessionFactory sessionFactory = new SessionFactory("com.apress.springrecipes.nosql");
 
-        StarwarsRepository repository = context.getBean(StarwarsRepository.class);
+        StarwarsRepository repository = new Neo4jStarwarsRepository(sessionFactory);
 
         // Planets
         Planet dagobah = new Planet();
@@ -54,6 +50,6 @@ public class Main {
 
         repository.printAll();
 
-        context.close();
+        sessionFactory.close();
     }
 }

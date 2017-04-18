@@ -1,6 +1,5 @@
 package com.apress.springrecipes.nosql;
 
-
 public interface VehicleRepository {
 
     void save(Vehicle vehicle);

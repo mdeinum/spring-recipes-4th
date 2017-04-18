@@ -1,24 +1,12 @@
 package com.apress.springrecipes.nosql;
 
-import com.couchbase.client.java.repository.annotation.Field;
-import com.couchbase.client.java.repository.annotation.Id;
-import org.springframework.data.couchbase.core.mapping.Document;
-
 import java.io.Serializable;
-import java.util.UUID;
 
-@Document
 public class Vehicle implements Serializable{
 
-    @Id
-    private String id = UUID.randomUUID().toString();
-    @Field
     private String vehicleNo;
-    @Field
     private String color;
-    @Field
     private int wheel;
-    @Field
     private int seat;
 
     public Vehicle() {

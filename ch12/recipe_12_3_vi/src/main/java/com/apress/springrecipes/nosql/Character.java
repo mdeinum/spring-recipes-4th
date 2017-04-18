@@ -1,16 +1,14 @@
 package com.apress.springrecipes.nosql;
 
-import org.springframework.data.neo4j.annotation.GraphId;
-import org.springframework.data.neo4j.annotation.NodeEntity;
-import org.springframework.data.neo4j.annotation.RelatedTo;
+import org.neo4j.ogm.annotation.GraphId;
+import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.Relationship;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
-/**
- * Created by marten on 10-10-14.
- */
 @NodeEntity
 public class Character {
 
@@ -18,11 +16,11 @@ public class Character {
     private Long id;
     private String name;
 
-    @RelatedTo(type="LOCATION")
+    @Relationship(type = "LOCATION")
     private Planet location;
-    @RelatedTo(type="FRIENDS_WITH")
+    @Relationship(type="FRIENDS_WITH")
     private final Set<Character> friends = new HashSet<>();
-    @RelatedTo(type="MASTER_OF")
+    @Relationship(type="MASTER_OF")
     private Character apprentice;
 
     public long getId() {
@@ -69,18 +67,13 @@ public class Character {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Character character = (Character) o;
-
-        if (id != null ? !id.equals(character.id) : character.id != null) return false;
-        return name != null ? name.equals(character.name) : character.name == null;
+        return Objects.equals(name, character.name);
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        return result;
+        return Objects.hash(name);
     }
 
     @Override
