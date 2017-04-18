@@ -7,13 +7,12 @@ apply plugin: 'application'
 
 defaultTasks 'clean', 'build', 'shadowJar'
 
-
-
 mainClassName = 'com.apress.springrecipes.hello.Main'
 
 repositories {
     maven {
-        url 'https://repo.spring.io/libs-milestone'
+        maven { url 'https://repo.spring.io/libs-milestone' }
+        maven { url 'https://repo.spring.io/release' }
     }
 }
 

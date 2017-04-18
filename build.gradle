@@ -13,15 +13,16 @@ description='Spring Recipes 4th Edition - Sources'
 
 allprojects {
     group = 'com.apress.springrecipes'
-    version = '4.0.0-SNAPSHOT'
+
 
     // Define repositorie to get dependencies
     repositories {
         mavenCentral()
         // Public Spring artifacts
-        maven { url "http://repo.spring.io/release" }
-        maven { url "http://repo.spring.io/libs-release"}
-        maven { url "http://repo.spring.io/milestone" }
+        maven { url "https://repo.spring.io/release" }
+        maven { url "https://repo.spring.io/libs-release"}
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://repo.spring.io/libs-snapshot" }
     }
 }
 
@@ -30,21 +31,11 @@ subprojects { subproject ->
     apply plugin: 'java'
     apply plugin: "io.spring.dependency-management"
 
-    ext['spring.version'] = '5.0.0.M5'
-    ext['spring-data-releasetrain.version'] = 'Kay-M2'
-    ext['spring-integration.version'] = '5.0.0.M3'
-    ext['spring-mobile-device.version'] = '2.0.0.M1'
-    ext['hibernate.version'] = '5.2.9.Final'
-    ext['assertj.version'] = '3.6.2'
-
     ext {
-        springIOPlatform            = 'Brussels-SR1'
+        springIOPlatform            = 'Cairo-BUILD-SNAPSHOT'
         apacheCxfVersion            = '3.1.10'
-        hadoopVersion               = '2.7.3'
         neo4jVersion                = '3.1.3'
-        springDataHadoop            = '2.5.0.M1'
     }
-
 
 	compileJava.options*.compilerArgs = [
 		"-Xlint:serial", "-Xlint:varargs", "-Xlint:cast", "-Xlint:classfile",
@@ -86,7 +77,6 @@ subprojects { subproject ->
         testCompile("org.assertj:assertj-core")
 		testCompile("org.springframework:spring-test")
 	}
-	
 
 	task copyDependenciesToLibDir( type: Copy ) {
 		into "$buildDir/libs/lib"

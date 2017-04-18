@@ -28,10 +28,9 @@ public class Main {
         System.out.println(persisted);
 
         Long courseId = persisted.getId();
-        Course courseFromDb = courseDao.findOne(courseId);
 
         System.out.println("\nCourse fresh from database");
-        System.out.println(courseFromDb);
+        courseDao.findOne(courseId).ifPresent(System.out::println);
 
         courseDao.delete(courseId);
 

@@ -14,7 +14,8 @@ ext.springVersion='5.0.0.M5'
 repositories {
     mavenCentral()
     // Public Spring artifacts
-    maven { url "http://repo.spring.io/release" }
+    maven { url 'https://repo.spring.io/libs-milestone' }
+    maven { url 'https://repo.spring.io/release' }
 }
 
 dependencies {

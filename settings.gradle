@@ -4,7 +4,7 @@ import static groovy.io.FileVisitResult.SKIP_SUBTREE
 def includeDirs = ~/^(?i)(ch|recipe).*$/
 def preDir = {
 
-    if (!includeDirs.matcher(it.name).matches()) {
+    if (!includeDirs.matcher(it.name).matches() || it.name.contains('ch01')) {
         return SKIP_SUBTREE
     }
 }
@@ -22,7 +22,7 @@ rootDir.traverse( type: DIRECTORIES, preDir: preDir) { dir ->
     def build = new File(dstr + "/build.gradle").exists()
 
     if (includes && build) {
-        def projectName = getProjectName(dstr);
+        def projectName = getProjectName(dstr)
         include projectName
     }
 
