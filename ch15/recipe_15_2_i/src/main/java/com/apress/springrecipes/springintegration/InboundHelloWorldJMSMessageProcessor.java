@@ -16,7 +16,7 @@ public class InboundHelloWorldJMSMessageProcessor {
     public void handleIncomingJmsMessage(Message<Map<String, Object>> inboundJmsMessage)
             throws Throwable {
         Map<String, Object> msg = inboundJmsMessage.getPayload();
-        logger.debug("firstName: {}, lastName: {}, id: {}", msg.get("firstName"),
+        logger.info("firstName: {}, lastName: {}, id: {}", msg.get("firstName"),
                                                             msg.get("lastName"),
                                                             msg.get("id"));
 

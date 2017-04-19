@@ -34,6 +34,15 @@ project(':ch15:recipe_15_2_ii') {
 } // End
 
 // Define project
+project(':ch15:recipe_15_3_i') {
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework.integration', name: 'spring-integration-jms'
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+    }
+} // End
+
+// Define project
 project(':ch15:recipe_15_3_ii') {
     // Define dependencies
     dependencies {

@@ -37,7 +37,7 @@ public class IntegrationConfiguration {
     @Bean
     public IntegrationFlow jmsInbound(ConnectionFactory connectionFactory) {
         return IntegrationFlows
-                .from(Jms.messageDrivenChannelAdapter(connectionFactory).extractPayload(true).destination("recipe-15-2"))
+                .from(Jms.messageDrivenChannelAdapter(connectionFactory).extractPayload(false).destination("recipe-15-2"))
                 .handle(messageProcessor())
                 .get();
     }

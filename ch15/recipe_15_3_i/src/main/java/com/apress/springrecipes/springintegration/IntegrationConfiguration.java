@@ -30,15 +30,15 @@ public class IntegrationConfiguration {
     }
 
     @Bean
-    public InboundHelloWorldJMSMessageProcessor messageProcessor() {
-        return new InboundHelloWorldJMSMessageProcessor();
+    public InboundFileMessageServiceActivator inboundFileMessageServiceActivator() {
+        return new InboundFileMessageServiceActivator();
     }
 
     @Bean
     public IntegrationFlow jmsInbound(ConnectionFactory connectionFactory) {
         return IntegrationFlows
-                .from(Jms.messageDrivenChannelAdapter(connectionFactory).extractPayload(true).destination("recipe-15-2"))
-                .handle(messageProcessor())
+                .from(Jms.messageDrivenChannelAdapter(connectionFactory).extractPayload(false).destination("recipe-15-3"))
+                .handle(inboundFileMessageServiceActivator())
                 .get();
     }
 }
