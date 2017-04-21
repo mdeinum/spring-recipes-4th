@@ -1,5 +1,7 @@
 package com.apress.springrecipes.springintegration;
 
+import javax.jms.ConnectionFactory;
+
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,9 +11,6 @@ import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.jms.dsl.Jms;
 import org.springframework.jms.connection.CachingConnectionFactory;
-import org.springframework.jms.core.JmsTemplate;
-
-import javax.jms.ConnectionFactory;
 
 @Configuration
 @EnableIntegration
@@ -25,20 +24,35 @@ public class IntegrationConfiguration {
     }
 
     @Bean
-    public JmsTemplate jmsTemplate(ConnectionFactory connectionFactory) {
-        return new JmsTemplate(connectionFactory);
+    public InboundJMSMessageToCustomerTransformer customerTransformer() {
+        return new InboundJMSMessageToCustomerTransformer();
     }
 
     @Bean
-    public InboundFileMessageServiceActivator inboundFileMessageServiceActivator() {
-        return new InboundFileMessageServiceActivator();
+    public InboundCustomerServiceActivator customerServiceActivator() {
+        return new InboundCustomerServiceActivator();
+    }
+
+    @Bean
+    public DefaultErrorHandlingServiceActivator errorHandlingServiceActivator() {
+        return new DefaultErrorHandlingServiceActivator();
+    }
+
+    @Bean
+    public IntegrationFlow errorFlow() {
+        return IntegrationFlows
+                .from("errorChannel")
+                .handle(errorHandlingServiceActivator())
+                .get();
     }
 
     @Bean
     public IntegrationFlow jmsInbound(ConnectionFactory connectionFactory) {
         return IntegrationFlows
-                .from(Jms.messageDrivenChannelAdapter(connectionFactory).extractPayload(false).destination("recipe-15-3"))
-                .handle(inboundFileMessageServiceActivator())
+                .from(Jms.messageDrivenChannelAdapter(connectionFactory).extractPayload(true).destination("recipe-15-6")
+                        .errorChannel("errorChannel"))
+                .transform(customerTransformer())
+                .handle(customerServiceActivator())
                 .get();
     }
 }

@@ -7,7 +7,6 @@ import org.springframework.messaging.Message;
 
 import java.io.File;
 
-
 public class InboundHelloWorldFileMessageProcessor {
     private final Logger logger = LoggerFactory.getLogger(InboundHelloWorldFileMessageProcessor.class);
 

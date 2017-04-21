@@ -5,8 +5,8 @@ import org.springframework.messaging.Message;
 
 import java.util.Map;
 
-
 public class InboundJMSMessageToCustomerTransformer {
+
     @Transformer
     public Customer transformJMSMapToCustomer(Message<Map<String, Object>> inboundSprignIntegrationMessage) {
         Map<String, Object> jmsMessagePayload = inboundSprignIntegrationMessage.getPayload();

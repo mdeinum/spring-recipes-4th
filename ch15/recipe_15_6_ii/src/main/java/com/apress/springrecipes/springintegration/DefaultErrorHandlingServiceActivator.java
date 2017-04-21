@@ -6,7 +6,6 @@ import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessagingException;
 
-
 public class DefaultErrorHandlingServiceActivator {
     private static final Logger logger = LoggerFactory.getLogger(DefaultErrorHandlingServiceActivator.class);
 

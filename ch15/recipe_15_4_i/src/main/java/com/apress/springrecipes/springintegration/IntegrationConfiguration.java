@@ -7,9 +7,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.config.EnableIntegration;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
+import org.springframework.integration.dsl.Pollers;
 import org.springframework.integration.file.dsl.Files;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 @Configuration
 @EnableIntegration
@@ -25,7 +27,9 @@ public class IntegrationConfiguration {
     @Bean
     public IntegrationFlow inboundFileFlow(@Value("${user.home}/inboundFiles/new/") File directory) {
         return IntegrationFlows
-                .from(Files.inboundAdapter(directory).regexFilter("^new.*csv").useWatchService(true))
+                .from(
+                        Files.inboundAdapter(directory).patternFilter("*.csv"),
+                        c -> c.poller(Pollers.fixedRate(10, TimeUnit.SECONDS)))
                 .handle(messageProcessor())
                 .get();
     }
