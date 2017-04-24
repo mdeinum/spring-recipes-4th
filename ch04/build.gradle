@@ -1,0 +1,82 @@
+description = 'Spring Recipes :: Chapter 4 :: Spring REST'
+
+subprojects { subproject ->
+
+    // Define usage of war plugin
+    apply plugin: 'war'
+    // Define defaulttasks, first clean, then build, then war
+    defaultTasks 'clean', 'build', 'test', 'war'
+    war {
+        archiveName='court.war'
+    }
+    // Define dependencies
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-oxm'
+        compile group: 'org.springframework', name: 'spring-webmvc'
+
+        // Provided Dependencies
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+}
+
+// Define springweb project
+project(':ch04:recipe_4_2_ii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_2_iii') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_3_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_3_ii') {
+    // Define defaulttasks, first clean, then build
+    defaultTasks 'clean', 'build'
+    // Define aditional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.court.Main")
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_3_iii') {
+    // Define defaulttasks, first clean, then build
+    defaultTasks 'clean', 'build'
+    // Define dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+
+    jar {
+        manifest.attributes("Main-Class": "com.apress.springrecipes.court.Main")
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_4_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.rometools', name: 'rome'
+    }
+} // End springweb
