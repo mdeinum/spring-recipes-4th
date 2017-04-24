@@ -1,8 +1,8 @@
 package com.apress.springrecipes.springintegration;
 
+import com.apress.springrecipes.springintegration.myholiday.VacationServiceImpl;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.config.EnableIntegration;
 import org.springframework.integration.dsl.IntegrationFlow;
@@ -10,36 +10,27 @@ import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.jms.dsl.Jms;
 import org.springframework.jms.connection.CachingConnectionFactory;
 
-import javax.jms.ConnectionFactory;
-
 @Configuration
 @EnableIntegration
-@ComponentScan
-public class IntegrationConfiguration {
+public class ServerIntegrationContext {
 
     @Bean
     public CachingConnectionFactory connectionFactory() {
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
+        connectionFactory.setTrustAllPackages(true);
         return new CachingConnectionFactory(connectionFactory);
     }
 
     @Bean
-    public InboundJMSMessageToCustomerTransformer customerTransformer() {
-        return new InboundJMSMessageToCustomerTransformer();
+    public VacationServiceImpl vacationService() {
+        return new VacationServiceImpl();
     }
 
     @Bean
-    public InboundCustomerServiceActivator customerServiceActivator() {
-        return new InboundCustomerServiceActivator();
-    }
-
-    @Bean
-    public IntegrationFlow jmsInbound(ConnectionFactory connectionFactory) {
-        return IntegrationFlows
-                .from(Jms.messageDrivenChannelAdapter(connectionFactory).extractPayload(true).destination("recipe-15-6")
-                        .errorChannel("errorChannel"))
-                .transform(customerTransformer())
-                .handle(customerServiceActivator())
+    public IntegrationFlow serverIntegrationFlow() {
+        return IntegrationFlows.from(
+                    Jms.inboundGateway(connectionFactory()).destination("inboundHotelReservationSearchDestination"))
+                .handle(vacationService())
                 .get();
     }
 }

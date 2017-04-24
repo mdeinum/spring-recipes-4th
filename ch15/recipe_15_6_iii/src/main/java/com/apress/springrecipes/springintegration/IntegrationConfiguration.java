@@ -1,7 +1,5 @@
 package com.apress.springrecipes.springintegration;
 
-import javax.jms.ConnectionFactory;
-
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,9 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.config.EnableIntegration;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
-import org.springframework.integration.dsl.RouterSpec;
 import org.springframework.integration.jms.dsl.Jms;
 import org.springframework.jms.connection.CachingConnectionFactory;
+
+import javax.jms.ConnectionFactory;
 
 @Configuration
 @EnableIntegration
@@ -43,15 +42,17 @@ public class IntegrationConfiguration {
     public IntegrationFlow errorFlow() {
         return IntegrationFlows
                 .from("errorChannel")
-                .route
-                .get();
+                .<Exception, Class>route(Exception::getClass, m ->
+                                m.subFlowMapping(MyCustomException.class, flow -> flow.handle(errorHandlingServiceActivator()))
+                                    .defaultSubFlowMapping(flow -> flow.log())
+                                    ).get();
     }
 
     @Bean
     public IntegrationFlow jmsInbound(ConnectionFactory connectionFactory) {
         return IntegrationFlows
                 .from(Jms.messageDrivenChannelAdapter(connectionFactory).extractPayload(true).destination("recipe-15-6")
-                        .errorChannel("errorChannel"))
+                        .errorChannel("errorChannel").extractPayload(true))
                 .transform(customerTransformer())
                 .handle(customerServiceActivator())
                 .get();

@@ -1,20 +1,20 @@
 package com.apress.springrecipes.springintegration.myholiday;
 
-import org.apache.commons.lang3.SerializationUtils;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 
 public class HotelReservationSearch implements Serializable {
     private static final long serialVersionUID = 1L;
-    private int roomsDesired;
-    private Date start;
-    private Date stop;
-    private float maximumPrice;
+    private final int roomsDesired;
+    private final Date start;
+    private final Date stop;
+    private final float maximumPrice;
+
+    public HotelReservationSearch() {
+        this(0,0, null,null);
+    }
 
     public HotelReservationSearch(float maximumPrice, int roomsDesired, Date start, Date stop) {
         super();
@@ -24,55 +24,40 @@ public class HotelReservationSearch implements Serializable {
         this.stop = stop;
     }
 
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return EqualsBuilder.reflectionEquals(this, obj);
-    }
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return SerializationUtils.clone(this);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this);
-    }
-
-    public void setStart(Date start) {
-        this.start = start;
+    public int getRoomsDesired() {
+        return roomsDesired;
     }
 
     public Date getStart() {
         return start;
     }
 
-    public void setStop(Date stop) {
-        this.stop = stop;
-    }
-
     public Date getStop() {
         return stop;
-    }
-
-    public void setMaximumPrice(float maximumPrice) {
-        this.maximumPrice = maximumPrice;
     }
 
     public float getMaximumPrice() {
         return maximumPrice;
     }
 
-    public void setRoomsDesired(int roomsDesired) {
-        this.roomsDesired = roomsDesired;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        HotelReservationSearch that = (HotelReservationSearch) o;
+        return roomsDesired == that.roomsDesired &&
+                Float.compare(that.maximumPrice, maximumPrice) == 0 &&
+                Objects.equals(start, that.start) &&
+                Objects.equals(stop, that.stop);
     }
 
-    public int getRoomsDesired() {
-        return roomsDesired;
+    @Override
+    public int hashCode() {
+        return Objects.hash(roomsDesired, start, stop, maximumPrice);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("HotelReservationSearch [roomsDesired=%d, start=%t, stop=%t, maximumPrice=%f]", roomsDesired, start, stop, maximumPrice);
     }
 }

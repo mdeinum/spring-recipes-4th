@@ -4,13 +4,9 @@ import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParametersBuilder;
 import org.springframework.batch.integration.launch.JobLaunchRequest;
 import org.springframework.integration.annotation.Transformer;
-import org.springframework.messaging.Message;
 
 import java.io.File;
 
-/**
- * Created by marten on 15-08-14.
- */
 public class FileToJobLaunchRequestTransformer {
 
     private final Job job;
@@ -22,9 +18,9 @@ public class FileToJobLaunchRequestTransformer {
     }
 
     @Transformer
-    public JobLaunchRequest transform(Message<File> message) throws Exception {
+    public JobLaunchRequest transform(File file) throws Exception {
         JobParametersBuilder builder = new JobParametersBuilder();
-        builder.addString(fileParameterName, message.getPayload().getAbsolutePath());
+        builder.addString(fileParameterName, file.getAbsolutePath());
         return new JobLaunchRequest(job, builder.toJobParameters());
     }
 }

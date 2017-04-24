@@ -2,7 +2,6 @@ package com.apress.springrecipes.springintegration;
 
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jms.core.JmsTemplate;
 
 import java.util.HashMap;
@@ -20,14 +19,16 @@ public class ClientMain {
         customer.put("firstName", "Marten");
         customer.put("lastName", "Deinum");
 
-        jmsTemplate.convertAndSend("solution015", customer);
+        jmsTemplate.convertAndSend("recipe-15-6", customer);
 
         Map<String, Object> customer2 = new HashMap<String, Object>();
         customer2.put("id", 666L);
         customer2.put("firstName", "Foo");
         customer2.put("lastName", "Bar");
 
-        jmsTemplate.convertAndSend("solution015", customer2);
+        jmsTemplate.convertAndSend("recipe-15-6", customer2);
+
+        context.close();
 
     }
 }

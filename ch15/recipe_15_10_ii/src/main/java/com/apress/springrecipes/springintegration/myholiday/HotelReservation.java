@@ -1,10 +1,7 @@
 package com.apress.springrecipes.springintegration.myholiday;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.UUID;
 
 
@@ -46,23 +43,21 @@ public class HotelReservation implements Serializable, Comparable<HotelReservati
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+
+        return String.format("HotelReservation [hotelName=%s, price=%f, id=%s]", this.hotelName, this.price, this.id);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        HotelReservation that = (HotelReservation) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(this.id).toHashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof HotelReservation)) {
-            return false;
-        }
-
-        HotelReservation other = (HotelReservation) obj;
-
-        return new EqualsBuilder().append(this.id, other.id).isEquals();
+        return Objects.hash(id);
     }
 
     public int compareTo(HotelReservation o) {

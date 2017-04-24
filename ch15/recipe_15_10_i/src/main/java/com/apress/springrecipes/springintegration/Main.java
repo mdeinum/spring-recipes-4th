@@ -1,22 +1,28 @@
 package com.apress.springrecipes.springintegration;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.messaging.MessageChannel;
 
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("integration-context.xml");
-        MessageChannel request = (MessageChannel) ctx.getBean("request");
-        MessageChannel response = (MessageChannel) ctx.getBean("response");
+        ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(AdditionConfiguration.class);
+        MessageChannel request = ctx.getBean("request", MessageChannel.class);
+        MessageChannel response = ctx.getBean("response", MessageChannel.class);
+
         SimpleMessagingGateway msgGateway = new SimpleMessagingGateway();
         msgGateway.setRequestChannel(request);
         msgGateway.setReplyChannel(response);
+        msgGateway.setBeanFactory(ctx);
         msgGateway.afterPropertiesSet();
         msgGateway.start();
+
         Number result = msgGateway.convertSendAndReceive(new Operands(22, 4));
-        System.out.println("Result: " + result.floatValue());
+
+        System.out.printf("Result: %f%n", result.floatValue());
+
+        ctx.close();
 
     }
 }

@@ -11,9 +11,7 @@ public class DefaultErrorHandlingServiceActivator {
     private static final Logger logger = LoggerFactory.getLogger(DefaultErrorHandlingServiceActivator.class);
 
     @ServiceActivator
-    public void handleThrowable(Message<Throwable> errorMessage)
-        throws Throwable {
-        Throwable throwable = errorMessage.getPayload();
+    public void handleThrowable(Throwable throwable) {
         logger.debug("Message: {}", throwable.getMessage(), throwable);
 
         if (throwable instanceof MessagingException) {

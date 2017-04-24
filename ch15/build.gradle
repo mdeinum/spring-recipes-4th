@@ -128,6 +128,14 @@ project(':ch15:recipe_15_7_ii') {
 } // End
 
 // Define project
+project(':ch15:recipe_15_8') {
+    dependencies {
+        // IRC Client
+        compile group: 'org.springframework.integration', name: 'spring-integration-file'
+    }
+} // End
+
+// Define project
 project(':ch15:recipe_15_9') {
     dependencies {
         // IRC Client
