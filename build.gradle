@@ -36,7 +36,7 @@ subprojects { subproject ->
 
     ext['spring-hateoas.version'] = '0.24.0.BUILD-SNAPSHOT'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
-    ext['apacheCxfVersion'] = '3.1.10'
+    ext['apacheCxfVersion'] = '3.1.11'
     ext['neo4jVersion'] = '3.13'
 
 	compileJava.options*.compilerArgs = [
