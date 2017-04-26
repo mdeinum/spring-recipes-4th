@@ -30,6 +30,7 @@ subprojects { subproject ->
 
     apply plugin: 'java'
     apply plugin: "io.spring.dependency-management"
+    ext['spring-hateoas.version'] = '0.24.0.BUILD-SNAPSHOT'
 
     ext {
         springIOPlatform            = 'Cairo-BUILD-SNAPSHOT'
