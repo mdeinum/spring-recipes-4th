@@ -8,7 +8,9 @@ import org.springframework.integration.config.EnableIntegration;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.jms.dsl.Jms;
+import org.springframework.integration.router.ErrorMessageExceptionTypeRouter;
 import org.springframework.jms.connection.CachingConnectionFactory;
+import org.springframework.messaging.MessageHandlingException;
 
 import javax.jms.ConnectionFactory;
 
@@ -39,13 +41,28 @@ public class IntegrationConfiguration {
     }
 
     @Bean
+    public ErrorMessageExceptionTypeRouter exceptionTypeRouter() {
+        ErrorMessageExceptionTypeRouter router = new ErrorMessageExceptionTypeRouter();
+        router.setChannelMapping(MyCustomException.class.getName(), "customExceptionChannel");
+        router.setChannelMapping(RuntimeException.class.getName(), "runtimeExceptionChannel");
+        router.setChannelMapping(MessageHandlingException.class.getName(), "messageHandlingExceptionChannel");
+        return router;
+    }
+
+    @Bean
     public IntegrationFlow errorFlow() {
         return IntegrationFlows
-                .from("errorChannel")
-                .<Exception, Class>route(Exception::getClass, m ->
-                                m.subFlowMapping(MyCustomException.class, flow -> flow.handle(errorHandlingServiceActivator()))
-                                    .defaultSubFlowMapping(flow -> flow.log())
-                                    ).get();
+                    .from("errorChannel")
+                    .route(exceptionTypeRouter())
+                .get();
+    }
+
+    @Bean
+    public IntegrationFlow customExceptionFlow() {
+        return IntegrationFlows
+                    .from("customExceptionChannel")
+                    .handle(errorHandlingServiceActivator())
+                .get();
     }
 
     @Bean
