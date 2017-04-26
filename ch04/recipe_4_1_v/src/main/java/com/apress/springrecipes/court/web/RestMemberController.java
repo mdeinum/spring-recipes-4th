@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * Created by marten on 16-06-14.
- */
 @Controller
 public class RestMemberController {
 
@@ -40,6 +37,6 @@ public class RestMemberController {
         if (member != null) {
             return new ResponseEntity<Member>(member, HttpStatus.OK);
         }
-        return new ResponseEntity(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }

@@ -1,26 +1,25 @@
 package com.apress.springrecipes.court.feeds;
 
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class TournamentContent {
-    private static int idCounter = 0;
-    private String author;
-    private Date publicationDate;
-    private String name;
-    private String link;
-    private int id;
+    private static final AtomicInteger idCounter = new AtomicInteger();
+    private final String author;
+    private final Date publicationDate;
+    private final String name;
+    private final String link;
+    private final int id;
 
-    public static TournamentContent generateContent(String author, Date date, String name, String link) {
-        TournamentContent content = new TournamentContent();
-        content.author = author;
-        content.publicationDate = date;
-        content.name = name;
-        content.link = link;
-        content.id = idCounter++;
-
-        return content;
+    public TournamentContent(String author, Date publicationDate, String name, String link, int id) {
+        this.author = author;
+        this.publicationDate = publicationDate;
+        this.name = name;
+        this.link = link;
+        this.id = id;
     }
+
 
     public String getAuthor() {
         return author;
@@ -41,4 +40,9 @@ public class TournamentContent {
     public int getId() {
         return id;
     }
+
+    public static TournamentContent of(String author, Date date, String name, String link) {
+        return new TournamentContent(author, date, name, link, idCounter.incrementAndGet());
+    }
+
 }

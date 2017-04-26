@@ -1,6 +1,7 @@
 package com.apress.springrecipes.court.service;
 
 import com.apress.springrecipes.court.domain.Member;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -9,7 +10,8 @@ import java.util.Map;
 /**
  * Created by marten on 16-06-14.
  */
-public class InMemoryMemberService implements MemberService {
+@Service
+class InMemoryMemberService implements MemberService {
 
     private final Map<Long, Member> members = new HashMap<>();
 

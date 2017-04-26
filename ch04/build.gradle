@@ -1,11 +1,23 @@
 description = 'Spring Recipes :: Chapter 4 :: Spring REST'
 
-subprojects { subproject ->
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+
+subprojects { project ->
 
     // Define usage of war plugin
     apply plugin: 'war'
-    // Define defaulttasks, first clean, then build, then war
-    defaultTasks 'clean', 'build', 'test', 'war'
+    apply plugin: 'docker'
+
+    defaultTasks 'clean', 'build'
     war {
         archiveName='court.war'
     }
@@ -16,6 +28,21 @@ subprojects { subproject ->
 
         // Provided Dependencies
         providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+    }
+
+
+    task buildDocker(type: Docker, dependsOn: build) {
+        push = false
+        applicationName = war.archiveName
+        tag = 'spring-recipes-4th/court-rest'
+        tagVersion = 'latest'
+        dockerfile = file('../Dockerfile')
+        doFirst {
+            copy {
+                from war
+                into stageDir
+            }
+        }
     }
 }
 
@@ -34,6 +61,16 @@ project(':ch04:recipe_4_2_iii') {
         compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
     }
 } // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_2_iv') { project ->
+    println "Configuring $project"
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.google.code.gson', name: 'gson'
+    }
+} // End springweb
+
 
 // Define springweb project
 project(':ch04:recipe_4_3_i') {
@@ -78,5 +115,14 @@ project(':ch04:recipe_4_4_i') {
     // Define additional dependencies
     dependencies {
         compile group: 'com.rometools', name: 'rome'
+    }
+} // End springweb
+
+// Define springweb project
+project(':ch04:recipe_4_5_i') {
+    // Define additional dependencies
+    dependencies {
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'org.springframework.hateoas', name: 'spring-hateoas'
     }
 } // End springweb

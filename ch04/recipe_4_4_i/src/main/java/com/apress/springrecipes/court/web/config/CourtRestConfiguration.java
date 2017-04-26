@@ -9,12 +9,9 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
 
-/**
- * Created by marten on 16-06-14.
- */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.apress.springrecipes.court.web")
+@ComponentScan(basePackages = "com.apress.springrecipes.court")
 public class CourtRestConfiguration {
 
     @Bean

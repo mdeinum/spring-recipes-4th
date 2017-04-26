@@ -15,11 +15,11 @@ import java.util.List;
 public class FeedController {
     @RequestMapping("/atomfeed")
     public String getAtomFeed(Model model) {
-        List<TournamentContent> tournamentList = new ArrayList<TournamentContent>();
-        tournamentList.add(TournamentContent.generateContent("ATP", new Date(), "Australian Open", "www.australianopen.com"));
-        tournamentList.add(TournamentContent.generateContent("ATP", new Date(), "Roland Garros", "www.rolandgarros.com"));
-        tournamentList.add(TournamentContent.generateContent("ATP", new Date(), "Wimbledon", "www.wimbledon.org"));
-        tournamentList.add(TournamentContent.generateContent("ATP", new Date(), "US Open", "www.usopen.org"));
+        List<TournamentContent> tournamentList = new ArrayList<>();
+        tournamentList.add(TournamentContent.of("ATP", new Date(), "Australian Open", "www.australianopen.com"));
+        tournamentList.add(TournamentContent.of("ATP", new Date(), "Roland Garros", "www.rolandgarros.com"));
+        tournamentList.add(TournamentContent.of("ATP", new Date(), "Wimbledon", "www.wimbledon.org"));
+        tournamentList.add(TournamentContent.of("ATP", new Date(), "US Open", "www.usopen.org"));
         model.addAttribute("feedContent", tournamentList);
 
         return "atomfeedtemplate";
@@ -27,11 +27,12 @@ public class FeedController {
 
     @RequestMapping("/rssfeed")
     public String getRSSFeed(Model model) {
-        List<TournamentContent> tournamentList = new ArrayList<TournamentContent>();
-        tournamentList.add(TournamentContent.generateContent("FIFA", new Date(), "World Cup", "www.fifa.com/worldcup/"));
-        tournamentList.add(TournamentContent.generateContent("FIFA", new Date(), "U-20 World Cup", "www.fifa.com/u20worldcup/"));
-        tournamentList.add(TournamentContent.generateContent("FIFA", new Date(), "U-17 World Cup", "www.fifa.com/u17worldcup/"));
-        tournamentList.add(TournamentContent.generateContent("FIFA", new Date(), "Confederations Cup", "www.fifa.com/confederationscup/"));
+        List<TournamentContent> tournamentList;
+        tournamentList = new ArrayList<TournamentContent>();
+        tournamentList.add(TournamentContent.of("FIFA", new Date(), "World Cup", "www.fifa.com/worldcup/"));
+        tournamentList.add(TournamentContent.of("FIFA", new Date(), "U-20 World Cup", "www.fifa.com/u20worldcup/"));
+        tournamentList.add(TournamentContent.of("FIFA", new Date(), "U-17 World Cup", "www.fifa.com/u17worldcup/"));
+        tournamentList.add(TournamentContent.of("FIFA", new Date(), "Confederations Cup", "www.fifa.com/confederationscup/"));
         model.addAttribute("feedContent", tournamentList);
 
         return "rssfeedtemplate";
@@ -39,11 +40,11 @@ public class FeedController {
 
     @RequestMapping("/jsontournament")
     public String getJSON(Model model) {
-        List<TournamentContent> tournamentList = new ArrayList<TournamentContent>();
-        tournamentList.add(TournamentContent.generateContent("FIFA", new Date(), "World Cup", "www.fifa.com/worldcup/"));
-        tournamentList.add(TournamentContent.generateContent("FIFA", new Date(), "U-20 World Cup", "www.fifa.com/u20worldcup/"));
-        tournamentList.add(TournamentContent.generateContent("FIFA", new Date(), "U-17 World Cup", "www.fifa.com/u17worldcup/"));
-        tournamentList.add(TournamentContent.generateContent("FIFA", new Date(), "Confederations Cup", "www.fifa.com/confederationscup/"));
+        List<TournamentContent> tournamentList = new ArrayList<>();
+        tournamentList.add(TournamentContent.of("FIFA", new Date(), "World Cup", "www.fifa.com/worldcup/"));
+        tournamentList.add(TournamentContent.of("FIFA", new Date(), "U-20 World Cup", "www.fifa.com/u20worldcup/"));
+        tournamentList.add(TournamentContent.of("FIFA", new Date(), "U-17 World Cup", "www.fifa.com/u17worldcup/"));
+        tournamentList.add(TournamentContent.of("FIFA", new Date(), "Confederations Cup", "www.fifa.com/confederationscup/"));
         model.addAttribute("feedContent", tournamentList);
 
         return "jsontournamenttemplate";
