@@ -9,7 +9,7 @@
 <c:if test="${not empty param.error}">
     <font color="red">
         Login error. <br />
-        Reason : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+        Reason : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].todo}
     </font>
 </c:if>
 <form method="POST" action="<c:url value="/j_spring_security_check" />">

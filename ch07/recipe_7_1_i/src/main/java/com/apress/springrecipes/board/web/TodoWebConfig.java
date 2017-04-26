@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.apress.springrecipes.board")
-public class BoardWebConfig implements WebMvcConfigurer {
+public class TodoWebConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {

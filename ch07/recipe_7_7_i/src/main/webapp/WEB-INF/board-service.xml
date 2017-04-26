@@ -11,7 +11,7 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
-    <bean id="messageBoardService" class="com.apress.springrecipes.board.service.MessageBoardServiceImpl">
+    <bean id="todoService" class="com.apress.springrecipes.board.service.MessageBoardServiceImpl">
         <property name="mutableAclService" ref="aclService" />
         </bean>
 

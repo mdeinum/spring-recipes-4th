@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form:form method="POST" modelAttribute="message">
+<form:form method="POST" modelAttribute="todo">
     <table>
         <tr>
             <td>Title</td>

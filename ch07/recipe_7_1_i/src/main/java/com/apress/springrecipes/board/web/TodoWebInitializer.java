@@ -5,7 +5,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import javax.servlet.Filter;
 
-public class BoardWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class TodoWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[0];
@@ -13,7 +13,7 @@ public class BoardWebInitializer extends AbstractAnnotationConfigDispatcherServl
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[]{BoardWebConfig.class};
+        return new Class<?>[]{ TodoWebConfig.class};
     }
 
     @Override

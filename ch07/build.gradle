@@ -21,7 +21,7 @@ subprojects { subproject ->
     defaultTasks 'clean','build'
 
     war {
-        archiveName='board.war'
+        archiveName='todos.war'
     }
 
     dependencies {
@@ -53,7 +53,7 @@ subprojects { subproject ->
     task buildDocker(type: Docker, dependsOn: build) {
         push = false
         applicationName = war.archiveName
-        tag = 'spring-recipes-4th/board-security'
+        tag = 'sr4/todos-security'
         tagVersion = 'latest'
         dockerfile = file('../Dockerfile')
         doFirst {

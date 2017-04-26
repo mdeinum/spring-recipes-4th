@@ -6,23 +6,23 @@
 </head>
 
 <body>
-<c:forEach items="${messages}" var="message">
+<c:forEach items="${todos}" var="todo">
     <table>
         <tr>
             <td>Author</td>
-            <td>${message.author}</td>
+            <td>${todo.author}</td>
         </tr>
         <tr>
             <td>Title</td>
-            <td>${message.title}</td>
+            <td>${todo.title}</td>
         </tr>
         <tr>
             <td>Body</td>
-            <td>${message.body}</td>
+            <td>${todo.body}</td>
         </tr>
         <tr>
             <td colspan="2">
-                <a href="messageDelete?messageId=${message.id}">Delete</a>
+                <a href="messageDelete?messageId=${todo.id}">Delete</a>
             </td>
         </tr>
     </table>

@@ -1,6 +1,6 @@
-CREATE TABLE message (
+CREATE TABLE todo (
   id bigint AUTO_INCREMENT PRIMARY KEY ,
-  author VARCHAR(255) NOT NULL,
-  title VARCHAR(255) NOT NULL,
-  body VARCHAR(1048576) NOT NULL
+  owner VARCHAR(255) NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  completed BOOLEAN NOT NULL DEFAULT false
 );

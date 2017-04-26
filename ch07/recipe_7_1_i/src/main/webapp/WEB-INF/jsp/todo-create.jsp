@@ -10,17 +10,18 @@
 
 <body>
 <div class="ui container">
-    <h4>New Message</h4>
-    <c:url value="/messages" var="uri"/>
-    <form:form method="POST" modelAttribute="message" action="${uri}" class="ui form">
+    <h4>New Todo</h4>
+    <c:url value="/todos" var="uri"/>
+    <form:form method="POST" modelAttribute="todo" action="${uri}" class="ui form">
         <fieldset>
+            <legend>Todo</legend>
             <div class="field">
-                <label>Subject</label>
-                <form:input path="title"/>
+                <label>Todo</label>
+                <form:input path="description"/>
             </div>
             <div class="field">
-                <label>Body</label>
-                <form:textarea path="body" rows="4"/>
+                <label>Completed</label>
+                <form:checkbox path="completed" />
             </div>
             <button class="ui primary button">Send <i class="send icon"></i></button>
         </fieldset>
