@@ -30,20 +30,20 @@
                         <c:url value="/todos/${todo.id}/completed" var="completedUrl"/>
                         <form action="${completedUrl}" method="post" style="float: left;">
                             <input type="hidden" name="_method" value="PUT"/>
-                            <button class="ui green icon button"><i class="check circle icon"></i></button>
+                            <button class="ui mini green icon button"><i class="check circle icon"></i></button>
                         </form>
                     </c:if>
                     <c:url value="/todos/${todo.id}" var="deleteUrl"/>
                     <form action="${deleteUrl}" method="post" style="float: left;">
                         <input type="hidden" name="_method" value="DELETE"/>
-                        <button class="ui red icon button"><i class="remove circle icon"></i></button>
+                        <button class="ui mini red icon button"><i class="remove circle icon"></i></button>
                     </form>
                 </td>
             </tr>
         </c:forEach>
         <tr>
             <td colspan="3">
-                <a class="ui icon button" href="<c:url value="/todos/new"/>">New Todo <i
+                <a class="ui mini icon button" href="<c:url value="/todos/new"/>">New Todo <i
                         class="add circle icon"></i></a>
             </td>
         </tr>

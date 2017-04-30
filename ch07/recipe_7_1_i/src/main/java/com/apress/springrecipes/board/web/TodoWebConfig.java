@@ -20,7 +20,7 @@ public class TodoWebConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("redirect:/messages");
+        registry.addViewController("/").setViewName("redirect:/todos");
     }
 
     @Bean

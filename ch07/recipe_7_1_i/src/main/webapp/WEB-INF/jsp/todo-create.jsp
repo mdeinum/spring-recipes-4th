@@ -23,7 +23,7 @@
                 <label>Completed</label>
                 <form:checkbox path="completed" />
             </div>
-            <button class="ui primary button">Send <i class="send icon"></i></button>
+            <button class="ui mini primary button">Save <i class="send icon"></i></button>
         </fieldset>
     </form:form>
 </div>
