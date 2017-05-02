@@ -3,36 +3,57 @@
 <html>
 <head>
     <title>Login</title>
+    <link type="text/css" rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
+    <style type="text/css">
+        body {
+            background-color: #DADADA;
+        }
+        body > .grid {
+            height: 100%;
+        }
+        .column {
+            max-width: 450px;
+        }
+    </style>
 </head>
 
 <body>
-<c:if test="${not empty param.error}">
-    <font color="red">
-        Login error. <br />
-        Reason : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].todo}
-    </font>
-</c:if>
-<form method="POST" action="<c:url value="/j_spring_security_check" />">
-    <table>
-        <tr>
-            <td align="right">Username</td>
-            <td><input type="text" name="username" /></td>
-        </tr>
-        <tr>
-            <td align="right">Password</td>
-            <td><input type="password" name="password" /></td>
-        </tr>
-        <tr>
-            <td align="right">Remember me</td>
-            <td><input type="checkbox" name="_spring_security_remember_me" /></td>
-        </tr>
-        <tr>
-            <td colspan="2" align="right">
-                <input type="submit" value="Login" />
-                <input type="reset" value="Reset" />
-            </td>
-        </tr>
-    </table>
-</form>
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2 class="ui header">Log-in to your account</h2>
+        <form method="POST" action="<c:url value="/login" />" class="ui large form">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="username" placeholder="E-mail address">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui toggle checkbox">
+                        <input type="checkbox" name="remember-me">
+                        <label>Remember Me</label>
+                    </div>
+                </div>
+                <button class="ui fluid large submit green button">Login</button>
+            </div>
+            <c:if test="${not empty param.error}">
+                <div class="ui error message" style="display: block;">
+                    Authentication Failed<br/>
+                    Reason : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+                    </font>
+                </div>
+            </c:if>
+        </form>
+    </div>
+</div>
 </body>
 </html>

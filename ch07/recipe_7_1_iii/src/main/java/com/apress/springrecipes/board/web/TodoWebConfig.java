@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.apress.springrecipes.board")
+@ComponentScan(value = "com.apress.springrecipes.board", excludeFilters = {@ComponentScan.Filter(Configuration.class)})
 public class TodoWebConfig implements WebMvcConfigurer {
 
     @Override
