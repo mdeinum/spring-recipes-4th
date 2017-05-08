@@ -34,6 +34,7 @@ subprojects { subproject ->
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.ben-manes.versions'
 
+    ext['spring.version'] = '5.0.0.RC1'
     ext['spring-hateoas.version'] = '0.24.0.BUILD-SNAPSHOT'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
     ext['apacheCxfVersion'] = '3.1.11'
