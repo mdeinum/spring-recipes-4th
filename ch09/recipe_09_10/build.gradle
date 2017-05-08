@@ -1,4 +1,0 @@
-dependencies {
-
-    compile group: 'org.springframework.data', name: 'spring-data-jpa'
-}

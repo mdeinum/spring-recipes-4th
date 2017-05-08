@@ -1,7 +1,7 @@
 package com.apress.springrecipes.course.config;
 
 import com.zaxxer.hikari.HikariDataSource;
-import org.hibernate.dialect.PostgreSQL95Dialect;
+import org.hibernate.dialect.PostgreSQL9Dialect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -33,7 +33,7 @@ public class CourseConfiguration {
         HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
         jpaVendorAdapter.setShowSql(true);
         jpaVendorAdapter.setGenerateDdl(true);
-        jpaVendorAdapter.setDatabasePlatform(PostgreSQL95Dialect.class.getName());
+        jpaVendorAdapter.setDatabasePlatform(PostgreSQL9Dialect.class.getName());
         return jpaVendorAdapter;
     }
 

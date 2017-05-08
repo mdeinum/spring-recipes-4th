@@ -5,6 +5,12 @@ subprojects { subproject ->
     // Define defaultTasks, first clean then build for springintro
     defaultTasks 'clean', 'build'
 
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context'
+        compile group: 'org.postgresql', name: 'postgresql'
+        compile group: 'com.zaxxer', name: 'HikariCP'
+    }
+
     if (subproject.name.contains('course') || subproject.name.contains('vehicle')) {
         return
     }
@@ -26,5 +32,25 @@ subprojects { subproject ->
             compile project(':ch09:recipe_09_course')
         }
 
+    }
+}
+
+project(':ch09:recipe_09_course') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-orm'
+        compile group: 'org.hibernate', name: 'hibernate-entitymanager'
+    }
+}
+project(':ch09:recipe_09_vehicle') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-jdbc'
+    }
+
+}
+
+project(':ch09:recipe_09_10') {
+
+    dependencies {
+        compile group: 'org.springframework.data', name: 'spring-data-jpa'
     }
 }

@@ -30,9 +30,9 @@ public class Main {
         Long courseId = persisted.getId();
 
         System.out.println("\nCourse fresh from database");
-        courseDao.findOne(courseId).ifPresent(System.out::println);
+        courseDao.findById(courseId).ifPresent(System.out::println);
 
-        courseDao.delete(courseId);
+        courseDao.deleteById(courseId);
 
     }
 }
