@@ -22,7 +22,6 @@ configure(subprojects.findAll { p -> p.name.contains('Front') } ) {
     jar {
         manifest.attributes("Main-Class": "com.apress.springrecipes.post.FrontDeskMain")
     }
-
 }
 
 configure(subprojects.findAll { p -> p.name.contains('Back') }) {
@@ -30,5 +29,104 @@ configure(subprojects.findAll { p -> p.name.contains('Back') }) {
     jar {
         manifest.attributes("Main-Class": "com.apress.springrecipes.post.BackOfficeMain")
     }
+}
 
+project(':ch14:recipe_14_3_BackOffice') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-aop'
+        compile group: 'org.aspectj', name: 'aspectjtools'
+    }
+}
+
+project(':ch14:recipe_14_3_FrontDesk') {
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-aop'
+        compile group: 'org.aspectj', name: 'aspectjtools'
+    }
+}
+
+project(':ch14:recipe_14_5_BackOffice') {
+
+    dependencies {
+        compile group: 'org.apache.activemq', name: 'activemq-pool'
+    }
+}
+
+project(':ch14:recipe_14_5_FrontDesk') {
+
+    dependencies {
+        compile group: 'org.apache.activemq', name: 'activemq-pool'
+    }
+}
+
+project(':ch14:recipe_14_6_i_BackOffice') {
+
+    dependencies {
+        compile group: 'org.springframework.amqp', name: 'spring-rabbit'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+}
+
+project(':ch14:recipe_14_6_i_FrontDesk') {
+
+    dependencies {
+        compile group: 'org.springframework.amqp', name: 'spring-rabbit'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+}
+
+project(':ch14:recipe_14_6_ii_BackOffice') {
+
+    dependencies {
+        compile group: 'org.springframework.amqp', name: 'spring-rabbit'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+}
+
+project(':ch14:recipe_14_6_ii_FrontDesk') {
+
+    dependencies {
+        compile group: 'org.springframework.amqp', name: 'spring-rabbit'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+}
+
+project(':ch14:recipe_14_7_i_BackOffice') {
+
+    dependencies {
+        compile group: 'org.springframework.kafka', name: 'spring-kafka'
+        compile group: 'org.apache.kafka', name:'kafka-clients'
+
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+}
+
+project(':ch14:recipe_14_7_i_FrontDesk') {
+
+    dependencies {
+        compile group: 'org.springframework.kafka', name: 'spring-kafka'
+        compile group: 'org.apache.kafka', name:'kafka-clients'
+
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+}
+
+project(':ch14:recipe_14_7_ii_BackOffice') {
+
+    dependencies {
+        compile group: 'org.springframework.kafka', name: 'spring-kafka'
+        compile group: 'org.apache.kafka', name:'kafka-clients'
+
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
+}
+
+project(':ch14:recipe_14_7_ii_FrontDesk') {
+
+    dependencies {
+        compile group: 'org.springframework.kafka', name: 'spring-kafka'
+        compile group: 'org.apache.kafka', name:'kafka-clients'
+
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    }
 }

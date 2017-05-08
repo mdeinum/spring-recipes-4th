@@ -1,4 +1,0 @@
-dependencies {
-    compile group: 'org.springframework', name: 'spring-aop'
-    compile group: 'org.aspectj', name: 'aspectjtools'
-}

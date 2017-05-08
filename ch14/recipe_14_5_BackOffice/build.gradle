@@ -1,3 +1,0 @@
-dependencies {
-    compile group: 'org.apache.activemq', name: 'activemq-pool'
-}
