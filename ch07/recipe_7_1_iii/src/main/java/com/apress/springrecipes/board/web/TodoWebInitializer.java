@@ -1,6 +1,5 @@
 package com.apress.springrecipes.board.web;
 
-import org.springframework.core.annotation.Order;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
