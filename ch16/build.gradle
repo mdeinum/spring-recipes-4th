@@ -25,6 +25,10 @@ project(':ch16:recipe_16_1_ii') {
     dependencies {
         testCompile group: 'org.testng', name: 'testng'
     }
+
+    test {
+        useTestNG()
+    }
 } // End
 
 // Define project
@@ -33,6 +37,10 @@ project(':ch16:recipe_16_1_iii') {
     // Define dependencies
     dependencies {
         testCompile group: 'org.testng', name: 'testng'
+    }
+
+    test {
+        useTestNG()
     }
 } // End
 
