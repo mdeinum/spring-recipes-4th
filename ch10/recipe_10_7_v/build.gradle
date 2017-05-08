@@ -1,3 +1,0 @@
-dependencies {
-    compile group: 'org.aspectj', name: 'aspectjweaver'
-}

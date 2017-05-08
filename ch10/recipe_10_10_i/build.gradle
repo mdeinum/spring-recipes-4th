@@ -1,5 +1,0 @@
-dependencies {
-    compile group: 'org.springframework', name: 'spring-aspects'
-    compile group: 'org.springframework', name: 'spring-instrument'
-    compile group: 'org.aspectj', name: 'aspectjweaver'
-}

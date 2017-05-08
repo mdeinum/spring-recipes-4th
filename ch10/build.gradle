@@ -17,3 +17,55 @@ subprojects { subproject ->
         manifest.attributes("Main-Class": "com.apress.springrecipes.bookshop.Main")
     }
 }
+
+project(':ch10:recipe_10_5_i') {
+
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver'
+    }
+}
+
+project(':ch10:recipe_10_6_i') {
+
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver'
+    }
+}
+
+project(':ch10:recipe_10_6_ii') {
+
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver'
+    }
+}
+
+project(':ch10:recipe_10_7_v') {
+
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver'
+    }
+}
+
+project(':ch10:recipe_10_8_i') {
+
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver'
+    }
+}
+
+project(':ch10:recipe_10_9_i') {
+
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver'
+    }
+}
+
+project(':ch10:recipe_10_10_i') {
+
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-aspects'
+        compile group: 'org.springframework', name: 'spring-instrument'
+        compile group: 'org.aspectj', name: 'aspectjweaver'
+    }
+}
+
