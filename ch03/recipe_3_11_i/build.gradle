@@ -1,4 +1,0 @@
-dependencies {
-    compile group: 'javax.validation', name: 'validation-api'
-    compile group: 'org.hibernate', name: 'hibernate-validator'
-}

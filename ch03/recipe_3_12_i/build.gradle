@@ -1,6 +1,0 @@
-dependencies {
-    compile group: 'javax.validation', name: 'validation-api'
-    compile group: 'org.hibernate', name: 'hibernate-validator'
-    compile group: 'com.lowagie', name: 'itext'
-    compile group: 'org.apache.poi', name: 'poi-ooxml'
-}
