@@ -1,10 +1,11 @@
 package com.apress.springrecipes.vehicle;
 
-import com.apress.springrecipes.vehicle.config.VehicleConfiguration;
+import java.util.Arrays;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.Arrays;
+import com.apress.springrecipes.vehicle.config.VehicleConfiguration;
 
 public class Main {
 

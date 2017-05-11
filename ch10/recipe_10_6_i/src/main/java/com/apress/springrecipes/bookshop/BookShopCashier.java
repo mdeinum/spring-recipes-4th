@@ -1,8 +1,8 @@
 package com.apress.springrecipes.bookshop;
 
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
+
+import org.springframework.transaction.annotation.Transactional;
 
 
 public class BookShopCashier implements Cashier {

@@ -1,8 +1,8 @@
 package com.apress.springrecipes.nosql;
 
-import com.mongodb.MongoClient;
-
 import java.util.List;
+
+import com.mongodb.MongoClient;
 
 public class Main {
 

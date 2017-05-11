@@ -1,12 +1,13 @@
 package com.apress.springrecipes.shop.config;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
 import com.apress.springrecipes.shop.Battery;
 import com.apress.springrecipes.shop.Cashier;
 import com.apress.springrecipes.shop.Disc;
 import com.apress.springrecipes.shop.Product;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("com.apress.springrecipes.shop")

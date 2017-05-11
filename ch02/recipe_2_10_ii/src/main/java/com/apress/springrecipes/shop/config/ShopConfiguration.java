@@ -1,15 +1,16 @@
 package com.apress.springrecipes.shop.config;
 
-import com.apress.springrecipes.shop.Battery;
-import com.apress.springrecipes.shop.Disc;
-import com.apress.springrecipes.shop.Product;
-import com.apress.springrecipes.shop.ProductCreator;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.apress.springrecipes.shop.Battery;
+import com.apress.springrecipes.shop.Disc;
+import com.apress.springrecipes.shop.Product;
+import com.apress.springrecipes.shop.ProductCreator;
 
 @Configuration
 @ComponentScan("com.apress.springrecipes.shop")

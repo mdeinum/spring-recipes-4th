@@ -1,11 +1,11 @@
 package com.apress.springrecipes.bookshop;
 
+import java.io.IOException;
+
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.io.IOException;
 
 
 public class JdbcBookShop extends JdbcDaoSupport implements BookShop {

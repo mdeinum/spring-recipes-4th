@@ -1,11 +1,12 @@
 package com.apress.springrecipes.nosql;
 
-import com.apress.springrecipes.nosql.config.MongoConfiguration;
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
-import java.util.List;
+import com.apress.springrecipes.nosql.config.MongoConfiguration;
 
 public class Main {
 

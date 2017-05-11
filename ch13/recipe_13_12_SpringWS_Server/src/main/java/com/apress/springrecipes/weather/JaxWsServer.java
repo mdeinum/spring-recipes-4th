@@ -1,8 +1,8 @@
 package com.apress.springrecipes.weather;
 
-import org.springframework.context.support.GenericXmlApplicationContext;
-
 import java.io.IOException;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class JaxWsServer {
 

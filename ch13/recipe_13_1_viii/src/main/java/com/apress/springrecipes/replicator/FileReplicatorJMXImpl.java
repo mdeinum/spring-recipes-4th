@@ -1,11 +1,11 @@
 package com.apress.springrecipes.replicator;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.jmx.export.annotation.ManagedOperation;
 import org.springframework.jmx.export.annotation.ManagedResource;
-
-import java.io.File;
-import java.io.IOException;
 
 @ManagedResource(description = "File replicator")
 public class FileReplicatorJMXImpl implements FileReplicator {

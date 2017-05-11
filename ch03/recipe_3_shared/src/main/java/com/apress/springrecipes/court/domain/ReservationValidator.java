@@ -1,12 +1,12 @@
 package com.apress.springrecipes.court.domain;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-
-import java.time.DayOfWeek;
-import java.time.LocalDate;
 
 @Component
 public class ReservationValidator implements Validator {

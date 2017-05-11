@@ -1,10 +1,11 @@
 package com.apress.springrecipes.social.config;
 
-import com.apress.springrecipes.social.StaticUserIdSource;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.social.config.annotation.EnableSocial;
 import org.springframework.social.config.annotation.SocialConfigurerAdapter;
+
+import com.apress.springrecipes.social.StaticUserIdSource;
 
 @Configuration
 @EnableSocial

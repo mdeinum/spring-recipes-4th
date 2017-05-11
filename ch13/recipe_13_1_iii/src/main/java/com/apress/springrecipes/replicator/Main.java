@@ -1,8 +1,8 @@
 package com.apress.springrecipes.replicator;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 import java.io.IOException;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 

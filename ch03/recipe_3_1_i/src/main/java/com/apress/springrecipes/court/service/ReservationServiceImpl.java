@@ -1,15 +1,16 @@
 package com.apress.springrecipes.court.service;
 
-import com.apress.springrecipes.court.domain.Player;
-import com.apress.springrecipes.court.domain.Reservation;
-import com.apress.springrecipes.court.domain.SportType;
-import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import com.apress.springrecipes.court.domain.Player;
+import com.apress.springrecipes.court.domain.Reservation;
+import com.apress.springrecipes.court.domain.SportType;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {

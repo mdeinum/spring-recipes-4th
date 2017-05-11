@@ -1,7 +1,8 @@
 package com.apress.springrecipes.post;
 
-import com.apress.springrecipes.post.config.BackOfficeConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.apress.springrecipes.post.config.BackOfficeConfiguration;
 
 public class BackOfficeMain {
 

@@ -1,10 +1,10 @@
 package com.apress.springrecipes.post;
 
-import org.springframework.amqp.rabbit.core.RabbitGatewaySupport;
-import org.springframework.scheduling.annotation.Scheduled;
-
 import java.util.Locale;
 import java.util.Random;
+
+import org.springframework.amqp.rabbit.core.RabbitGatewaySupport;
+import org.springframework.scheduling.annotation.Scheduled;
 
 public class FrontDeskImpl extends RabbitGatewaySupport implements FrontDesk {
 

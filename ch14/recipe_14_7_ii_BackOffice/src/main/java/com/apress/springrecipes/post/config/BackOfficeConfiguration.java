@@ -1,6 +1,8 @@
 package com.apress.springrecipes.post.config;
 
-import com.apress.springrecipes.post.MailListener;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -14,8 +16,7 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 import org.springframework.kafka.support.converter.StringJsonMessageConverter;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.apress.springrecipes.post.MailListener;
 
 /**
  * Created by marten on 02-06-14.

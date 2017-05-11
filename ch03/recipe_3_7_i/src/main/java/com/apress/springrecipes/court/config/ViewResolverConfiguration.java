@@ -1,5 +1,8 @@
 package com.apress.springrecipes.court.config;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -8,9 +11,6 @@ import org.springframework.web.servlet.config.annotation.ContentNegotiationConfi
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.ResourceBundleViewResolver;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Configuration
 public class ViewResolverConfiguration extends WebMvcConfigurerAdapter {

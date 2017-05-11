@@ -1,9 +1,10 @@
 package com.apress.springrecipes.post.config;
 
-import com.apress.springrecipes.post.FrontDeskImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
+
+import com.apress.springrecipes.post.FrontDeskImpl;
 
 /**
  * Created by marten on 03-06-14.

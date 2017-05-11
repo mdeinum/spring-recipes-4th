@@ -1,12 +1,14 @@
 package com.apress.springrecipes.nosql;
 
-
-import org.neo4j.graphdb.*;
-import org.neo4j.graphdb.factory.GraphDatabaseFactory;
+import static com.apress.springrecipes.nosql.Main.RelationshipTypes.FRIENDS_WITH;
+import static com.apress.springrecipes.nosql.Main.RelationshipTypes.LOCATION;
+import static com.apress.springrecipes.nosql.Main.RelationshipTypes.MASTER_OF;
+import static com.apress.springrecipes.nosql.Main.RelationshipTypes.SIBLING;
 
 import java.nio.file.Paths;
 
-import static com.apress.springrecipes.nosql.Main.RelationshipTypes.*;
+import org.neo4j.graphdb.*;
+import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
 public class Main {
 

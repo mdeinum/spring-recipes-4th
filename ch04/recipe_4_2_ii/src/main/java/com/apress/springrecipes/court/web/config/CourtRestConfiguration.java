@@ -1,7 +1,7 @@
 package com.apress.springrecipes.court.web.config;
 
-import com.apress.springrecipes.court.domain.Member;
-import com.apress.springrecipes.court.domain.Members;
+import java.util.Collections;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,8 @@ import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 import org.springframework.web.servlet.view.xml.MarshallingView;
 
-import java.util.Collections;
+import com.apress.springrecipes.court.domain.Member;
+import com.apress.springrecipes.court.domain.Members;
 
 @Configuration
 @EnableWebMvc

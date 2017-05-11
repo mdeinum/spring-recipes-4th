@@ -1,7 +1,8 @@
 package com.apress.springrecipes.mobile.web;
 
-import com.apress.springrecipes.mobile.web.config.MobileConfiguration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import com.apress.springrecipes.mobile.web.config.MobileConfiguration;
 
 /**
  * Created by marten on 23-06-14.

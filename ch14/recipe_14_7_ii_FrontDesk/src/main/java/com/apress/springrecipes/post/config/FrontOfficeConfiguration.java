@@ -1,6 +1,8 @@
 package com.apress.springrecipes.post.config;
 
-import com.apress.springrecipes.post.FrontDeskImpl;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.IntegerSerializer;
 import org.springframework.context.annotation.Bean;
@@ -11,8 +13,7 @@ import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.apress.springrecipes.post.FrontDeskImpl;
 
 /**
  * Created by marten on 03-06-14.

@@ -1,13 +1,14 @@
 package com.apress.springrecipes.vehicle.config;
 
-import com.apress.springrecipes.vehicle.JdbcVehicleDao;
-import com.apress.springrecipes.vehicle.VehicleDao;
-import com.zaxxer.hikari.HikariDataSource;
+import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
+import com.apress.springrecipes.vehicle.JdbcVehicleDao;
+import com.apress.springrecipes.vehicle.VehicleDao;
+import com.zaxxer.hikari.HikariDataSource;
 
 /**
  * Created by marten on 27-05-14.

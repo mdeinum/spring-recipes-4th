@@ -1,10 +1,11 @@
 package com.apress.springrecipes.replicator.config;
 
-import com.apress.springrecipes.replicator.EmailErrorNotifier;
-import com.apress.springrecipes.replicator.ErrorNotifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+
+import com.apress.springrecipes.replicator.EmailErrorNotifier;
+import com.apress.springrecipes.replicator.ErrorNotifier;
 
 /**
  * Created by marten on 26-05-14.

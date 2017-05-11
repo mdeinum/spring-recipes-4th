@@ -1,6 +1,7 @@
 package com.apress.springrecipes.bank;
 
-import com.apress.springrecipes.bank.config.BankConfiguration;
+import static org.junit.Assert.assertEquals;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
@@ -8,7 +9,7 @@ import org.springframework.test.context.testng.AbstractTransactionalTestNGSpring
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertEquals;
+import com.apress.springrecipes.bank.config.BankConfiguration;
 
 /**
  * Created by marten on 16-06-14.

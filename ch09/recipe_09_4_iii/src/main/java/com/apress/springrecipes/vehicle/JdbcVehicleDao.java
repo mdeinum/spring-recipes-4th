@@ -1,11 +1,11 @@
 package com.apress.springrecipes.vehicle;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-
-import java.util.List;
 
 public class JdbcVehicleDao extends NamedParameterJdbcDaoSupport implements VehicleDao {
 

@@ -1,9 +1,10 @@
 package com.apress.springrecipes.weather;
 
-import com.apress.springrecipes.weather.config.WeatherConfigJaxWsServer;
+import java.io.IOException;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.io.IOException;
+import com.apress.springrecipes.weather.config.WeatherConfigJaxWsServer;
 
 public class JaxWsServer {
 

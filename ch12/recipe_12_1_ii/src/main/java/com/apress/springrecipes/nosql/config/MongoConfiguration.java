@@ -1,13 +1,14 @@
 package com.apress.springrecipes.nosql.config;
 
+import java.net.UnknownHostException;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 import com.apress.springrecipes.nosql.MongoDBVehicleRepository;
 import com.apress.springrecipes.nosql.VehicleRepository;
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import java.net.UnknownHostException;
 
 @Configuration
 public class MongoConfiguration {

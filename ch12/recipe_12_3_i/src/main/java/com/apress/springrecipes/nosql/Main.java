@@ -1,11 +1,11 @@
 package com.apress.springrecipes.nosql;
 
+import java.nio.file.Paths;
+
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
-
-import java.nio.file.Paths;
 
 public class Main {
 

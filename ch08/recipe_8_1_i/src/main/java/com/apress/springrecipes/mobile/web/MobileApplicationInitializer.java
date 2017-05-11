@@ -1,10 +1,11 @@
 package com.apress.springrecipes.mobile.web;
 
-import com.apress.springrecipes.mobile.web.config.MobileConfiguration;
-import com.apress.springrecipes.mobile.web.filter.DeviceResolverRequestFilter;
+import javax.servlet.Filter;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.Filter;
+import com.apress.springrecipes.mobile.web.config.MobileConfiguration;
+import com.apress.springrecipes.mobile.web.filter.DeviceResolverRequestFilter;
 
 /**
  * Created by marten on 23-06-14.

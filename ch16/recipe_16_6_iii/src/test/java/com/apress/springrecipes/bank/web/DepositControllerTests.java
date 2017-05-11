@@ -1,12 +1,13 @@
 package com.apress.springrecipes.bank.web;
 
-import com.apress.springrecipes.bank.AccountService;
+import static org.junit.Assert.assertEquals;
+
 import org.mockito.Mockito;
 import org.springframework.ui.ModelMap;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertEquals;
+import com.apress.springrecipes.bank.AccountService;
 
 public class DepositControllerTests {
 

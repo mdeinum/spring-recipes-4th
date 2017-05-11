@@ -4,10 +4,8 @@ version = '4.0.0-SNAPSHOT'
 defaultTasks 'clean', 'build'
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
 
-ext.springVersion='5.0.0.M5'
+ext.springVersion='5.0.0.RC1'
 
 
 // Define repositorie to get dependencies
@@ -27,5 +25,5 @@ jar {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.4'
+    gradleVersion = '3.5'
 }

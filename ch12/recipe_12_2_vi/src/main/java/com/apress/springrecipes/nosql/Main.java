@@ -1,9 +1,10 @@
 package com.apress.springrecipes.nosql;
 
-import com.apress.springrecipes.nosql.config.RedisConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.redis.core.RedisTemplate;
+
+import com.apress.springrecipes.nosql.config.RedisConfig;
 
 /**
  * Created by marten on 29-09-14.

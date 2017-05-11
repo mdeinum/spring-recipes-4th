@@ -1,6 +1,7 @@
 package com.apress.springrecipes.bank;
 
-import com.apress.springrecipes.bank.config.BankConfiguration;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +12,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.assertEquals;
+import com.apress.springrecipes.bank.config.BankConfiguration;
 
 /**
  * Created by marten on 16-06-14.

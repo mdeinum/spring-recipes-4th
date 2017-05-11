@@ -1,7 +1,10 @@
 package com.apress.springrecipes.bank.web;
 
-import com.apress.springrecipes.bank.config.BankConfiguration;
-import com.apress.springrecipes.bank.web.config.BankWebConfiguration;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +16,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import com.apress.springrecipes.bank.config.BankConfiguration;
+import com.apress.springrecipes.bank.web.config.BankWebConfiguration;
 
 @ContextConfiguration(classes= { BankWebConfiguration.class, BankConfiguration.class})
 @WebAppConfiguration

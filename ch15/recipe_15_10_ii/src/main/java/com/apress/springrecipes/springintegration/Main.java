@@ -1,15 +1,16 @@
 package com.apress.springrecipes.springintegration;
 
-import com.apress.springrecipes.springintegration.myholiday.HotelReservation;
-import com.apress.springrecipes.springintegration.myholiday.HotelReservationSearch;
-import com.apress.springrecipes.springintegration.myholiday.VacationService;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.apress.springrecipes.springintegration.myholiday.HotelReservation;
+import com.apress.springrecipes.springintegration.myholiday.HotelReservationSearch;
+import com.apress.springrecipes.springintegration.myholiday.VacationService;
 
 
 public class Main {

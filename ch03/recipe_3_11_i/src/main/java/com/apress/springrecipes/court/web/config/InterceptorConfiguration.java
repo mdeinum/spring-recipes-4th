@@ -1,12 +1,13 @@
 package com.apress.springrecipes.court.web.config;
 
-import com.apress.springrecipes.court.web.ExtensionInterceptor;
-import com.apress.springrecipes.court.web.MeasurementInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import com.apress.springrecipes.court.web.ExtensionInterceptor;
+import com.apress.springrecipes.court.web.MeasurementInterceptor;
 
 @Configuration
 @ComponentScan("com.apress.springrecipes.court")

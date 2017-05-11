@@ -1,12 +1,13 @@
 package com.apress.springrecipes.board;
 
+import java.util.Collections;
+
+import javax.annotation.PostConstruct;
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-import java.util.Collections;
 
 @Component
 class TodoInitializer {

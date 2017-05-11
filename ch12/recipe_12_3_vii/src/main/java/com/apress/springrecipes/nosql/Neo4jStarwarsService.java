@@ -1,9 +1,9 @@
 package com.apress.springrecipes.nosql;
 
+import javax.annotation.PreDestroy;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.PreDestroy;
 
 @Service
 @Transactional

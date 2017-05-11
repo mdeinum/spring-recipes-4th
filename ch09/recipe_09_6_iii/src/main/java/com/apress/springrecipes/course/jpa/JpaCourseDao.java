@@ -1,10 +1,15 @@
 package com.apress.springrecipes.course.jpa;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
 import com.apress.springrecipes.course.Course;
 import com.apress.springrecipes.course.CourseDao;
-
-import javax.persistence.*;
-import java.util.List;
 
 public class JpaCourseDao implements CourseDao {
 

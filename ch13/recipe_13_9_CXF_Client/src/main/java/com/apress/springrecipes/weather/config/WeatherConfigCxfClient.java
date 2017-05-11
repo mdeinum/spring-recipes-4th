@@ -1,11 +1,12 @@
 package com.apress.springrecipes.weather.config;
 
-import com.apress.springrecipes.weather.WeatherService;
-import com.apress.springrecipes.weather.WeatherServiceClient;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+
+import com.apress.springrecipes.weather.WeatherService;
+import com.apress.springrecipes.weather.WeatherServiceClient;
 
 @Configuration
 @ImportResource("classpath:META-INF/cxf/cxf.xml")

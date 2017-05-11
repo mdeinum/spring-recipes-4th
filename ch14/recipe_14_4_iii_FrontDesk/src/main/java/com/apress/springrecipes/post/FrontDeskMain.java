@@ -1,11 +1,12 @@
 package com.apress.springrecipes.post;
 
-import com.apress.springrecipes.post.config.FrontOfficeConfiguration;
+import java.util.Locale;
+import java.util.Random;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.Locale;
-import java.util.Random;
+import com.apress.springrecipes.post.config.FrontOfficeConfiguration;
 
 public class FrontDeskMain {
 

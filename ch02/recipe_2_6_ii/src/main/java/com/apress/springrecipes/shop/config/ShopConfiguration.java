@@ -1,9 +1,5 @@
 package com.apress.springrecipes.shop.config;
 
-import com.apress.springrecipes.shop.BannerLoader;
-import com.apress.springrecipes.shop.Battery;
-import com.apress.springrecipes.shop.Disc;
-import com.apress.springrecipes.shop.Product;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,6 +7,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.Resource;
+
+import com.apress.springrecipes.shop.BannerLoader;
+import com.apress.springrecipes.shop.Battery;
+import com.apress.springrecipes.shop.Disc;
+import com.apress.springrecipes.shop.Product;
 
 @Configuration
 @PropertySource("classpath:discounts.properties")

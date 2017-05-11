@@ -1,11 +1,11 @@
 package com.apress.springrecipes.replicator;
 
+import java.io.IOException;
+import java.util.Map;
+
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
-
-import java.io.IOException;
-import java.util.Map;
 
 public class FileReplicationJob implements Job {
 

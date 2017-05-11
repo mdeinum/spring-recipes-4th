@@ -1,16 +1,22 @@
 package com.apress.springrecipes.replicator.config;
 
-import com.apress.springrecipes.replicator.*;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+import javax.management.NotificationListener;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jmx.export.annotation.AnnotationMBeanExporter;
 
-import javax.annotation.PostConstruct;
-import javax.management.NotificationListener;
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
+import com.apress.springrecipes.replicator.FileCopier;
+import com.apress.springrecipes.replicator.FileCopierJMXImpl;
+import com.apress.springrecipes.replicator.FileReplicator;
+import com.apress.springrecipes.replicator.FileReplicatorJMXImpl;
+import com.apress.springrecipes.replicator.ReplicationNotificationListener;
 
 
 @Configuration

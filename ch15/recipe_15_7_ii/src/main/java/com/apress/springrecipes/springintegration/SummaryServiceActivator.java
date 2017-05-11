@@ -1,8 +1,8 @@
 package com.apress.springrecipes.springintegration;
 
-import org.springframework.integration.annotation.ServiceActivator;
-
 import java.util.Collection;
+
+import org.springframework.integration.annotation.ServiceActivator;
 
 public class SummaryServiceActivator {
 

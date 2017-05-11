@@ -1,12 +1,13 @@
 package com.apress.springrecipes.weather;
 
-import org.springframework.stereotype.Component;
-
-import javax.jws.WebMethod;
-import javax.jws.WebService;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+import org.springframework.stereotype.Component;
 
 
 @Component

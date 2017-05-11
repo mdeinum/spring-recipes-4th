@@ -1,11 +1,13 @@
 package com.apress.springrecipes.nosql;
 
+import static com.apress.springrecipes.nosql.RelationshipTypes.FRIENDS_WITH;
+import static com.apress.springrecipes.nosql.RelationshipTypes.LOCATION;
+import static com.apress.springrecipes.nosql.RelationshipTypes.MASTER_OF;
+
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Transaction;
-
-import static com.apress.springrecipes.nosql.RelationshipTypes.*;
 
 public class Neo4jStarwarsRepository implements StarwarsRepository {
 

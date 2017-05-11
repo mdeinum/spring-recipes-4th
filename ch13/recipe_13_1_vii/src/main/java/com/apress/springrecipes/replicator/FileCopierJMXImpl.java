@@ -1,9 +1,9 @@
 package com.apress.springrecipes.replicator;
 
-import org.springframework.util.FileCopyUtils;
-
 import java.io.File;
 import java.io.IOException;
+
+import org.springframework.util.FileCopyUtils;
 
 public class FileCopierJMXImpl implements FileCopier {
 

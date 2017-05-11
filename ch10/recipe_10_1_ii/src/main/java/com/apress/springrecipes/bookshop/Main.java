@@ -1,8 +1,9 @@
 package com.apress.springrecipes.bookshop;
 
-import com.apress.springrecipes.bookshop.config.BookstoreConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.apress.springrecipes.bookshop.config.BookstoreConfiguration;
 
 public class Main {
 

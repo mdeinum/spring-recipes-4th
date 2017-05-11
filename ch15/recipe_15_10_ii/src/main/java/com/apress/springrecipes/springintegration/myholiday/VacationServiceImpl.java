@@ -1,10 +1,11 @@
 package com.apress.springrecipes.springintegration.myholiday;
 
-import org.springframework.integration.annotation.ServiceActivator;
-
-import javax.annotation.PostConstruct;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.integration.annotation.ServiceActivator;
 
 
 public class VacationServiceImpl implements VacationService {

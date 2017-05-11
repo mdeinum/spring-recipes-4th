@@ -1,12 +1,13 @@
 package com.apress.springrecipes.replicator.config;
 
+import java.net.MalformedURLException;
+
+import javax.management.MBeanServerConnection;
+
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jmx.support.MBeanServerConnectionFactoryBean;
-
-import javax.management.MBeanServerConnection;
-import java.net.MalformedURLException;
 
 /**
  * Created by marten on 26-05-14.

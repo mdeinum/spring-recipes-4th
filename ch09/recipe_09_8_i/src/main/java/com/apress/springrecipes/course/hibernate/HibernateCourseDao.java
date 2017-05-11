@@ -1,12 +1,13 @@
 package com.apress.springrecipes.course.hibernate;
 
-import com.apress.springrecipes.course.Course;
-import com.apress.springrecipes.course.CourseDao;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import com.apress.springrecipes.course.Course;
+import com.apress.springrecipes.course.CourseDao;
 
 public class HibernateCourseDao implements CourseDao {
 

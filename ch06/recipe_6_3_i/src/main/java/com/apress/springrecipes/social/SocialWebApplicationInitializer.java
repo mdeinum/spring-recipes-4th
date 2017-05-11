@@ -1,8 +1,9 @@
 package com.apress.springrecipes.social;
 
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
 import com.apress.springrecipes.social.config.SocialConfig;
 import com.apress.springrecipes.social.config.WebConfig;
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
  * Created by marten on 14-07-14.

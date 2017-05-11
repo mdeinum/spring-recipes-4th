@@ -1,8 +1,8 @@
 package com.apress.springrecipes.court.domain;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class PeriodicReservation {
 

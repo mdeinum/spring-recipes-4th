@@ -1,13 +1,14 @@
 package com.apress.springrecipes.vehicle.config;
 
-import com.apress.springrecipes.vehicle.PlainJdbcVehicleDao;
-import com.apress.springrecipes.vehicle.VehicleDao;
+import javax.sql.DataSource;
+
 import org.postgresql.Driver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
-import javax.sql.DataSource;
+import com.apress.springrecipes.vehicle.PlainJdbcVehicleDao;
+import com.apress.springrecipes.vehicle.VehicleDao;
 
 @Configuration
 public class VehicleConfiguration {

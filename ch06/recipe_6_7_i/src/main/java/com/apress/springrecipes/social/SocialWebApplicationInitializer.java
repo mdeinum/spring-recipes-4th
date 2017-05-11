@@ -1,12 +1,13 @@
 package com.apress.springrecipes.social;
 
-import com.apress.springrecipes.social.config.SecurityConfig;
-import com.apress.springrecipes.social.config.SocialConfig;
-import com.apress.springrecipes.social.config.WebConfig;
+import javax.servlet.Filter;
+
 import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.Filter;
+import com.apress.springrecipes.social.config.SecurityConfig;
+import com.apress.springrecipes.social.config.SocialConfig;
+import com.apress.springrecipes.social.config.WebConfig;
 
 /**
  * Created by marten on 14-07-14.

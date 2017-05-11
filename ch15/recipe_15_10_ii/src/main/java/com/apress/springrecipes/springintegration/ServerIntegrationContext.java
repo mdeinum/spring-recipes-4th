@@ -1,6 +1,5 @@
 package com.apress.springrecipes.springintegration;
 
-import com.apress.springrecipes.springintegration.myholiday.VacationServiceImpl;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +8,8 @@ import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.jms.dsl.Jms;
 import org.springframework.jms.connection.CachingConnectionFactory;
+
+import com.apress.springrecipes.springintegration.myholiday.VacationServiceImpl;
 
 @Configuration
 @EnableIntegration

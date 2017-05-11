@@ -1,9 +1,9 @@
 package com.apress.springrecipes.replicator;
 
-import org.springframework.scheduling.annotation.Scheduled;
-
 import java.io.File;
 import java.io.IOException;
+
+import org.springframework.scheduling.annotation.Scheduled;
 
 public class FileReplicatorImpl implements FileReplicator {
         

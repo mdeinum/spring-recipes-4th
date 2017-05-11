@@ -1,5 +1,8 @@
 package com.apress.springrecipes.springintegration;
 
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.integration.launch.JobLaunchingMessageHandler;
@@ -9,9 +12,6 @@ import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.dsl.Pollers;
 import org.springframework.integration.file.dsl.Files;
-
-import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 public class IntegrationConfiguration {
 

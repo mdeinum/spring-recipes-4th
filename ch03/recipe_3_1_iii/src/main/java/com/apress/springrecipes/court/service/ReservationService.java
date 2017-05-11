@@ -1,8 +1,8 @@
 package com.apress.springrecipes.court.service;
 
-import com.apress.springrecipes.court.domain.Reservation;
-
 import java.util.List;
+
+import com.apress.springrecipes.court.domain.Reservation;
 
 public interface ReservationService {
 

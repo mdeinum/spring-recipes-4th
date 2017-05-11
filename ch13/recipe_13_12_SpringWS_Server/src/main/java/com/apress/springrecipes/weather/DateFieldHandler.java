@@ -1,11 +1,11 @@
 package com.apress.springrecipes.weather;
 
-import org.exolab.castor.mapping.GeneralizedFieldHandler;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import org.exolab.castor.mapping.GeneralizedFieldHandler;
 
 public class DateFieldHandler extends GeneralizedFieldHandler {
 

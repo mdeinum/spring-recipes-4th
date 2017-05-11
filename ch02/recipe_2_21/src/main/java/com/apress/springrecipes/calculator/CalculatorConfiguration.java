@@ -1,12 +1,12 @@
 package com.apress.springrecipes.calculator;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.aspectj.lang.Aspects;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by marten on 24-01-17.

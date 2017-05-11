@@ -1,7 +1,8 @@
 package com.apress.springrecipes.court.web;
 
-import com.apress.springrecipes.court.web.config.CourtRestConfiguration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import com.apress.springrecipes.court.web.config.CourtRestConfiguration;
 
 public class CourtRestApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

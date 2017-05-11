@@ -1,12 +1,20 @@
 package com.apress.springrecipes.post;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rabbitmq.client.*;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.PreDestroy;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
+
+import javax.annotation.PreDestroy;
+
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.rabbitmq.client.AMQP;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.Consumer;
+import com.rabbitmq.client.DefaultConsumer;
+import com.rabbitmq.client.Envelope;
 
 /**
  * Created by marten on 14-02-17.

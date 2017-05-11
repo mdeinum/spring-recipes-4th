@@ -1,12 +1,12 @@
 package com.apress.springrecipes.nosql;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.couchbase.config.AbstractCouchbaseConfiguration;
 import org.springframework.data.couchbase.core.CouchbaseTemplate;
-
-import java.util.Collections;
-import java.util.List;
 
 @Configuration
 public class CouchbaseConfiguration extends AbstractCouchbaseConfiguration {

@@ -1,6 +1,7 @@
 package com.apress.springrecipes.bank;
 
-import com.apress.springrecipes.bank.config.BankConfiguration;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +11,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.Assert.assertEquals;
+import com.apress.springrecipes.bank.config.BankConfiguration;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = BankConfiguration.class)

@@ -1,15 +1,16 @@
 package com.apress.springrecipes.post;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
-import org.springframework.scheduling.annotation.Scheduled;
-
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.TimeoutException;
+
+import org.springframework.scheduling.annotation.Scheduled;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 
 public class FrontDeskImpl implements FrontDesk {
 

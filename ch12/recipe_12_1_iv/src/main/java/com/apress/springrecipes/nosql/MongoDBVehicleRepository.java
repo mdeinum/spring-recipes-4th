@@ -1,12 +1,13 @@
 package com.apress.springrecipes.nosql;
 
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Query;
+import static org.springframework.data.mongodb.core.query.Criteria.where;
 
-import javax.annotation.PreDestroy;
 import java.util.List;
 
-import static org.springframework.data.mongodb.core.query.Criteria.where;
+import javax.annotation.PreDestroy;
+
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Query;
 
 public class MongoDBVehicleRepository implements VehicleRepository {
 

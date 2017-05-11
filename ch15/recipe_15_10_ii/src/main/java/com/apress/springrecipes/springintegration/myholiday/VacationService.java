@@ -1,9 +1,9 @@
 package com.apress.springrecipes.springintegration.myholiday;
 
+import java.util.List;
+
 import org.springframework.integration.annotation.Gateway;
 import org.springframework.integration.annotation.MessagingGateway;
-
-import java.util.List;
 
 
 @MessagingGateway

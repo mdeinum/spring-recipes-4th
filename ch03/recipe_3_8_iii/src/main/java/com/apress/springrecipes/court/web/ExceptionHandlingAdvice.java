@@ -1,8 +1,9 @@
 package com.apress.springrecipes.court.web;
 
-import com.apress.springrecipes.court.service.ReservationNotAvailableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.apress.springrecipes.court.service.ReservationNotAvailableException;
 
 @ControllerAdvice
 public class ExceptionHandlingAdvice {

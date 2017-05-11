@@ -1,14 +1,15 @@
 package com.apress.springrecipes.nosql;
 
+import java.util.Collections;
+
+import javax.annotation.PreDestroy;
+
 import org.neo4j.ogm.model.Result;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.PreDestroy;
-import java.util.Collections;
 
 @Repository
 @Transactional

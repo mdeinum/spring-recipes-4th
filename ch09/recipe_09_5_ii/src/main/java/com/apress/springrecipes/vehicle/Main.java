@@ -1,11 +1,12 @@
 package com.apress.springrecipes.vehicle;
 
-import com.apress.springrecipes.vehicle.config.VehicleConfiguration;
+import java.sql.SQLException;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.dao.DataAccessException;
 
-import java.sql.SQLException;
+import com.apress.springrecipes.vehicle.config.VehicleConfiguration;
 
 /**
  * Created by marten on 24-03-14.

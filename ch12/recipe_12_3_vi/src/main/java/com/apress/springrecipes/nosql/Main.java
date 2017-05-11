@@ -1,8 +1,8 @@
 package com.apress.springrecipes.nosql;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 import java.util.stream.Stream;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 

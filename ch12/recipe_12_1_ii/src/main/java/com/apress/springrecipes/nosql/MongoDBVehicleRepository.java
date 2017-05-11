@@ -1,10 +1,15 @@
 package com.apress.springrecipes.nosql;
 
-import com.mongodb.*;
-
-import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.PreDestroy;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.Mongo;
 
 public class MongoDBVehicleRepository implements VehicleRepository {
 

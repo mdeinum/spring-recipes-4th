@@ -1,8 +1,8 @@
 package com.apress.springrecipes.course;
 
-import com.apress.springrecipes.course.jpa.JpaCourseDao;
-
 import java.util.GregorianCalendar;
+
+import com.apress.springrecipes.course.jpa.JpaCourseDao;
 
 
 public class Main {

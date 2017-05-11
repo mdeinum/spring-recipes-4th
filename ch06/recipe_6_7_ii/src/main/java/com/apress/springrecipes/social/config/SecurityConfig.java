@@ -1,6 +1,7 @@
 package com.apress.springrecipes.social.config;
 
-import com.apress.springrecipes.social.security.SimpleSocialUserDetailsService;
+import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,7 +14,7 @@ import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.social.security.SocialUserDetailsService;
 import org.springframework.social.security.SpringSocialConfigurer;
 
-import javax.sql.DataSource;
+import com.apress.springrecipes.social.security.SimpleSocialUserDetailsService;
 
 @Configuration
 @EnableWebSecurity

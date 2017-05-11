@@ -1,11 +1,12 @@
 package com.apress.springrecipes.bank.config;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 import com.apress.springrecipes.bank.AccountDao;
 import com.apress.springrecipes.bank.AccountService;
 import com.apress.springrecipes.bank.AccountServiceImpl;
 import com.apress.springrecipes.bank.InMemoryAccountDao;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by marten on 16-06-14.

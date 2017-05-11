@@ -1,9 +1,10 @@
 package com.apress.springrecipes.nosql;
 
-import com.couchbase.client.java.repository.annotation.Id;
+import java.io.Serializable;
+
 import org.springframework.data.couchbase.core.mapping.Document;
 
-import java.io.Serializable;
+import com.couchbase.client.java.repository.annotation.Id;
 
 @Document
 public class Vehicle implements Serializable{

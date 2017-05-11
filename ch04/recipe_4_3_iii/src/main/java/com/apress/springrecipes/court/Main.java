@@ -1,7 +1,8 @@
 package com.apress.springrecipes.court;
 
-import com.apress.springrecipes.court.domain.Members;
 import org.springframework.web.client.RestTemplate;
+
+import com.apress.springrecipes.court.domain.Members;
 
 /**
  * Created by marten on 16-06-14.

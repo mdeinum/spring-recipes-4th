@@ -1,9 +1,9 @@
 package com.apress.springrecipes.weather;
 
-import org.springframework.ws.client.core.WebServiceTemplate;
-
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.ws.client.core.WebServiceTemplate;
 
 public class WeatherServiceProxy implements WeatherService {
 

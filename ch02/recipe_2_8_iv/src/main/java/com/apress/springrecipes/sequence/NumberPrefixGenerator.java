@@ -1,8 +1,8 @@
 package com.apress.springrecipes.sequence;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Random;
+
+import org.springframework.stereotype.Component;
 
 
 @Component

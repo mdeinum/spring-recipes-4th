@@ -1,7 +1,7 @@
 package com.apress.springrecipes.course.hibernate;
 
-import com.apress.springrecipes.course.Course;
-import com.apress.springrecipes.course.CourseDao;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,7 +9,8 @@ import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.dialect.PostgreSQL95Dialect;
 
-import java.util.List;
+import com.apress.springrecipes.course.Course;
+import com.apress.springrecipes.course.CourseDao;
 
 public class HibernateCourseDao implements CourseDao {
 

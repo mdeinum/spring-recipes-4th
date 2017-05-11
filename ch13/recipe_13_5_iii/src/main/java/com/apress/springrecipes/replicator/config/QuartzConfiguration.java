@@ -1,7 +1,7 @@
 package com.apress.springrecipes.replicator.config;
 
-import com.apress.springrecipes.replicator.FileReplicationJob;
-import com.apress.springrecipes.replicator.FileReplicator;
+import java.util.Collections;
+
 import org.quartz.JobDetail;
 import org.quartz.Trigger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,8 @@ import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 
-import java.util.Collections;
+import com.apress.springrecipes.replicator.FileReplicationJob;
+import com.apress.springrecipes.replicator.FileReplicator;
 
 /**
  * Created by marten on 26-05-14.

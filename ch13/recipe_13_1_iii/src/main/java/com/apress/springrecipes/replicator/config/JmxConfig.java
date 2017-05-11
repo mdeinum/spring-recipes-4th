@@ -1,6 +1,11 @@
 package com.apress.springrecipes.replicator.config;
 
-import com.apress.springrecipes.replicator.FileReplicator;
+import java.rmi.registry.Registry;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.management.remote.JMXConnectorServer;
+
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -10,10 +15,7 @@ import org.springframework.jmx.export.MBeanExporter;
 import org.springframework.jmx.support.ConnectorServerFactoryBean;
 import org.springframework.remoting.rmi.RmiRegistryFactoryBean;
 
-import javax.management.remote.JMXConnectorServer;
-import java.rmi.registry.Registry;
-import java.util.HashMap;
-import java.util.Map;
+import com.apress.springrecipes.replicator.FileReplicator;
 
 @Configuration
 public class JmxConfig {

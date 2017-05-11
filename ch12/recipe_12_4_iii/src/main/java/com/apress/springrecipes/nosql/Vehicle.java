@@ -1,10 +1,10 @@
 package com.apress.springrecipes.nosql;
 
-import com.couchbase.client.java.repository.annotation.Field;
-import com.couchbase.client.java.repository.annotation.Id;
-
 import java.io.Serializable;
 import java.util.UUID;
+
+import com.couchbase.client.java.repository.annotation.Field;
+import com.couchbase.client.java.repository.annotation.Id;
 
 public class Vehicle implements Serializable{
 

@@ -1,12 +1,12 @@
 package com.apress.springrecipes.nosql;
 
+import java.io.IOException;
+
 import com.couchbase.client.java.Bucket;
 import com.couchbase.client.java.document.JsonDocument;
 import com.couchbase.client.java.document.json.JsonObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.IOException;
 
 class CouchbaseVehicleRepository implements VehicleRepository {
 

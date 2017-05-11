@@ -1,7 +1,8 @@
 package com.apress.springrecipes.court.web;
 
-import com.apress.springrecipes.court.domain.Member;
-import com.apress.springrecipes.court.service.MemberService;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.hateoas.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,8 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import com.apress.springrecipes.court.domain.Member;
+import com.apress.springrecipes.court.service.MemberService;
 
 @RestController
 @RequestMapping("/members")

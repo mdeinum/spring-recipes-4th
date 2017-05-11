@@ -1,11 +1,12 @@
 package com.apress.springrecipes.course;
 
-import com.apress.springrecipes.course.config.CourseConfiguration;
+import java.util.GregorianCalendar;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.GregorianCalendar;
+import com.apress.springrecipes.course.config.CourseConfiguration;
 
 
 public class Main {

@@ -1,5 +1,7 @@
 package com.apress.springrecipes.springintegration;
 
+import javax.jms.ConnectionFactory;
+
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,8 +13,6 @@ import org.springframework.integration.jms.dsl.Jms;
 import org.springframework.integration.router.ErrorMessageExceptionTypeRouter;
 import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.messaging.MessageHandlingException;
-
-import javax.jms.ConnectionFactory;
 
 @Configuration
 @EnableIntegration

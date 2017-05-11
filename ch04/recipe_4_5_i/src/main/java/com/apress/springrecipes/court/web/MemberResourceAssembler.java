@@ -1,7 +1,8 @@
 package com.apress.springrecipes.court.web;
 
-import com.apress.springrecipes.court.domain.Member;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
+
+import com.apress.springrecipes.court.domain.Member;
 
 public class MemberResourceAssembler extends ResourceAssemblerSupport<Member, MemberResource> {
 

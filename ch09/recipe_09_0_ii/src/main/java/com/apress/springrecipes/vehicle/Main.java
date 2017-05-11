@@ -1,8 +1,9 @@
 package com.apress.springrecipes.vehicle;
 
-import com.apress.springrecipes.vehicle.config.VehicleConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.apress.springrecipes.vehicle.config.VehicleConfiguration;
 
 /**
  * Created by marten on 24-03-14.

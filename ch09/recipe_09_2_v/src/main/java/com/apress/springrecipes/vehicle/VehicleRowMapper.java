@@ -1,9 +1,9 @@
 package com.apress.springrecipes.vehicle;
 
-import org.springframework.jdbc.core.RowMapper;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
 
 /**
  * Created by marten on 24-03-14.

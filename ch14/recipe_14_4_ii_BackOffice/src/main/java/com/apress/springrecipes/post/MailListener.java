@@ -1,8 +1,8 @@
 package com.apress.springrecipes.post;
 
-import org.springframework.jms.annotation.JmsListener;
-
 import java.util.Map;
+
+import org.springframework.jms.annotation.JmsListener;
 
 public class MailListener {
 

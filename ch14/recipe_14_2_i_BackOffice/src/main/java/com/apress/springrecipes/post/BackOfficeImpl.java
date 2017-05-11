@@ -1,8 +1,8 @@
 package com.apress.springrecipes.post;
 
-import org.springframework.jms.core.support.JmsGatewaySupport;
+import java.util.Map;
 
-import java.util.Map; 
+import org.springframework.jms.core.support.JmsGatewaySupport;
 
 public class BackOfficeImpl extends JmsGatewaySupport implements BackOffice {
 

@@ -1,9 +1,10 @@
 package com.apress.springrecipes.sequence.config;
 
-import com.apress.springrecipes.sequence.DatePrefixGenerator;
-import com.apress.springrecipes.sequence.SequenceGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.apress.springrecipes.sequence.DatePrefixGenerator;
+import com.apress.springrecipes.sequence.SequenceGenerator;
 
 
 @Configuration

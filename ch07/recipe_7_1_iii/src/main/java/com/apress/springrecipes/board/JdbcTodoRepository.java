@@ -1,13 +1,14 @@
 package com.apress.springrecipes.board;
 
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import javax.sql.DataSource;
+
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Repository;
-
-import javax.sql.DataSource;
-import java.sql.PreparedStatement;
-import java.util.List;
 
 @Repository
 class JdbcTodoRepository implements TodoRepository {

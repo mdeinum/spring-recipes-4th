@@ -1,9 +1,9 @@
 package com.apress.springrecipes.court;
 
-import org.springframework.web.client.RestTemplate;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by marten on 16-06-14.

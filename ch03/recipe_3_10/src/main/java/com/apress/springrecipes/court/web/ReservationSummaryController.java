@@ -1,7 +1,8 @@
 package com.apress.springrecipes.court.web;
 
-import com.apress.springrecipes.court.domain.Reservation;
-import com.apress.springrecipes.court.service.ReservationService;
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
@@ -10,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.LocalDate;
-import java.util.List;
+import com.apress.springrecipes.court.domain.Reservation;
+import com.apress.springrecipes.court.service.ReservationService;
 
 @Controller
 @RequestMapping("/reservationSummary*")

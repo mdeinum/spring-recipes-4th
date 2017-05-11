@@ -1,12 +1,12 @@
 package com.apress.springrecipes.board.security;
 
+import java.util.Collection;
+import java.util.Objects;
+
 import org.springframework.security.access.AccessDecisionVoter;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
-
-import java.util.Collection;
-import java.util.Objects;
 
 
 public class IpAddressVoter implements AccessDecisionVoter<Object> {

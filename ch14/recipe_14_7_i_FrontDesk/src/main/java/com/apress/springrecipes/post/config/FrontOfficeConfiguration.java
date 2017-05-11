@@ -1,6 +1,8 @@
 package com.apress.springrecipes.post.config;
 
-import com.apress.springrecipes.post.FrontDeskImpl;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.IntegerSerializer;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -10,8 +12,7 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.apress.springrecipes.post.FrontDeskImpl;
 
 /**
  * Created by marten on 03-06-14.

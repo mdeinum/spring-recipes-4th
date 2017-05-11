@@ -1,13 +1,14 @@
 package com.apress.springrecipes.court.web;
 
-import com.apress.springrecipes.court.domain.Member;
-import com.apress.springrecipes.court.domain.Members;
-import com.apress.springrecipes.court.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.apress.springrecipes.court.domain.Member;
+import com.apress.springrecipes.court.domain.Members;
+import com.apress.springrecipes.court.service.MemberService;
 
 @Controller
 public class RestMemberController {

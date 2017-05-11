@@ -1,8 +1,8 @@
 package com.apress.springrecipes.board;
 
-import org.springframework.stereotype.Component;
-
 import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Component;
 
 @Component
 class TodoInitializer {

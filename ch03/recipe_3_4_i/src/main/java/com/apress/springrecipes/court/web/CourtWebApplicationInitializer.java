@@ -1,7 +1,8 @@
 package com.apress.springrecipes.court.web;
 
-import com.apress.springrecipes.court.config.InterceptorConfiguration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import com.apress.springrecipes.court.config.InterceptorConfiguration;
 
 /**
  * {@link org.springframework.web.WebApplicationInitializer} implementation to bootstrap the application.

@@ -1,12 +1,13 @@
 package com.apress.springrecipes.shop;
 
-import org.springframework.core.io.Resource;
-
-import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.core.io.Resource;
 
 public class BannerLoader {
 

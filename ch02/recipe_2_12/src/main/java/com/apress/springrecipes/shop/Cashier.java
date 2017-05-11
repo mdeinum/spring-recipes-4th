@@ -1,9 +1,13 @@
 package com.apress.springrecipes.shop;
 
-import org.springframework.beans.factory.BeanNameAware;
-
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.Date;
+
+import org.springframework.beans.factory.BeanNameAware;
 
 public class Cashier implements BeanNameAware {
 

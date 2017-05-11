@@ -1,10 +1,10 @@
 package com.apress.springrecipes.springintegration;
 
+import java.util.Map;
+
 import org.springframework.integration.annotation.Transformer;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.Message;
-
-import java.util.Map;
 
 public class InboundJMSMessageToCustomerTransformer {
 

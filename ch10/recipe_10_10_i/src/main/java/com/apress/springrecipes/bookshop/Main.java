@@ -1,11 +1,12 @@
 package com.apress.springrecipes.bookshop;
 
-import com.apress.springrecipes.bookshop.config.BookstoreConfiguration;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.Arrays;
-import java.util.List;
+import com.apress.springrecipes.bookshop.config.BookstoreConfiguration;
 
 /**
  *

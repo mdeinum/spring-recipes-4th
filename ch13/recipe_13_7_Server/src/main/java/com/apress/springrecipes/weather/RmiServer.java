@@ -1,7 +1,8 @@
 package com.apress.springrecipes.weather;
 
-import com.apress.springrecipes.weather.config.WeatherConfigServer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.apress.springrecipes.weather.config.WeatherConfigServer;
 
 public class RmiServer {
 

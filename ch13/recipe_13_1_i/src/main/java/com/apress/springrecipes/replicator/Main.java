@@ -1,16 +1,24 @@
 package com.apress.springrecipes.replicator;
 
-import com.apress.springrecipes.replicator.config.FileReplicatorConfig;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import java.io.IOException;
+import java.lang.management.ManagementFactory;
 
 import javax.management.Descriptor;
 import javax.management.JMException;
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
-import javax.management.modelmbean.*;
-import java.io.IOException;
-import java.lang.management.ManagementFactory;
+import javax.management.modelmbean.DescriptorSupport;
+import javax.management.modelmbean.InvalidTargetObjectTypeException;
+import javax.management.modelmbean.ModelMBeanAttributeInfo;
+import javax.management.modelmbean.ModelMBeanInfo;
+import javax.management.modelmbean.ModelMBeanInfoSupport;
+import javax.management.modelmbean.ModelMBeanOperationInfo;
+import javax.management.modelmbean.RequiredModelMBean;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.apress.springrecipes.replicator.config.FileReplicatorConfig;
 
 public class Main {
 

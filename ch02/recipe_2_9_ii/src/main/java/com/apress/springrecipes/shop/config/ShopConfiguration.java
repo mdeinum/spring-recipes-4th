@@ -1,8 +1,14 @@
 package com.apress.springrecipes.shop.config;
 
-import com.apress.springrecipes.shop.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.apress.springrecipes.shop.AuditCheckBeanPostProcessor;
+import com.apress.springrecipes.shop.Battery;
+import com.apress.springrecipes.shop.Cashier;
+import com.apress.springrecipes.shop.Disc;
+import com.apress.springrecipes.shop.Product;
+import com.apress.springrecipes.shop.ProductCheckBeanPostProcessor;
 
 @Configuration
 public class ShopConfiguration {

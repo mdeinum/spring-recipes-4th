@@ -1,14 +1,15 @@
 package com.apress.springrecipes.weather.config;
 
-import com.apress.springrecipes.weather.WeatherService;
-import com.apress.springrecipes.weather.WeatherServiceClient;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import com.apress.springrecipes.weather.WeatherService;
+import com.apress.springrecipes.weather.WeatherServiceClient;
 
 @Configuration
 public class WeatherConfigJaxWsClient {

@@ -1,13 +1,14 @@
 package com.apress.springrecipes.weather.config;
 
-import com.apress.springrecipes.weather.WeatherService;
-import com.apress.springrecipes.weather.WeatherServiceClient;
-import com.apress.springrecipes.weather.WeatherServiceProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.oxm.castor.CastorMarshaller;
 import org.springframework.ws.client.core.WebServiceTemplate;
+
+import com.apress.springrecipes.weather.WeatherService;
+import com.apress.springrecipes.weather.WeatherServiceClient;
+import com.apress.springrecipes.weather.WeatherServiceProxy;
 
 @Configuration
 public class SpringWsClientConfiguration {

@@ -1,13 +1,14 @@
 package com.apress.springrecipes.course.jpa;
 
-import com.apress.springrecipes.course.Course;
-import com.apress.springrecipes.course.CourseDao;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
-import java.util.List;
+
+import com.apress.springrecipes.course.Course;
+import com.apress.springrecipes.course.CourseDao;
 
 /**
  * Created by marten on 24-03-14.

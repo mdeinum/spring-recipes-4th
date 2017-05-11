@@ -1,12 +1,11 @@
 package com.apress.springrecipes.springintegration;
 
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jms.core.JmsTemplate;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.jms.core.JmsTemplate;
 
 
 public class ClientMain {

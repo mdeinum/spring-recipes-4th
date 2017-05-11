@@ -1,7 +1,7 @@
 package com.apress.springrecipes.bookshop.config;
 
-import com.apress.springrecipes.bookshop.BookShop;
-import com.apress.springrecipes.bookshop.JdbcBookShop;
+import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -10,7 +10,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.support.TransactionTemplate;
 
-import javax.sql.DataSource;
+import com.apress.springrecipes.bookshop.BookShop;
+import com.apress.springrecipes.bookshop.JdbcBookShop;
 
 @Configuration
 @EnableTransactionManagement

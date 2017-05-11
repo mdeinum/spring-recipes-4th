@@ -1,12 +1,12 @@
 package com.apress.springrecipes.court.service;
 
-import com.apress.springrecipes.court.domain.Player;
-import com.apress.springrecipes.court.domain.Reservation;
-import com.apress.springrecipes.court.domain.SportType;
-
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
+
+import com.apress.springrecipes.court.domain.Player;
+import com.apress.springrecipes.court.domain.Reservation;
+import com.apress.springrecipes.court.domain.SportType;
 
 
 public class ReservationServiceImpl implements ReservationService {

@@ -1,12 +1,13 @@
 package com.apress.springrecipes.nosql.config;
 
-import com.apress.springrecipes.nosql.MongoDBVehicleRepository;
-import com.apress.springrecipes.nosql.VehicleRepository;
-import com.mongodb.MongoClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoClientFactoryBean;
 import org.springframework.data.mongodb.core.MongoTemplate;
+
+import com.apress.springrecipes.nosql.MongoDBVehicleRepository;
+import com.apress.springrecipes.nosql.VehicleRepository;
+import com.mongodb.MongoClient;
 
 @Configuration
 public class MongoConfiguration {

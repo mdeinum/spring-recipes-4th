@@ -1,14 +1,15 @@
 //FINAL 
 package com.apress.springrecipes.court.web;
 
-import com.apress.springrecipes.court.feeds.TournamentContent;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import com.apress.springrecipes.court.feeds.TournamentContent;
 
 
 @Controller

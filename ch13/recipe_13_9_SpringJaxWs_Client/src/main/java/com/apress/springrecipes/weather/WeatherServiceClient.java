@@ -1,10 +1,10 @@
 package com.apress.springrecipes.weather;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 public class WeatherServiceClient {

@@ -1,8 +1,9 @@
 package com.apress.springrecipes.weather;
 
-import com.apress.springrecipes.weather.config.WeatherConfigHessianClient;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.apress.springrecipes.weather.config.WeatherConfigHessianClient;
 
 public class HessianClient {
 

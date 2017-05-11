@@ -5,7 +5,6 @@ import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.MapMessage;
- 
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 

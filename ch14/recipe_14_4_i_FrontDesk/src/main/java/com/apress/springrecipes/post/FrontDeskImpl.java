@@ -1,10 +1,10 @@
 package com.apress.springrecipes.post;
 
-import org.springframework.jms.core.support.JmsGatewaySupport;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import org.springframework.jms.core.support.JmsGatewaySupport;
+import org.springframework.transaction.annotation.Transactional;
 
 public class FrontDeskImpl extends JmsGatewaySupport implements FrontDesk {
 

@@ -1,11 +1,12 @@
 package com.apress.springrecipes.shop;
 
-import com.apress.springrecipes.shop.config.ShopConfiguration;
+import java.util.Date;
+import java.util.Locale;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.Date;
-import java.util.Locale;
+import com.apress.springrecipes.shop.config.ShopConfiguration;
 
 public class Main {
 

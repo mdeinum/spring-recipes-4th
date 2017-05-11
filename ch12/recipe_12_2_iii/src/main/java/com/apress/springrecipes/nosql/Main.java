@@ -1,6 +1,7 @@
 package com.apress.springrecipes.nosql;
 
 import org.springframework.util.SerializationUtils;
+
 import redis.clients.jedis.Jedis;
 
 public class Main {

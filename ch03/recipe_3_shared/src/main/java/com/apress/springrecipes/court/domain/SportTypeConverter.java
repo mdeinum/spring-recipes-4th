@@ -1,8 +1,9 @@
 package com.apress.springrecipes.court.domain;
 
-import com.apress.springrecipes.court.service.ReservationService;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
+
+import com.apress.springrecipes.court.service.ReservationService;
 
 @Component
 public class SportTypeConverter implements Converter<String, SportType> {

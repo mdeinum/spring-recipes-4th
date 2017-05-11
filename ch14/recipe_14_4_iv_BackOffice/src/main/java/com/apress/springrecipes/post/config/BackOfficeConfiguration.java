@@ -1,7 +1,7 @@
 package com.apress.springrecipes.post.config;
 
-import com.apress.springrecipes.post.MailListener;
-import com.apress.springrecipes.post.MailMessageConverter;
+import javax.jms.ConnectionFactory;
+
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,8 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.connection.CachingConnectionFactory;
 
-import javax.jms.ConnectionFactory;
+import com.apress.springrecipes.post.MailListener;
+import com.apress.springrecipes.post.MailMessageConverter;
 
 @Configuration
 @EnableJms

@@ -1,9 +1,9 @@
 package com.apress.springrecipes.sequence;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class SequenceGenerator {
     @Autowired

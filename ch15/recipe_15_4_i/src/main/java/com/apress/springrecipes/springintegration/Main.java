@@ -1,9 +1,9 @@
 package com.apress.springrecipes.springintegration;
 
+import java.io.IOException;
+
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.io.IOException;
 
 
 public class Main {

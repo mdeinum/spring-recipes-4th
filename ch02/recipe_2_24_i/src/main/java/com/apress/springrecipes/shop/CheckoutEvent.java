@@ -1,8 +1,8 @@
 package com.apress.springrecipes.shop;
 
-import org.springframework.context.ApplicationEvent;
-
 import java.util.Date;
+
+import org.springframework.context.ApplicationEvent;
 
 public class CheckoutEvent extends ApplicationEvent {
 

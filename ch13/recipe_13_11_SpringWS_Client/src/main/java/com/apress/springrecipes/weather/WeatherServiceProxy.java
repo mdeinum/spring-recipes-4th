@@ -1,18 +1,18 @@
 package com.apress.springrecipes.weather;
 
-import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Element;
-import org.dom4j.io.DocumentResult;
-import org.dom4j.io.DocumentSource;
-import org.springframework.ws.client.core.WebServiceTemplate;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
+import org.dom4j.io.DocumentResult;
+import org.dom4j.io.DocumentSource;
+import org.springframework.ws.client.core.WebServiceTemplate;
 
 
 public class WeatherServiceProxy implements WeatherService {

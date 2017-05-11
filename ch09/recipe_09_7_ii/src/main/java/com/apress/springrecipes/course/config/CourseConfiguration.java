@@ -1,9 +1,9 @@
 package com.apress.springrecipes.course.config;
 
-import com.apress.springrecipes.course.Course;
-import com.apress.springrecipes.course.CourseDao;
-import com.apress.springrecipes.course.hibernate.HibernateCourseDao;
-import com.zaxxer.hikari.HikariDataSource;
+import java.util.Properties;
+
+import javax.sql.DataSource;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.dialect.PostgreSQL95Dialect;
@@ -11,8 +11,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
-import javax.sql.DataSource;
-import java.util.Properties;
+import com.apress.springrecipes.course.Course;
+import com.apress.springrecipes.course.CourseDao;
+import com.apress.springrecipes.course.hibernate.HibernateCourseDao;
+import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 public class CourseConfiguration {

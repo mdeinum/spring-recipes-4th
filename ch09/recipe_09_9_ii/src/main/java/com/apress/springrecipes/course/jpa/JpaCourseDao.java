@@ -1,14 +1,16 @@
 package com.apress.springrecipes.course.jpa;
 
-import com.apress.springrecipes.course.Course;
-import com.apress.springrecipes.course.CourseDao;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import java.util.List;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.apress.springrecipes.course.Course;
+import com.apress.springrecipes.course.CourseDao;
 
 @Repository("courseDao")
 public class JpaCourseDao implements CourseDao {

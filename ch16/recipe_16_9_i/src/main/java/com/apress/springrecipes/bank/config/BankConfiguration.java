@@ -1,16 +1,21 @@
 package com.apress.springrecipes.bank.config;
 
-import com.apress.springrecipes.bank.AccountDao;
-import com.apress.springrecipes.bank.InMemoryAccountDao;
-import com.apress.springrecipes.bank.JdbcAccountDao;
-import org.springframework.context.annotation.*;
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import javax.sql.DataSource;
+import com.apress.springrecipes.bank.AccountDao;
+import com.apress.springrecipes.bank.InMemoryAccountDao;
+import com.apress.springrecipes.bank.JdbcAccountDao;
 
 @Configuration
 @ComponentScan(value = "com.apress.springrecipes.bank", excludeFilters = {@ComponentScan.Filter(Configuration.class)})

@@ -1,8 +1,9 @@
 package com.apress.springrecipes.shop;
 
-import com.apress.springrecipes.shop.config.ShopConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.apress.springrecipes.shop.config.ShopConfiguration;
 
 public class Main {
 

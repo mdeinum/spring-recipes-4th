@@ -1,13 +1,13 @@
 package com.apress.springrecipes.post;
 
+import java.util.Locale;
+import java.util.Random;
+
 import org.springframework.kafka.core.KafkaOperations;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
-
-import java.util.Locale;
-import java.util.Random;
 
 public class FrontDeskImpl implements FrontDesk {
 
