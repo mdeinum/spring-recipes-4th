@@ -22,11 +22,13 @@ public class Main {
         sw.stop();
 
         sw.start("Create New Customer");
-        customer = customerRepository.create("Marten Deinum");
-        System.out.println("Create new Customer (result) : " + customer);
+        try {
+            customer = customerRepository.create("Marten Deinum");
+            System.out.println("Create new Customer (result) : " + customer);
+        } catch (RuntimeException re) {}
         sw.stop();
 
-        long customerId = customer.getId();
+        long customerId = 1;
 
         sw.start("Get 'New Customer 1'");
         customer = customerRepository.find(customerId);

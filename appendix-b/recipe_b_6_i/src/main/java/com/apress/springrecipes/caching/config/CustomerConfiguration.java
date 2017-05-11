@@ -26,6 +26,7 @@ public class CustomerConfiguration {
     public CacheManager cacheManager() {
         EhCacheCacheManager cacheManager = new EhCacheCacheManager();
         cacheManager.setCacheManager(ehCacheManagerFactoryBean().getObject());
+        cacheManager.setTransactionAware(true);
         return cacheManager;
     }
 

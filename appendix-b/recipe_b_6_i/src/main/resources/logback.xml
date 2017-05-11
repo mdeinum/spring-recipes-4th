@@ -10,7 +10,7 @@
     </appender>
 
     <logger name="com.apress" level="DEBUG" />
-    <logger name="org.springframework.cache" level="DEBUG" />
+    <logger name="org.springframework.cache" level="TRACE" />
 
     <root level="INFO">
         <appender-ref ref="CONSOLE" />
