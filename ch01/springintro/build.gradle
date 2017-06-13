@@ -10,16 +10,14 @@ defaultTasks 'clean', 'build', 'shadowJar'
 mainClassName = 'com.apress.springrecipes.hello.Main'
 
 repositories {
-    maven {
-        maven { url 'https://repo.spring.io/libs-milestone' }
-        maven { url 'https://repo.spring.io/release' }
-    }
+      maven { url 'https://repo.spring.io/libs-milestone' }
+      maven { url 'https://repo.spring.io/release' }
 }
 
 // Define dependencies
 dependencies {
-    compile group: 'org.springframework', name: 'spring-core'
-    compile group: 'org.springframework', name: 'spring-expression'
-    compile group: 'org.springframework', name: 'spring-beans'
-    compile group: 'org.springframework', name: 'spring-context'
+    compile group: 'org.springframework', name: 'spring-core', version: '5.0.0.RC1'
+    compile group: 'org.springframework', name: 'spring-expression', version: '5.0.0.RC1'
+    compile group: 'org.springframework', name: 'spring-beans', version: '5.0.0.RC1'
+    compile group: 'org.springframework', name: 'spring-context', version: '5.0.0.RC1'
 }
