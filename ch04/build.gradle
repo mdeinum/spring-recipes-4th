@@ -117,12 +117,3 @@ project(':ch04:recipe_4_4_i') {
         compile group: 'com.rometools', name: 'rome'
     }
 } // End springweb
-
-// Define springweb project
-project(':ch04:recipe_4_5_i') {
-    // Define additional dependencies
-    dependencies {
-        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
-        compile group: 'org.springframework.hateoas', name: 'spring-hateoas'
-    }
-} // End springweb
