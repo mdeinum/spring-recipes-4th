@@ -1,23 +1,23 @@
 package com.apress.springrecipes.nosql;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
 
 import javax.annotation.PreDestroy;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
-import com.mongodb.Mongo;
+import static com.mongodb.client.model.Filters.eq;
 
 public class MongoDBVehicleRepository implements VehicleRepository {
 
-    private final Mongo mongo;
+    private final MongoClient mongo;
     private final String collectionName;
     private final String databaseName;
 
-    public MongoDBVehicleRepository(Mongo mongo, String databaseName, String collectionName) {
+    public MongoDBVehicleRepository(MongoClient mongo, String databaseName, String collectionName) {
         this.mongo = mongo;
         this.databaseName = databaseName;
         this.collectionName = collectionName;
@@ -30,40 +30,29 @@ public class MongoDBVehicleRepository implements VehicleRepository {
 
     @Override
     public void save(Vehicle vehicle) {
-        BasicDBObject query = new BasicDBObject("vehicleNo", vehicle.getVehicleNo());
-        DBObject dbVehicle = transform(vehicle);
-
-        DBObject fromDB = getCollection().findAndModify(query, dbVehicle);
-        if (fromDB == null) {
-            getCollection().insert(dbVehicle);
-        }
+        Document dbVehicle = transform(vehicle);
+        getCollection().insertOne(dbVehicle);
     }
 
     @Override
     public void delete(Vehicle vehicle) {
-        BasicDBObject query = new BasicDBObject("vehicleNo", vehicle.getVehicleNo());
-        getCollection().remove(query);
+        getCollection().deleteOne(eq("vehicleNo", vehicle.getVehicleNo()));
     }
 
     @Override
     public List<Vehicle> findAll() {
-        DBCursor cursor = getCollection().find(null);
-        List<Vehicle> vehicles = new ArrayList<>(cursor.size());
-        for (DBObject dbObject : cursor) {
-            vehicles.add(transform(dbObject));
-        }
-        return vehicles;
+        return StreamSupport.stream(getCollection().find().spliterator(), false)
+                .map(this::transform)
+                .collect(Collectors.toList());
     }
 
     @Override
     public Vehicle findByVehicleNo(String vehicleNo) {
-        BasicDBObject query = new BasicDBObject("vehicleNo", vehicleNo);
-        DBObject dbVehicle = getCollection().findOne(query);
-        return transform(dbVehicle);
+        return transform(getCollection().find(eq("vehicleNo", vehicleNo)).first());
     }
 
-    private DBCollection getCollection() {
-        return mongo.getDB(databaseName).getCollection(collectionName);
+    private MongoCollection<Document> getCollection() {
+        return mongo.getDatabase(databaseName).getCollection(collectionName);
     }
 
     /**
@@ -73,12 +62,15 @@ public class MongoDBVehicleRepository implements VehicleRepository {
      * @return newly constructed Vehicle instance
      */
 
-    private Vehicle transform(DBObject dbVehicle) {
+    private Vehicle transform(Document dbVehicle) {
+        if (dbVehicle == null) {
+            return null;
+        }
         return new Vehicle(
-                (String) dbVehicle.get("vehicleNo"),
-                (String) dbVehicle.get("color"),
-                (int) dbVehicle.get("wheel"),
-                (int) dbVehicle.get("seat"));
+                dbVehicle.getString("vehicleNo"),
+                dbVehicle.getString("color"),
+                dbVehicle.getInteger("wheel"),
+                dbVehicle.getInteger("seat"));
     }
 
     /**
@@ -87,12 +79,11 @@ public class MongoDBVehicleRepository implements VehicleRepository {
      * @param vehicle the vehicle
      * @return DBObject based on the Vehicle properties
      */
-    private DBObject transform(Vehicle vehicle) {
-        BasicDBObject dbVehicle = new BasicDBObject("vehicleNo", vehicle.getVehicleNo())
+    private Document transform(Vehicle vehicle) {
+        return new Document("vehicleNo", vehicle.getVehicleNo())
                 .append("color", vehicle.getColor())
                 .append("wheel", vehicle.getWheel())
                 .append("seat", vehicle.getSeat());
-        return dbVehicle;
     }
 
     @PreDestroy

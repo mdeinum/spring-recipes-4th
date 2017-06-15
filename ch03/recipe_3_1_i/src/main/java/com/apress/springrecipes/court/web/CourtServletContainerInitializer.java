@@ -1,16 +1,14 @@
 package com.apress.springrecipes.court.web;
 
-import java.util.Set;
+import com.apress.springrecipes.court.config.CourtConfiguration;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.ServletContainerInitializer;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
-
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.servlet.DispatcherServlet;
-
-import com.apress.springrecipes.court.config.CourtConfiguration;
+import java.util.Set;
 
 /**
  * {@link ServletContainerInitializer} implementation to bootstrap the {@link DispatcherServlet}.

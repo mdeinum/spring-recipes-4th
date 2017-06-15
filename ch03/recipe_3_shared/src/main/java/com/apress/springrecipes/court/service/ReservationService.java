@@ -1,11 +1,11 @@
 package com.apress.springrecipes.court.service;
 
-import java.time.LocalDate;
-import java.util.List;
-
 import com.apress.springrecipes.court.domain.PeriodicReservation;
 import com.apress.springrecipes.court.domain.Reservation;
 import com.apress.springrecipes.court.domain.SportType;
+
+import java.time.LocalDate;
+import java.util.List;
 
 public interface ReservationService {
 

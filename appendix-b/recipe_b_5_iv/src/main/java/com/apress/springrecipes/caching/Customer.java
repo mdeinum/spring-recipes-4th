@@ -7,9 +7,6 @@ public class Customer implements Serializable {
     private final long id;
     private String name;
 
-    Customer() {
-    }
-
     public Customer(long id) {
         this.id = id;
     }

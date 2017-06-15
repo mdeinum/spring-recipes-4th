@@ -1,8 +1,6 @@
 package com.apress.springrecipes.post.config;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import com.apress.springrecipes.post.MailListener;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -15,18 +13,16 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 
-import com.apress.springrecipes.post.MailListener;
+import java.util.HashMap;
+import java.util.Map;
 
-/**
- * Created by marten on 02-06-14.
- */
 @Configuration
 @EnableKafka
 public class BackOfficeConfiguration {
 
     @Bean
     KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<Integer, String>> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory factory = new ConcurrentKafkaListenerContainerFactory();
+        ConcurrentKafkaListenerContainerFactory<Integer, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
         return factory;
     }

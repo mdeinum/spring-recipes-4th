@@ -1,31 +1,23 @@
 package com.apress.springrecipes.court.web;
 
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
-
+import com.apress.springrecipes.court.domain.PeriodicReservation;
+import com.apress.springrecipes.court.domain.PeriodicReservationValidator;
+import com.apress.springrecipes.court.domain.Player;
+import com.apress.springrecipes.court.service.ReservationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.util.WebUtils;
 
-import com.apress.springrecipes.court.domain.PeriodicReservation;
-import com.apress.springrecipes.court.domain.PeriodicReservationValidator;
-import com.apress.springrecipes.court.domain.Player;
-import com.apress.springrecipes.court.service.ReservationService;
+import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Controller

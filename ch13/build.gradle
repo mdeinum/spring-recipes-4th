@@ -340,7 +340,6 @@ project(':ch13:recipe_13_9_CXF_Client') {
         compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-bindings-soap', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-simple', version: "$apacheCxfVersion"
-        compile group: 'org.apache.cxf', name: 'cxf-common-utilities', version: "$apacheCxfVersion"
         compile group: 'org.apache.cxf', name: 'cxf-rt-databinding-jaxb', version: "$apacheCxfVersion"
         compile group: 'org.apache.ws.xmlschema', name: 'xmlschema-core'
         compile group: 'org.codehaus.woodstox', name: 'woodstox-core-lgpl', version: '4.2.0'

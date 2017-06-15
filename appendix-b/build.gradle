@@ -43,11 +43,3 @@ project(':appendix-b:recipe_b_7_i') {
         compile group: 'org.springframework.data', name: 'spring-data-redis'
     }
 } // End
-
-project(':appendix-b:recipe_b_7_ii') {
-    // Define additional dependencies
-    dependencies {
-        compile group: 'redis.clients', name: 'jedis'
-        compile group: 'org.springframework.data', name: 'spring-data-redis'
-    }
-} // End

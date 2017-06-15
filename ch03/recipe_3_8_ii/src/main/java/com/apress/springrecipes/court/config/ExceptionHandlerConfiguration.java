@@ -1,21 +1,17 @@
 package com.apress.springrecipes.court.config;
 
-import java.util.List;
-import java.util.Properties;
-
+import com.apress.springrecipes.court.service.ReservationNotAvailableException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerExceptionResolver;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
-import com.apress.springrecipes.court.service.ReservationNotAvailableException;
+import java.util.List;
+import java.util.Properties;
 
-/**
- * Created by marten on 28-02-17.
- */
 @Configuration
-public class ExceptionHandlerConfiguration extends WebMvcConfigurerAdapter {
+public class ExceptionHandlerConfiguration implements WebMvcConfigurer {
 
     @Override
     public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {

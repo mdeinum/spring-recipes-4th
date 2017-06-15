@@ -13,11 +13,11 @@ public class Main {
         vehicleRepository.save(new Vehicle("TEM0001", "GREEN", 3, 1));
         vehicleRepository.save(new Vehicle("TEM0004", "RED", 4, 2));
 
-        vehicleRepository.findOne("TEM0001").ifPresent(System.out::println);
-        vehicleRepository.findOne("TEM0004").ifPresent(System.out::println);
+        vehicleRepository.findById("TEM0001").ifPresent(System.out::println);
+        vehicleRepository.findById("TEM0004").ifPresent(System.out::println);
 
-        vehicleRepository.delete("TEM0001");
-        vehicleRepository.delete("TEM0004");
+        vehicleRepository.deleteById("TEM0001");
+        vehicleRepository.deleteById("TEM0004");
     }
 
 

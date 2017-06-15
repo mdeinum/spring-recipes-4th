@@ -1,7 +1,7 @@
 import static groovy.io.FileType.DIRECTORIES
 import static groovy.io.FileVisitResult.SKIP_SUBTREE
 
-def includeDirs = ~/^(?i)(ch|recipe|appendix-|court).*$/
+def includeDirs = ~/^(?i)(ch|recipe|appendix).*$/
 def preDir = {
 
     if (!includeDirs.matcher(it.name).matches() || it.name.contains('ch01')) {

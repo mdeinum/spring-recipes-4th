@@ -1,16 +1,15 @@
 package com.apress.springrecipes.court.domain;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.springframework.format.annotation.DateTimeFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class Reservation {
 

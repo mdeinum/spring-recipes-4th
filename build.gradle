@@ -6,12 +6,12 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE'
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.14.0'
     }
 }
 
-description='Spring Recipes 4th Edition - Sources'
+description='Spring 5 Recipes - Sources'
 
 allprojects {
     group = 'com.apress.springrecipes'
@@ -34,11 +34,13 @@ subprojects { subproject ->
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.ben-manes.versions'
 
-    ext['spring.version'] = '5.0.0.RC1'
-    ext['spring-hateoas.version'] = '0.24.0.BUILD-SNAPSHOT'
+    ext['spring.version'] = '5.0.0.RC2'
+    ext['spring-security.version'] = '5.0.0.M1'
+    ext['spring-integration.version'] = '5.0.0.M4'
+    ext['spring-data-releasetrain.version'] = 'Kay-M4'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
     ext['apacheCxfVersion'] = '3.1.11'
-    ext['neo4jVersion'] = '3.13'
+    ext['neo4jVersion'] = '3.1.5'
     ext['springCFVersion'] = '1.2.4.RELEASE'
 
 	compileJava.options*.compilerArgs = [

@@ -1,11 +1,11 @@
 // FINAL 
 package com.apress.springrecipes.court.web;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class MeasurementInterceptor implements HandlerInterceptor {
 

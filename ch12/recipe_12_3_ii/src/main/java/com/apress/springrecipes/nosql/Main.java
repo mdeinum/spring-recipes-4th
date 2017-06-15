@@ -1,18 +1,15 @@
 package com.apress.springrecipes.nosql;
 
-import static com.apress.springrecipes.nosql.Main.RelationshipTypes.FRIENDS_WITH;
-import static com.apress.springrecipes.nosql.Main.RelationshipTypes.LOCATION;
-import static com.apress.springrecipes.nosql.Main.RelationshipTypes.MASTER_OF;
-import static com.apress.springrecipes.nosql.Main.RelationshipTypes.SIBLING;
-
-import java.nio.file.Paths;
-
 import org.neo4j.graphdb.*;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
+import java.nio.file.Paths;
+
+import static com.apress.springrecipes.nosql.Main.RelationshipTypes.*;
+
 public class Main {
 
-    enum RelationshipTypes implements RelationshipType {FRIENDS_WITH, MASTER_OF, SIBLING, LOCATION}
+    public enum RelationshipTypes implements RelationshipType {FRIENDS_WITH, MASTER_OF, SIBLING, LOCATION}
 
     public static void main(String[] args) {
         final String DB_PATH = System.getProperty("user.home") + "/friends";

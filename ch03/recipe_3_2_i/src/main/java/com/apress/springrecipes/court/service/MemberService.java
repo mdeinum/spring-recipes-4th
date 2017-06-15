@@ -1,8 +1,8 @@
 package com.apress.springrecipes.court.service;
 
-import java.util.List;
-
 import com.apress.springrecipes.court.domain.Member;
+
+import java.util.List;
 
 public interface MemberService {
 
