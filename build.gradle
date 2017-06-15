@@ -19,6 +19,7 @@ allprojects {
 
     // Define repositorie to get dependencies
     repositories {
+        mavenLocal()
         mavenCentral()
         // Public Spring artifacts
         maven { url "https://repo.spring.io/release" }
