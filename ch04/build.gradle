@@ -64,7 +64,6 @@ project(':ch04:recipe_4_2_iii') {
 
 // Define springweb project
 project(':ch04:recipe_4_2_iv') { project ->
-    println "Configuring $project"
     // Define additional dependencies
     dependencies {
         compile group: 'com.google.code.gson', name: 'gson'
