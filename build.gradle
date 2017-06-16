@@ -36,7 +36,7 @@ subprojects { subproject ->
     apply plugin: 'com.github.ben-manes.versions'
 
     ext['spring.version'] = '5.0.0.RC2'
-    ext['spring-security.version'] = '5.0.0.M1'
+    ext['spring-security.version'] = '5.0.0.M2'
     ext['spring-integration.version'] = '5.0.0.M4'
     ext['spring-data-releasetrain.version'] = 'Kay-M4'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
