@@ -19,7 +19,7 @@ public class MobileApplicationInitializer extends AbstractAnnotationConfigDispat
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] { MobileConfiguration.class };
+        return new Class<?>[] { MobileConfiguration.class };
     }
 
     @Override

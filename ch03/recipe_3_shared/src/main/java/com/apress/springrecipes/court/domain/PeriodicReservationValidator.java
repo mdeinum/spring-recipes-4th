@@ -8,7 +8,7 @@ import org.springframework.validation.Validator;
 @Component
 public class PeriodicReservationValidator implements Validator {
 
-    public boolean supports(Class clazz) {
+    public boolean supports(Class<?> clazz) {
         return PeriodicReservation.class.isAssignableFrom(clazz);
     }
 

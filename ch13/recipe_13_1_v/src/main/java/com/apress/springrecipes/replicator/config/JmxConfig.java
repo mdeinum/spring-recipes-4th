@@ -38,7 +38,7 @@ public class JmxConfig {
     @Bean
     public MBeanInfoAssembler assembler() {
         InterfaceBasedMBeanInfoAssembler assembler = new InterfaceBasedMBeanInfoAssembler();
-        assembler.setManagedInterfaces(new Class[] {FileReplicator.class});
+        assembler.setManagedInterfaces(FileReplicator.class);
         return assembler;
     }
 

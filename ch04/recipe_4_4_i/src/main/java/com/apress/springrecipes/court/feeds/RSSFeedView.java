@@ -16,19 +16,22 @@ import com.rometools.rome.feed.rss.Item;
 public class RSSFeedView extends AbstractRssFeedView {
 
     @Override
-    protected void buildFeedMetadata(Map model, Channel feed, HttpServletRequest request) {
+    protected void buildFeedMetadata(Map<String, Object> model, Channel feed, HttpServletRequest request) {
         feed.setTitle("World Soccer Tournaments");
         feed.setDescription("FIFA World Soccer Tournament Calendar");
         feed.setLink("tennis.org");
 
+        @SuppressWarnings({"unchecked"})
         List<TournamentContent> tournamentList = (List<TournamentContent>) model.get("feedContent");
+
         feed.setLastBuildDate(tournamentList.stream().map( TournamentContent::getPublicationDate).sorted().findFirst().orElse(null) );
     }
 
 
     @Override
-    protected List<Item> buildFeedItems(Map model, HttpServletRequest request, HttpServletResponse response)
+    protected List<Item> buildFeedItems(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response)
         throws Exception {
+        @SuppressWarnings({"unchecked"})
         List<TournamentContent> tournamentList = (List<TournamentContent>) model.get("feedContent");
 
         return tournamentList.stream().map(this::toItem).collect(Collectors.toList());

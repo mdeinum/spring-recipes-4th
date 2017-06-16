@@ -11,7 +11,7 @@ public class ContactWebApplicationInitializer extends AbstractAnnotationConfigDi
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] {ContactConfiguration.class, ContactWebConfiguration.class};
+        return new Class<?>[] {ContactConfiguration.class, ContactWebConfiguration.class};
     }
 
     @Override

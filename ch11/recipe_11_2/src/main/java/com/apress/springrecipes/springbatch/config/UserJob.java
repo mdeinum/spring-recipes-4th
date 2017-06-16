@@ -70,11 +70,11 @@ public class UserJob {
     }
 
     @Bean
-    ItemWriter jdbcItemWriter() {
-        JdbcBatchItemWriter itemWriter = new JdbcBatchItemWriter();
+    ItemWriter<UserRegistration> jdbcItemWriter() {
+        JdbcBatchItemWriter<UserRegistration> itemWriter = new JdbcBatchItemWriter<>();
         itemWriter.setDataSource(dataSource);
         itemWriter.setSql(INSERT_REGISTRATION_QUERY);
-        itemWriter.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider());
+        itemWriter.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
         return itemWriter;
     }
 
@@ -84,7 +84,7 @@ public class UserJob {
         tokenizer.setDelimiter(",");
         tokenizer.setNames(new String[]{"firstName","lastName","company","address","city","state","zip","county","url","phoneNumber","fax"});
 
-        BeanWrapperFieldSetMapper<UserRegistration> fieldSetMapper = new BeanWrapperFieldSetMapper();
+        BeanWrapperFieldSetMapper<UserRegistration> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
         fieldSetMapper.setTargetType(UserRegistration.class);
 
         DefaultLineMapper<UserRegistration> lineMapper = new DefaultLineMapper<>();

@@ -1,9 +1,5 @@
 package com.apress.springrecipes.springbatch;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import java.io.Serializable;
 
 public class UserRegistration implements Serializable {
@@ -38,21 +34,6 @@ public class UserRegistration implements Serializable {
         this.url = url;
         this.phoneNumber = phoneNumber;
         this.fax = fax;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return EqualsBuilder.reflectionEquals(obj, this);
     }
 
     public String getFirstName() {

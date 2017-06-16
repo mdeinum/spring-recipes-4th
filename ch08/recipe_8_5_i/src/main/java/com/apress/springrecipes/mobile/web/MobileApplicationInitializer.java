@@ -4,9 +4,6 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import com.apress.springrecipes.mobile.web.config.MobileConfiguration;
 
-/**
- * Created by marten on 23-06-14.
- */
 public class MobileApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
@@ -15,7 +12,7 @@ public class MobileApplicationInitializer extends AbstractAnnotationConfigDispat
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] { MobileConfiguration.class };
+        return new Class<?>[] { MobileConfiguration.class };
     }
 
     @Override

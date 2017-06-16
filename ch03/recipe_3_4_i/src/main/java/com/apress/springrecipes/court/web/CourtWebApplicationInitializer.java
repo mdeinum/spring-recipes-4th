@@ -15,7 +15,7 @@ public class CourtWebApplicationInitializer extends AbstractAnnotationConfigDisp
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{InterceptorConfiguration.class};
+        return new Class<?>[]{InterceptorConfiguration.class};
     }
 
     @Override

@@ -23,7 +23,7 @@ public class DateFieldHandler extends GeneralizedFieldHandler {
         }
     }
 
-    public Class getFieldType() {
+    public Class<?> getFieldType() {
         return Date.class;
     }
 }

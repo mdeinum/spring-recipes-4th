@@ -7,7 +7,7 @@ import org.springframework.jms.annotation.JmsListener;
 public class MailListener {
 
     @JmsListener(destination = "mail.queue")
-    public void displayMail(Map map) {
+    public void displayMail(Map<String, Object> map) {
         Mail mail = new Mail();
         mail.setMailId((String) map.get("mailId"));
         mail.setCountry((String) map.get("country"));

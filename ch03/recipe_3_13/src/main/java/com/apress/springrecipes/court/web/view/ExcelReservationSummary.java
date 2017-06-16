@@ -15,7 +15,9 @@ import java.util.Map;
 
 public class ExcelReservationSummary extends AbstractXlsxView {
 
+    @Override
     protected void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        @SuppressWarnings({"unchecked"})
         final List<Reservation> reservations = (List<Reservation>) model.get("reservations");
         final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         final Sheet sheet = workbook.createSheet();

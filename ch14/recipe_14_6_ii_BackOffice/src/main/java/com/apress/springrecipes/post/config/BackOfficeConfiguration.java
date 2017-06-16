@@ -5,21 +5,19 @@ import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFacto
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.listener.RabbitListenerContainerFactory;
+import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.apress.springrecipes.post.MailListener;
 
-/**
- * Created by marten on 02-06-14.
- */
 @Configuration
 @EnableRabbit
 public class BackOfficeConfiguration {
 
     @Bean
-    public RabbitListenerContainerFactory rabbitListenerContainerFactory() {
+    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory() {
         SimpleRabbitListenerContainerFactory containerFactory = new SimpleRabbitListenerContainerFactory();
         containerFactory.setConnectionFactory(connectionFactory());
         containerFactory.setMessageConverter(new Jackson2JsonMessageConverter());

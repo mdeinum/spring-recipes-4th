@@ -11,7 +11,7 @@ public class FileReplicationJob implements Job {
 
     public void execute(JobExecutionContext context)
             throws JobExecutionException {
-        Map dataMap = context.getJobDetail().getJobDataMap();
+        Map<String, Object> dataMap = context.getJobDetail().getJobDataMap();
         FileReplicator fileReplicator =
             (FileReplicator) dataMap.get("fileReplicator");
         try {

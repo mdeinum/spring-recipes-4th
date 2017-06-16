@@ -11,7 +11,7 @@ public class QuotesServiceInitializer extends AbstractAnnotationConfigDispatcher
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] { QuoteServiceConfig.class };
+        return new Class<?>[] { QuoteServiceConfig.class };
     }
 
     @Override

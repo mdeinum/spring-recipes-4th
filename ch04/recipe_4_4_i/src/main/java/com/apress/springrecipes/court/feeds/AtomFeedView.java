@@ -17,10 +17,11 @@ import com.rometools.rome.feed.atom.Feed;
 public class AtomFeedView extends AbstractAtomFeedView {
 
     @Override
-    protected void buildFeedMetadata(Map model, Feed feed, HttpServletRequest request) {
+    protected void buildFeedMetadata(Map<String, Object> model, Feed feed, HttpServletRequest request) {
         feed.setId("tag:tennis.org");
         feed.setTitle("Grand Slam Tournaments");
 
+        @SuppressWarnings({"unchecked"})
         List<TournamentContent> tournamentList = (List<TournamentContent>) model.get("feedContent");
 
         feed.setUpdated(tournamentList.stream().map(TournamentContent::getPublicationDate).sorted().findFirst().orElse(null));
@@ -28,8 +29,9 @@ public class AtomFeedView extends AbstractAtomFeedView {
     }
 
     @Override
-    protected List buildFeedEntries(Map model, HttpServletRequest request, HttpServletResponse response)
+    protected List<Entry> buildFeedEntries(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response)
         throws Exception {
+        @SuppressWarnings({"unchecked"})
         List<TournamentContent> tournamentList = (List<TournamentContent>) model.get("feedContent");
         return tournamentList.stream().map(this::toEntry).collect(Collectors.toList());
     }
