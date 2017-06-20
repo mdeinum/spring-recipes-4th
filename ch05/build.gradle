@@ -20,6 +20,7 @@ subprojects { subproject ->
     defaultTasks 'clean', 'build'
     // Define dependencies
     dependencies {
+        compile project(':ch03:recipe_3_shared')
         compile group: 'org.springframework', name: 'spring-webmvc'
         runtime group: 'javax.servlet', name: 'jstl'
 
@@ -27,16 +28,18 @@ subprojects { subproject ->
             compile group: 'org.springframework', name: 'spring-webflux'
         }
         compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'javax.validation', name: 'validation-api'
+        compile group: 'org.hibernate', name: 'hibernate-validator'
 
         providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
     }
 
-    war { archiveName = 'quotes.war' }
+    war { archiveName = 'court.war' }
 
     task buildDocker(type: Docker, dependsOn: build) {
         push = false
         applicationName = war.archiveName
-        tag = 'sr4/quotes-web'
+        tag = 'sr4/court-async'
         tagVersion = 'latest'
         dockerfile = file('../Dockerfile')
         doFirst {
