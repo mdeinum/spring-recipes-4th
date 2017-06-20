@@ -50,6 +50,9 @@ public class UserJob {
     public Step step1() {
         return steps.get("User Registration CSV To DB Step")
                 .<UserRegistration,UserRegistration>chunk(5)
+                .faultTolerant()
+//                        .noRollback(com.yourdomain.exceptions.YourBusinessException.class)
+//                .retry()
                 .reader(csvFileReader())
                 .writer(jdbcItemWriter())
                 .build();

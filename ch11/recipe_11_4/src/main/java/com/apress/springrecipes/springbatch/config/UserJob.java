@@ -1,6 +1,7 @@
 package com.apress.springrecipes.springbatch.config;
 
 import com.apress.springrecipes.springbatch.UserRegistration;
+import com.apress.springrecipes.springbatch.UserRegistrationValidationItemProcessor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -51,8 +52,14 @@ public class UserJob {
         return steps.get("User Registration CSV To DB Step")
                 .<UserRegistration,UserRegistration>chunk(5)
                 .reader(csvFileReader())
+                .processor(userRegistrationValidationItemProcessor())
                 .writer(jdbcItemWriter())
                 .build();
+    }
+
+    @Bean
+    public UserRegistrationValidationItemProcessor userRegistrationValidationItemProcessor() {
+        return new UserRegistrationValidationItemProcessor();
     }
 
     @Bean

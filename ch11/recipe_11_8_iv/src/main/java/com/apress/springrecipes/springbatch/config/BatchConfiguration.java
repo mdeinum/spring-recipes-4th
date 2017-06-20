@@ -52,6 +52,7 @@ public class BatchConfiguration {
         return initializer;
     }
 
+    @Bean
     public ThreadPoolTaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
         taskExecutor.setThreadGroupName("batch-executor");
@@ -59,6 +60,7 @@ public class BatchConfiguration {
         return taskExecutor;
     }
 
+    @Bean
     public ThreadPoolTaskScheduler taskScheduler() {
         ThreadPoolTaskScheduler taskScheduler = new ThreadPoolTaskScheduler();
         taskScheduler.setThreadGroupName("batch-scheduler");

@@ -1,10 +1,12 @@
 package com.apress.springrecipes.springbatch;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.apress.springrecipes.springbatch.config.BatchConfiguration;
+import com.apress.springrecipes.springbatch.config.UserJob;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) throws Throwable {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("batch.xml", "user-job.xml");
 
+        new AnnotationConfigApplicationContext(BatchConfiguration.class, UserJob.class);
     }
 }

@@ -1,18 +1,18 @@
 package com.apress.springrecipes.springbatch;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.retry.RetryCallback;
 import org.springframework.retry.support.RetryTemplate;
 
+import java.util.List;
 
 /**
  * This class writes the user registration by calling an RPC service (whose client interface is wired in using Spring
  */
 public class RetryableUserRegistrationServiceItemWriter implements ItemWriter<UserRegistration> {
+
     private static final Logger logger = LoggerFactory.getLogger(RetryableUserRegistrationServiceItemWriter.class);
 
     // this is the client interface to an HTTP Invoker service.
