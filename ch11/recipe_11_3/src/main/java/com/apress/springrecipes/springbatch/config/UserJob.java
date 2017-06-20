@@ -1,6 +1,7 @@
 package com.apress.springrecipes.springbatch.config;
 
-import com.apress.springrecipes.springbatch.UserRegistration;
+import javax.sql.DataSource;
+
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -20,7 +21,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
-import javax.sql.DataSource;
+import com.apress.springrecipes.springbatch.UserRegistration;
 
 /**
  * Created by marten on 17-03-14.

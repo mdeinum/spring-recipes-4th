@@ -3,13 +3,16 @@ package com.apress.springrecipes.springbatch;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
 
+import com.apress.springrecipes.springbatch.config.BatchConfiguration;
+
 public class Main {
     public static void main(String[] args) throws Throwable {
-        ApplicationContext context = new ClassPathXmlApplicationContext("batch.xml", "user-job.xml");
+        ApplicationContext context = new AnnotationConfigApplicationContext(BatchConfiguration.class);
 
         JobLauncher jobLauncher = context.getBean("jobLauncher", JobLauncher.class);
         Job job = context.getBean("insertIntoDbFromCsvJob", Job.class);
