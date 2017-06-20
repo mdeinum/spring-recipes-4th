@@ -1,14 +1,12 @@
 package com.apress.springrecipes.springbatch;
 
+import com.apress.springrecipes.springbatch.config.BatchConfiguration;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
-
-import com.apress.springrecipes.springbatch.config.BatchConfiguration;
 
 public class Main {
     public static void main(String[] args) throws Throwable {
