@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -60,13 +60,14 @@ public class ReservationQueryController {
     }
 
     @GetMapping(params = "courtName")
-    public ResponseBodyEmitter find(@RequestParam("courtName") String courtName) {
-        final ResponseBodyEmitter emitter = new ResponseBodyEmitter();
+    public SseEmitter find(@RequestParam("courtName") String courtName) {
+        final SseEmitter emitter = new SseEmitter();
         taskExecutor.execute(() -> {
             Collection<Reservation> reservations = reservationService.query(courtName);
             try {
                 for (Reservation reservation : reservations) {
-                    emitter.send(reservation);
+                    Delayer.delay(120);
+                    emitter.send(SseEmitter.event().id(String.valueOf(reservation.hashCode())).data(reservation));
                 }
                 emitter.complete();
             } catch (IOException e) {

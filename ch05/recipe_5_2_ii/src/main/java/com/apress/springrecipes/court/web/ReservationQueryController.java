@@ -5,6 +5,8 @@ import com.apress.springrecipes.court.Delayer;
 import com.apress.springrecipes.court.domain.Reservation;
 import com.apress.springrecipes.court.service.ReservationService;
 import org.springframework.core.task.TaskExecutor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,7 +62,7 @@ public class ReservationQueryController {
     }
 
     @GetMapping(params = "courtName")
-    public ResponseBodyEmitter find(@RequestParam("courtName") String courtName) {
+    public ResponseEntity<ResponseBodyEmitter> find(@RequestParam("courtName") String courtName) {
         final ResponseBodyEmitter emitter = new ResponseBodyEmitter();
         taskExecutor.execute(() -> {
             Collection<Reservation> reservations = reservationService.query(courtName);
@@ -73,6 +75,9 @@ public class ReservationQueryController {
                 emitter.completeWithError(e);
             }
         });
-        return emitter;
+
+        return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT)
+                .header("Custom-Header", "Custom-Value")
+                .body(emitter);
     }
 }
