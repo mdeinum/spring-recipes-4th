@@ -12,6 +12,7 @@ buildscript {
 }
 
 subprojects { subproject ->
+
     // Define usage of war plugin
     apply plugin: 'war'
     apply plugin: 'docker'
@@ -19,23 +20,25 @@ subprojects { subproject ->
     // Define defaulttasks, first clean, then build, then war
     defaultTasks 'clean', 'build'
     // Define dependencies
-    dependencies {
-        compile project(':ch03:recipe_3_shared')
-        compile group: 'org.springframework', name: 'spring-webmvc'
-        runtime group: 'javax.servlet', name: 'jstl'
 
-        if (subproject.name.contains('5_2')) {
-            compile group: 'org.springframework', name: 'spring-webflux'
+    if (!subproject.name.contains('5_4') && !subproject.name.contains('5_5')) {
+        dependencies {
+            compile project(':ch03:recipe_3_shared')
+            compile group: 'org.springframework', name: 'spring-webmvc'
+            runtime group: 'javax.servlet', name: 'jstl'
+
+            if (subproject.name.contains('5_2')) {
+                compile group: 'org.springframework', name: 'spring-webflux'
+            }
+            compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+            compile group: 'javax.validation', name: 'validation-api'
+            compile group: 'org.hibernate', name: 'hibernate-validator'
+
+            providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
         }
-        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
-        compile group: 'javax.validation', name: 'validation-api'
-        compile group: 'org.hibernate', name: 'hibernate-validator'
 
-        providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+        war { archiveName = 'court.war' }
     }
-
-    war { archiveName = 'court.war' }
-
     task buildDocker(type: Docker, dependsOn: build) {
         push = false
         applicationName = war.archiveName
