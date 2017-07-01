@@ -10,7 +10,8 @@
     </appender>
 
     <logger name="com.apress" level="DEBUG"/>
-    <logger name="org.springframework.web" level="DEBUG"/>
+    <logger name="org.springframework" level="DEBUG"/>
+    <logger name="org.thymeleaf" level="DEBUG"/>
 
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>

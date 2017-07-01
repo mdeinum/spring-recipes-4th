@@ -19,13 +19,13 @@ allprojects {
 
     // Define repositorie to get dependencies
     repositories {
-        mavenLocal()
         mavenCentral()
         // Public Spring artifacts
         maven { url "https://repo.spring.io/release" }
         maven { url "https://repo.spring.io/libs-release"}
         maven { url "https://repo.spring.io/milestone" }
         maven { url "https://repo.spring.io/libs-snapshot" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
     }
 }
 
@@ -35,11 +35,12 @@ subprojects { subproject ->
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.ben-manes.versions'
 
-    ext['spring.version'] = '5.0.0.RC2'
+    ext['spring.version'] = '5.0.0.BUILD-SNAPSHOT'
     ext['spring-batch.version'] = '4.0.0.BUILD-SNAPSHOT'
     ext['spring-security.version'] = '5.0.0.M2'
     ext['spring-integration.version'] = '5.0.0.M5'
     ext['spring-data-releasetrain.version'] = 'Kay-M4'
+    ext['thymeleaf.version'] = '3.0.7-SNAPSHOT'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
     ext['apacheCxfVersion'] = '3.1.11'
     ext['neo4jVersion'] = '3.1.5'

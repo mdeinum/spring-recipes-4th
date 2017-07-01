@@ -1,4 +1,4 @@
-package com.apress.springrecipes.websocket;
+package com.apress.springrecipes.reactive.court;
 
 import org.springframework.lang.Nullable;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

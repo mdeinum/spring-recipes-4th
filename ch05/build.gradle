@@ -16,7 +16,7 @@ subprojects { subproject ->
     // Define usage of war plugin
     apply plugin: 'war'
     apply plugin: 'docker'
-
+    apply plugin: 'io.spring.dependency-management'
     // Define defaulttasks, first clean, then build, then war
     defaultTasks 'clean', 'build'
     // Define dependencies
@@ -27,9 +27,6 @@ subprojects { subproject ->
             compile group: 'org.springframework', name: 'spring-webmvc'
             runtime group: 'javax.servlet', name: 'jstl'
 
-            if (subproject.name.contains('5_2')) {
-                compile group: 'org.springframework', name: 'spring-webflux'
-            }
             compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
             compile group: 'javax.validation', name: 'validation-api'
             compile group: 'org.hibernate', name: 'hibernate-validator'

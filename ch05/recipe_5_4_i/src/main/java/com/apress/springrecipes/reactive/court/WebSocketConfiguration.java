@@ -1,4 +1,4 @@
-package com.apress.springrecipes.websocket;
+package com.apress.springrecipes.reactive.court;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

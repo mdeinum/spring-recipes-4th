@@ -1,4 +1,4 @@
-package com.apress.springrecipes.websocket;
+package com.apress.springrecipes.reactive.court;
 
 /**
  * Created by marten on 28-06-17.
