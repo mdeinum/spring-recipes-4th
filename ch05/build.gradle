@@ -21,7 +21,7 @@ subprojects { subproject ->
     defaultTasks 'clean', 'build'
     // Define dependencies
 
-    if (!subproject.name.contains('5_4') && !subproject.name.contains('5_5')) {
+    if (!subproject.name.contains('5_4') && !subproject.name.contains('5_5') && !subproject.name.contains('5_6')) {
         dependencies {
             compile project(':ch03:recipe_3_shared')
             compile group: 'org.springframework', name: 'spring-webmvc'
