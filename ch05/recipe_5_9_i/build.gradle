@@ -1,0 +1,24 @@
+dependencies {
+
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+
+    compile group: 'org.springframework', name: 'spring-webflux', version: '5.0.0.BUILD-SNAPSHOT'
+
+    compile group: 'org.thymeleaf', name: 'thymeleaf-spring5', version: '3.0.7-SNAPSHOT'
+    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310'
+
+    compile group: 'javax.websocket', name: 'javax.websocket-api'
+    compile group: 'io.projectreactor.ipc', name: 'reactor-netty'
+}
+
+war { archiveName = 'court-rx.war' }
+
+buildDocker {
+    tag = 'sr4/court-rx'
+    dockerfile = file('./Dockerfile')
+}

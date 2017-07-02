@@ -14,14 +14,16 @@ buildscript {
 subprojects { subproject ->
 
     // Define usage of war plugin
-    apply plugin: 'war'
-    apply plugin: 'docker'
+    if (!subproject.name.contains('5_8')) {
+        apply plugin: 'war'
+        apply plugin: 'docker'
+    }
     apply plugin: 'io.spring.dependency-management'
     // Define defaulttasks, first clean, then build, then war
     defaultTasks 'clean', 'build'
     // Define dependencies
 
-    if (!subproject.name.contains('5_4') && !subproject.name.contains('5_5') && !subproject.name.contains('5_6')) {
+    if (subproject.name.contains('5_1') || subproject.name.contains('5_2') || subproject.name.contains('5_3')) {
         dependencies {
             compile project(':ch03:recipe_3_shared')
             compile group: 'org.springframework', name: 'spring-webmvc'
@@ -36,16 +38,20 @@ subprojects { subproject ->
 
         war { archiveName = 'court.war' }
     }
-    task buildDocker(type: Docker, dependsOn: build) {
-        push = false
-        applicationName = war.archiveName
-        tag = 'sr4/court-async'
-        tagVersion = 'latest'
-        dockerfile = file('../Dockerfile')
-        doFirst {
-            copy {
-                from war
-                into stageDir
+
+    if (!subproject.name.contains('5_8')) {
+
+        task buildDocker(type: Docker, dependsOn: build) {
+            push = false
+            applicationName = war.archiveName
+            tag = 'sr4/court-async'
+            tagVersion = 'latest'
+            dockerfile = file('../Dockerfile')
+            doFirst {
+                copy {
+                    from war
+                    into stageDir
+                }
             }
         }
     }
