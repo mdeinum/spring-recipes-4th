@@ -42,7 +42,7 @@ subprojects { subproject ->
     ext['spring-data-releasetrain.version'] = 'Kay-M4'
     ext['thymeleaf.version'] = '3.0.7-SNAPSHOT'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
-    ext['apacheCxfVersion'] = '3.1.11'
+    ext['apacheCxfVersion'] = '3.1.12'
     ext['neo4jVersion'] = '3.1.5'
     ext['springCFVersion'] = '1.2.4.RELEASE'
 
