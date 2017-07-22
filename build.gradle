@@ -39,7 +39,7 @@ subprojects { subproject ->
     ext['spring-batch.version'] = '4.0.0.BUILD-SNAPSHOT'
     ext['spring-security.version'] = '5.0.0.M2'
     ext['spring-integration.version'] = '5.0.0.M5'
-    ext['spring-data-releasetrain.version'] = 'Kay-M4'
+    ext['spring-data-releasetrain.version'] = 'Kay-BUILD-SNAPSHOT'
     ext['thymeleaf.version'] = '3.0.7-SNAPSHOT'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
     ext['apacheCxfVersion'] = '3.1.12'

@@ -235,3 +235,17 @@ project(':ch12:recipe_12_4_vii') {
         compile group: 'org.springframework.data', name: 'spring-data-couchbase'
     }
 }
+
+project(':ch12:recipe_12_4_viii') {
+
+    dependencies {
+        compile group: 'com.couchbase.client', name: 'java-client'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+        compile group: 'org.springframework.data', name: 'spring-data-couchbase'
+
+        compile group: 'io.projectreactor', name: 'reactor-core'
+        compile group: 'io.reactivex', name: 'rxjava'
+        compile group: 'io.reactivex', name: 'rxjava-reactive-streams'
+
+    }
+}
