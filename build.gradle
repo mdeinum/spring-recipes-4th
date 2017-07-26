@@ -36,7 +36,7 @@ subprojects { subproject ->
     apply plugin: 'com.github.ben-manes.versions'
 
     ext['spring.version'] = '5.0.0.RC3'
-    ext['spring-batch.version'] = '4.0.0.BUILD-SNAPSHOT'
+    ext['spring-batch.version'] = '4.0.0.M3'
     ext['spring-security.version'] = '5.0.0.M3'
     ext['spring-integration.version'] = '5.0.0.M6'
     ext['spring-data-releasetrain.version'] = 'Kay-RC2'
