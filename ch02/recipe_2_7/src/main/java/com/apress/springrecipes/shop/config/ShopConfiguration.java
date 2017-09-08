@@ -8,7 +8,7 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 public class ShopConfiguration {
 
     @Bean
-    public static ReloadableResourceBundleMessageSource messageSource() {
+    public ReloadableResourceBundleMessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
         messageSource.setBasenames("classpath:messages");
         messageSource.setCacheSeconds(1);
