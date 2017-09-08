@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk8
+    steps:
+      - checkout
+      - run:
+        name: Build  & Test
+        command: ./gradlew build
+        environment:
+          TERM: dumb
