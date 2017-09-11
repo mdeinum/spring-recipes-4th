@@ -13,7 +13,7 @@ import com.apress.springrecipes.bookshop.JdbcBookShop;
 public class BookstoreConfiguration {
 
     @Bean
-    public DataSource dataSource() {
+    public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(org.postgresql.Driver.class.getName());
         dataSource.setUrl("jdbc:postgresql://localhost:5432/bookstore");
@@ -23,9 +23,9 @@ public class BookstoreConfiguration {
     }
 
     @Bean
-    public BookShop bookShop() {
+    public BookShop bookShop(DataSource dataSource) {
         JdbcBookShop bookShop = new JdbcBookShop();
-        bookShop.setDataSource(dataSource());
+        bookShop.setDataSource(dataSource);
         return bookShop;
     }
 }

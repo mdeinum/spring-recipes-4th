@@ -9,14 +9,13 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
 
-import com.apress.springrecipes.bookshop.BookShop;
 import com.apress.springrecipes.bookshop.TransactionalJdbcBookShop;
 
 @Configuration
 public class BookstoreConfiguration {
 
     @Bean
-    public DataSource dataSource() {
+    public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(org.postgresql.Driver.class.getName());
         dataSource.setUrl("jdbc:postgresql://localhost:5432/bookstore");
@@ -26,24 +25,24 @@ public class BookstoreConfiguration {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager() {
+    public DataSourceTransactionManager transactionManager(DataSource dataSource) {
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
-        transactionManager.setDataSource(dataSource());
+        transactionManager.setDataSource(dataSource);
         return transactionManager;
     }
 
     @Bean
-    public TransactionTemplate transactionTemplate() {
+    public TransactionTemplate transactionTemplate(PlatformTransactionManager transactionManager) {
         TransactionTemplate transactionTemplate = new TransactionTemplate();
-        transactionTemplate.setTransactionManager(transactionManager());
+        transactionTemplate.setTransactionManager(transactionManager);
         return transactionTemplate;
     }
 
     @Bean
-    public BookShop bookShop() {
+    public TransactionalJdbcBookShop bookShop(DataSource dataSource, TransactionTemplate transactionTemplate) {
         TransactionalJdbcBookShop bookShop = new TransactionalJdbcBookShop();
-        bookShop.setDataSource(dataSource());
-        bookShop.setTransactionTemplate(transactionTemplate());
+        bookShop.setDataSource(dataSource);
+        bookShop.setTransactionTemplate(transactionTemplate);
         return bookShop;
     }
 }

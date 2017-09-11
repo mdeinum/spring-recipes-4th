@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.apress.springrecipes.bookshop.BookShop;
@@ -19,7 +18,7 @@ import com.apress.springrecipes.bookshop.JdbcBookShop;
 public class BookstoreConfiguration {
 
     @Bean
-    public DataSource dataSource() {
+    public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(org.postgresql.Driver.class.getName());
         dataSource.setUrl("jdbc:postgresql://localhost:5432/bookstore");
@@ -29,23 +28,23 @@ public class BookstoreConfiguration {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager() {
+    public DataSourceTransactionManager transactionManager(DataSource dataSource) {
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
-        transactionManager.setDataSource(dataSource());
+        transactionManager.setDataSource(dataSource);
         return transactionManager;
     }
 
     @Bean
-    public BookShop bookShop() {
+    public JdbcBookShop bookShop(DataSource dataSource) {
         JdbcBookShop bookShop = new JdbcBookShop();
-        bookShop.setDataSource(dataSource());
+        bookShop.setDataSource(dataSource);
         return bookShop;
     }
 
     @Bean
-    public Cashier cashier() {
+    public Cashier cashier(BookShop bookShop) {
         BookShopCashier cashier = new BookShopCashier();
-        cashier.setBookShop(bookShop());
+        cashier.setBookShop(bookShop);
         return cashier;
     }
 }

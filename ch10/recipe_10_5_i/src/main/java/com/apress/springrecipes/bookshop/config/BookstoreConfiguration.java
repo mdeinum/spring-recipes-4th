@@ -18,7 +18,7 @@ import com.apress.springrecipes.bookshop.JdbcBookShop;
 public class BookstoreConfiguration {
 
     @Bean
-    public DataSource dataSource() {
+    public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(org.postgresql.Driver.class.getName());
         dataSource.setUrl("jdbc:postgresql://localhost:5432/bookstore");
@@ -28,23 +28,23 @@ public class BookstoreConfiguration {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager() {
+    public DataSourceTransactionManager transactionManager(DataSource dataSource) {
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
-        transactionManager.setDataSource(dataSource());
+        transactionManager.setDataSource(dataSource);
         return transactionManager;
     }
 
     @Bean
-    public TransactionTemplate transactionTemplate() {
+    public TransactionTemplate transactionTemplate(PlatformTransactionManager transactionManager) {
         TransactionTemplate transactionTemplate = new TransactionTemplate();
-        transactionTemplate.setTransactionManager(transactionManager());
+        transactionTemplate.setTransactionManager(transactionManager);
         return transactionTemplate;
     }
 
     @Bean
-    public BookShop bookShop() {
+    public JdbcBookShop bookShop(DataSource dataSource) {
         JdbcBookShop bookShop = new JdbcBookShop();
-        bookShop.setDataSource(dataSource());
+        bookShop.setDataSource(dataSource);
         return bookShop;
     }
 }
