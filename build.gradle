@@ -43,7 +43,7 @@ subprojects { subproject ->
     ext['thymeleaf.version'] = '3.0.7.RELEASE'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
     ext['apacheCxfVersion'] = '3.1.12'
-    ext['neo4jVersion'] = '3.1.5'
+    ext['neo4jVersion'] = '3.1.6'
     ext['springCFVersion'] = '1.2.4.RELEASE'
 
 	compileJava.options*.compilerArgs = [
