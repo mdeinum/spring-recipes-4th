@@ -1,9 +1,9 @@
 package com.apress.springrecipes.shop;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import javax.annotation.PostConstruct;
 
@@ -19,15 +19,9 @@ public class BannerLoader {
 
     @PostConstruct
     public void showBanner() throws IOException {
-        InputStream in = banner.getInputStream();
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-        while (true) {
-            String line = reader.readLine();
-            if (line == null)
-                break;
-            System.out.println(line);
-        }
-        reader.close();
+        Files.lines(Paths.get(banner.getURI()), Charset.forName("UTF-8"))
+                .forEachOrdered(System.out::println);
+
     }
 }
