@@ -74,8 +74,8 @@ project(':appendix-a:recipe_a_3_iii') {
         compile group: 'org.springframework', name: 'spring-context-support'
         compile group: 'org.springframework', name: 'spring-webmvc'
         compile group: 'org.springframework', name: 'spring-jdbc'
-        compile group: 'org.springframework.cloud', name: 'spring-cloud-cloudfoundry-connector', version:"$springCFVersion"
-        compile group: 'org.springframework.cloud', name: 'spring-cloud-spring-service-connector', version:"$springCFVersion"
+        compile group: 'org.springframework.cloud', name: 'spring-cloud-cloudfoundry-connector'
+        compile group: 'org.springframework.cloud', name: 'spring-cloud-spring-service-connector'
 
         compile group: 'com.h2database', name: 'h2'
         compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec'
