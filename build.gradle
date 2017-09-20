@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath 'io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.14.0'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
     }
 }
 
@@ -46,6 +46,8 @@ subprojects { subproject ->
     ext['spring-kafka.version'] = '2.0.0.RC1'
     ext['spring-amqp.version'] = '2.0.0.RC1'
     ext['thymeleaf.version'] = '3.0.7.RELEASE'
+    ext['mockito.version'] = '2.10.0'
+    ext['servlet-api.version'] = '4.0.0'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
     ext['apacheCxfVersion'] = '3.1.13'
     ext['neo4jVersion'] = '3.1.6'
