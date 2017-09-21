@@ -11,7 +11,6 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.transaction.PlatformTransactionManager;
 
 import com.apress.springrecipes.bank.AccountDao;
 import com.apress.springrecipes.bank.InMemoryAccountDao;
@@ -47,7 +46,7 @@ public class BankConfiguration {
         }
 
         @Bean
-        public PlatformTransactionManager transactionManager(DataSource dataSource) {
+        public DataSourceTransactionManager transactionManager(DataSource dataSource) {
             return new DataSourceTransactionManager(dataSource);
         }
 
