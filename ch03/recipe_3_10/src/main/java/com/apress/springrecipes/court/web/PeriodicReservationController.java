@@ -127,7 +127,7 @@ public class PeriodicReservationController {
         }
     }
 
-    private void validateCurrentPage(@ModelAttribute("reservation") PeriodicReservation reservation, BindingResult result, @RequestParam("_page") int currentPage) {
+    private void validateCurrentPage(PeriodicReservation reservation, BindingResult result, int currentPage) {
         switch (currentPage) {
             case 0:
                 validator.validateCourt(reservation, result);
