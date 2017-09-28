@@ -10,13 +10,13 @@
 
 <body>
 <div class="ui container">
-    <h4>New Todo</h4>
+    <h4>New To-do</h4>
     <c:url value="/todos" var="uri"/>
     <form:form method="POST" modelAttribute="todo" action="${uri}" class="ui form">
         <fieldset>
-            <legend>Todo</legend>
+            <legend>To-do</legend>
             <div class="field">
-                <label>Todo</label>
+                <label>To-do</label>
                 <form:input path="description"/>
             </div>
             <div class="field">

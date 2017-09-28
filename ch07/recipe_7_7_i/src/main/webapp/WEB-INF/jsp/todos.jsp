@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Todo List</title>
+    <title>To-do List</title>
     <link type="text/css" rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
 </head>
@@ -11,7 +11,7 @@
 <body>
 <div class="ui container">
     <div class="ui inverted menu">
-        <a class="item" href="<c:url value="/todos"/>">Todos</a>
+        <a class="item" href="<c:url value="/todos"/>">To-dos</a>
         <div class="right menu">
             <div class="item">
                 <form action="<c:url value="/logout"/>" method="post">
@@ -21,12 +21,12 @@
             </div>
         </div>
     </div>
-    <h4>Todos for <sec:authentication property="name" /></h4>
+    <h4>To-dos for <sec:authentication property="name" /></h4>
     <table class="ui celled table">
         <thead>
         <tr>
             <th class="three wide">Owner</th>
-            <th class="five wide">Todo</th>
+            <th class="five wide">To-do</th>
             <th class="two wide">Completed</th>
             <th class="six wide">&nbsp;</th>
         </tr>
@@ -57,7 +57,7 @@
         </c:forEach>
         <tr>
             <td colspan="3">
-                <a class="ui mini icon button" href="<c:url value="/todos/new"/>">New Todo <i
+                <a class="ui mini icon button" href="<c:url value="/todos/new"/>">New To-do <i
                         class="add circle icon"></i></a>
             </td>
         </tr>

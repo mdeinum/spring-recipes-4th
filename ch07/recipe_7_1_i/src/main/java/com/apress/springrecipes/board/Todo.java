@@ -13,6 +13,13 @@ public class Todo {
 
     private boolean completed = false;
 
+    public Todo() {}
+
+    public Todo(String owner, String description) {
+        this.owner=owner;
+        this.description=description;
+    }
+
     public Long getId() {
         return id;
     }

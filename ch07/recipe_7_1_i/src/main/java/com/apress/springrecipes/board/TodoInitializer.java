@@ -1,8 +1,8 @@
 package com.apress.springrecipes.board;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 @Component
 class TodoInitializer {
@@ -33,19 +33,6 @@ class TodoInitializer {
         todo.setDescription("Call parents.");
 
         messageBoardService.save(todo);
-
-        todo = new Todo();
-        todo.setOwner("jlong@pivotal.io");
-        todo.setDescription("Prepare Cloud Native Presentation");
-
-        messageBoardService.save(todo);
-
-        todo = new Todo();
-        todo.setOwner("rwinch@pivotal.io");
-        todo.setDescription("Finish Spring Security Reactive.");
-
-        messageBoardService.save(todo);
-
 
     }
 }

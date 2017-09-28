@@ -1,13 +1,12 @@
 package com.apress.springrecipes.board;
 
-import java.util.Collections;
-
-import javax.annotation.PostConstruct;
-
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import java.util.Collections;
 
 @Component
 class TodoInitializer {
@@ -44,17 +43,17 @@ class TodoInitializer {
 
         todoService.save(todo);
 
-        todo = new Todo();
-        todo.setOwner("jlong@pivotal.io");
-        todo.setDescription("Prepare Cloud Native Presentation");
-
-        todoService.save(todo);
-
-        todo = new Todo();
-        todo.setOwner("rwinch@pivotal.io");
-        todo.setDescription("Finish Spring Security Reactive.");
-
-        todoService.save(todo);
+//        todo = new Todo();
+//        todo.setOwner("jlong@pivotal.io");
+//        todo.setDescription("Prepare Cloud Native Presentation");
+//
+//        todoService.save(todo);
+//
+//        todo = new Todo();
+//        todo.setOwner("rwinch@pivotal.io");
+//        todo.setDescription("Finish Spring Security Reactive.");
+//
+//        todoService.save(todo);
 
         SecurityContextHolder.clearContext();
     }
