@@ -30,7 +30,7 @@ public class TemperatureEndpoint {
     public TemperatureEndpoint(WeatherService weatherService) {
         this.weatherService = weatherService;
         // Create the XPath objects, including the namespace
-        Map<String, String> namespaceUris = new HashMap<String, String>();
+        Map<String, String> namespaceUris = new HashMap<>();
         namespaceUris.put("weather", namespaceUri);
         cityPath = new DefaultXPath("/weather:GetTemperaturesRequest/weather:city");
         cityPath.setNamespaceURIs(namespaceUris);
@@ -44,7 +44,7 @@ public class TemperatureEndpoint {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         // Extract the service parameters from the request message
         String city = cityPath.valueOf(requestElement);
-        List<Date> dates = new ArrayList<Date>();
+        List<Date> dates = new ArrayList<>();
         for (Object node : datePath.selectNodes(requestElement)) {
             Element element = (Element) node;
             dates.add(dateFormat.parse(element.getText()));

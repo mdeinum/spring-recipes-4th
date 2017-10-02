@@ -36,7 +36,7 @@ public class RestMemberController {
     public ResponseEntity<Member> getMember(@PathVariable("memberid") long memberID) {
         Member member = memberService.find(memberID);
         if (member != null) {
-            return new ResponseEntity<Member>(member, HttpStatus.OK);
+            return new ResponseEntity<>(member, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }

@@ -1,12 +1,14 @@
 package com.apress.springrecipes.nosql;
 
-import com.apress.springrecipes.nosql.config.MongoConfiguration;
+import java.util.concurrent.CountDownLatch;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-import reactor.core.publisher.Flux;
 
-import java.util.concurrent.CountDownLatch;
+import com.apress.springrecipes.nosql.config.MongoConfiguration;
+
+import reactor.core.publisher.Flux;
 
 /**
  * Created by marten on 22-09-14.
@@ -31,7 +33,7 @@ public class Main {
                 .then(repository.deleteAll())
                     .doOnSuccess(x -> countDownLatch.countDown())
                     .doOnError(t -> countDownLatch.countDown())
-                .then(repository.count()).subscribe(cnt -> System.out.println("Number of Vehicles: " + cnt.longValue()));
+                .then(repository.count()).subscribe(cnt -> System.out.println("Number of Vehicles: " + cnt));
 
 
         countDownLatch.await();

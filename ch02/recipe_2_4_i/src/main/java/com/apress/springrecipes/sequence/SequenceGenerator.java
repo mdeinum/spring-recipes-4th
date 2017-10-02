@@ -32,7 +32,7 @@ public class SequenceGenerator {
     }
 
     public synchronized String getSequence() {
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         buffer.append(prefixGenerator.getPrefix());
         buffer.append(initial + counter++);
         buffer.append(suffix);

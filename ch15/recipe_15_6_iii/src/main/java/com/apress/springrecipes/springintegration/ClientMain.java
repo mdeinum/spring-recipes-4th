@@ -14,14 +14,14 @@ public class ClientMain {
 
         JmsTemplate jmsTemplate = context.getBean(JmsTemplate.class);
 
-        Map<String, Object> customer = new HashMap<String, Object>();
+        Map<String, Object> customer = new HashMap<>();
         customer.put("id", 1234L);
         customer.put("firstName", "Marten");
         customer.put("lastName", "Deinum");
 
         jmsTemplate.convertAndSend("recipe-15-6", customer);
 
-        Map<String, Object> customer2 = new HashMap<String, Object>();
+        Map<String, Object> customer2 = new HashMap<>();
         customer2.put("id", 666L);
         customer2.put("firstName", "Foo");
         customer2.put("lastName", "Bar");

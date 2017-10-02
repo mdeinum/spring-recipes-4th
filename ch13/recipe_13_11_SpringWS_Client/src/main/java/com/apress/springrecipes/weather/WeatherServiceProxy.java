@@ -44,7 +44,7 @@ public class WeatherServiceProxy implements WeatherService {
         // Extract the result from the response document
         Document responsetDocument = result.getDocument();
         Element responseElement = responsetDocument.getRootElement();
-        List<TemperatureInfo> temperatures = new ArrayList<TemperatureInfo>();
+        List<TemperatureInfo> temperatures = new ArrayList<>();
         for (Object node : responseElement.elements("TemperatureInfo")) {
             Element element = (Element) node;
             try {

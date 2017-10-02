@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class ShoppingCart {
 
-    private List<Product> items = new ArrayList<Product>();
+    private List<Product> items = new ArrayList<>();
 
     public void addItem(Product item) {
         items.add(item);

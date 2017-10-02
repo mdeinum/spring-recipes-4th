@@ -1,7 +1,7 @@
 package com.apress.springrecipes.springbatch.config;
 
-import com.apress.springrecipes.springbatch.UserRegistration;
-import com.apress.springrecipes.springbatch.UserRegistrationValidationItemProcessor;
+import javax.sql.DataSource;
+
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -18,7 +18,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
-import javax.sql.DataSource;
+import com.apress.springrecipes.springbatch.UserRegistration;
+import com.apress.springrecipes.springbatch.UserRegistrationValidationItemProcessor;
 
 @Configuration
 public class UserJob {
@@ -98,7 +99,7 @@ public class UserJob {
     public DelimitedLineTokenizer tokenizer() {
         DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();
         tokenizer.setDelimiter(",");
-        tokenizer.setNames(new String[]{"firstName","lastName","company","address","city","state","zip","county","url","phoneNumber","fax"});
+        tokenizer.setNames("firstName","lastName","company","address","city","state","zip","county","url","phoneNumber","fax");
         return tokenizer;
     }
 }

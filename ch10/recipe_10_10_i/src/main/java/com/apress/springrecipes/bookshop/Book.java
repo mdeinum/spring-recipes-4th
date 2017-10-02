@@ -53,8 +53,8 @@ public class Book {
 
     @Transactional
     public void purchase(String username) {
-        jdbcTemplate.update("UPDATE BOOK_STOCK SET STOCK = STOCK - 1 WHERE ISBN = ?", new Object[] { isbn });
+        jdbcTemplate.update("UPDATE BOOK_STOCK SET STOCK = STOCK - 1 WHERE ISBN = ?", isbn);
 
-        jdbcTemplate.update("UPDATE ACCOUNT SET BALANCE = BALANCE - ? WHERE USERNAME = ?", new Object[] { price, username });
+        jdbcTemplate.update("UPDATE ACCOUNT SET BALANCE = BALANCE - ? WHERE USERNAME = ?", price, username);
     }
 }

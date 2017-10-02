@@ -66,21 +66,15 @@ public class HibernateCourseDao implements CourseDao {
 
     @Override
     public Course findById(Long courseId) {
-        Session session = sessionFactory.openSession();
-        try {
+        try (Session session = sessionFactory.openSession()) {
             return session.get(Course.class, courseId);
-        } finally {
-            session.close();
         }
     }
 
     @Override
     public List<Course> findAll() {
-        Session session = sessionFactory.openSession();
-        try {
+        try (Session session = sessionFactory.openSession()) {
             return session.createQuery("SELECT c FROM Course c", Course.class).list();
-        } finally {
-            session.close();
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.apress.springrecipes.springbatch.config;
 
-import com.apress.springrecipes.springbatch.UserRegistration;
+import javax.sql.DataSource;
+
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -24,7 +25,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.dao.DeadlockLoserDataAccessException;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import javax.sql.DataSource;
+import com.apress.springrecipes.springbatch.UserRegistration;
 
 /**
  * Created by marten on 17-03-14.
@@ -96,7 +97,7 @@ public class UserJob {
     LineMapper<UserRegistration> lineMapper() {
         DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();
         tokenizer.setDelimiter(",");
-        tokenizer.setNames(new String[]{"firstName","lastName","company","address","city","state","zip","county","url","phoneNumber","fax"});
+        tokenizer.setNames("firstName","lastName","company","address","city","state","zip","county","url","phoneNumber","fax");
 
         BeanWrapperFieldSetMapper<UserRegistration> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
         fieldSetMapper.setTargetType(UserRegistration.class);

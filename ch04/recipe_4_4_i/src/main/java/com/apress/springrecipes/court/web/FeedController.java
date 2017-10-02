@@ -29,7 +29,7 @@ public class FeedController {
     @RequestMapping("/rssfeed")
     public String getRSSFeed(Model model) {
         List<TournamentContent> tournamentList;
-        tournamentList = new ArrayList<TournamentContent>();
+        tournamentList = new ArrayList<>();
         tournamentList.add(TournamentContent.of("FIFA", new Date(), "World Cup", "www.fifa.com/worldcup/"));
         tournamentList.add(TournamentContent.of("FIFA", new Date(), "U-20 World Cup", "www.fifa.com/u20worldcup/"));
         tournamentList.add(TournamentContent.of("FIFA", new Date(), "U-17 World Cup", "www.fifa.com/u17worldcup/"));
