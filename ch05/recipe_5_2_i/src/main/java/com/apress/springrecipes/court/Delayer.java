@@ -8,7 +8,7 @@ public abstract class Delayer {
 
     private Delayer() {}
 
-    public static void delay(long delay) {
+    private static void delay(long delay) {
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
