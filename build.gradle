@@ -43,7 +43,6 @@ subprojects { subproject ->
     ext['spring-social-twitter.version'] = '2.0.0.M4'
     ext['spring-social-facebook.version'] = '3.0.0.M3'
     ext['spring-data-releasetrain.version'] = 'Kay-RELEASE'
-    ext['spring-kafka.version'] = '2.0.0.RELEASE'
     ext['spring-amqp.version'] = '2.0.0.RC2'
     ext['thymeleaf.version'] = '3.0.7.RELEASE'
     ext['mockito.version'] = '2.10.0'
