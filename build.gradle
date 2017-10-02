@@ -51,20 +51,9 @@ subprojects { subproject ->
     ext['apacheCxfVersion'] = '3.1.13'
     ext['neo4jVersion'] = '3.1.6'
 
-	compileJava.options*.compilerArgs = [
-		"-Xlint:serial", "-Xlint:varargs", "-Xlint:cast", "-Xlint:classfile",
-		"-Xlint:dep-ann", "-Xlint:divzero", "-Xlint:empty", "-Xlint:finally",
-		"-Xlint:overrides", "-Xlint:path", "-Xlint:processing", "-Xlint:static",
-		"-Xlint:try", "-Xlint:fallthrough", "-Xlint:rawtypes", "-Xlint:deprecation",
-		"-Xlint:unchecked", "-Xlint:-options"
-	]
+	compileJava.options*.compilerArgs = [ '-Xlint:all','-Xlint:-options', '-Xlint:-processing' ]
 
-	compileTestJava.options*.compilerArgs = [
-		"-Xlint:serial", "-Xlint:varargs", "-Xlint:cast", "-Xlint:classfile",
-		"-Xlint:dep-ann", "-Xlint:divzero", "-Xlint:empty", "-Xlint:finally",
-		"-Xlint:overrides", "-Xlint:path", "-Xlint:processing", "-Xlint:static",
-		"-Xlint:try", "-Xlint:-fallthrough", "-Xlint:-rawtypes", "-Xlint:-deprecation",
-		"-Xlint:-unchecked", "-Xlint:-options"]
+	compileTestJava.options*.compilerArgs = ["-Xlint:all", "-Xlint:-options", "-Xlint:-processing"]
 
     sourceCompatibility=1.8
     targetCompatibility=1.8
@@ -85,7 +74,11 @@ subprojects { subproject ->
 		compile("org.slf4j:jcl-over-slf4j")
 		compile("ch.qos.logback:logback-classic")
 
-    	// Add dependencies for testing (these will only be used for the testing phase)
+        // To suppress compiler warnings.
+        compileOnly group: 'javax.validation', name: 'validation-api'
+        compileOnly group: 'javax.annotation', name: 'javax.annotation-api'
+        compileOnly group: 'com.google.code.findbugs', name: 'jsr305'
+        // Add dependencies for testing (these will only be used for the testing phase)
 		testCompile("junit:junit")
 		testCompile("org.mockito:mockito-core")
         testCompile("org.assertj:assertj-core")

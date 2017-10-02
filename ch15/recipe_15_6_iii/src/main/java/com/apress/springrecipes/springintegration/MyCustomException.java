@@ -1,7 +1,5 @@
 package com.apress.springrecipes.springintegration;
 
-/**
- * Created by marten on 14-04-14.
- */
+@SuppressWarnings("serial")
 public class MyCustomException extends Exception {
 }

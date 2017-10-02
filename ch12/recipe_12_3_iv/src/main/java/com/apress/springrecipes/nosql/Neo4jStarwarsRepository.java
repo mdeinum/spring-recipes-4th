@@ -23,16 +23,18 @@ public class Neo4jStarwarsRepository implements StarwarsRepository {
 
 
     @Override
+    @SuppressWarnings("try")
     public Planet save(Planet planet) {
 
         Session session = sessionFactory.openSession();
-        try (Transaction tx = session.beginTransaction()) {
+        try ( Transaction tx = session.beginTransaction()) {
             session.save(planet);
             return planet;
         }
     }
 
     @Override
+    @SuppressWarnings("try")
     public Character save(Character character) {
 
         Session session = sessionFactory.openSession();

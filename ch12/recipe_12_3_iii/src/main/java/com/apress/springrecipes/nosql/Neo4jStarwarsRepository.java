@@ -37,7 +37,7 @@ public class Neo4jStarwarsRepository implements StarwarsRepository {
         if (character.getId() != null) {
             return character;
         }
-        try (Transaction tx = db.beginTx()) {
+        try (@SuppressWarnings("try") Transaction tx = db.beginTx()) {
             Label label = Label.label("character");
             Node node = db.createNode(label);
             node.setProperty("name", character.getName());

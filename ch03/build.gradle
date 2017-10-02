@@ -40,6 +40,8 @@ subprojects { subproject ->
             // Add dependencies to add for runtime (these will be included in the WAR, in addition to those in compile group)
             runtime group: 'javax.servlet', name: 'jstl'
 
+            compileOnly group: 'javax.validation', name: 'validation-api'
+
             // Provided Dependencies
             providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
         }
