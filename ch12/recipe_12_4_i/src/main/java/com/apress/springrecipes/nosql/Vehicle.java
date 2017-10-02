@@ -2,6 +2,7 @@ package com.apress.springrecipes.nosql;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Vehicle implements Serializable {
 
     private String vehicleNo;

@@ -1,8 +1,6 @@
 package com.apress.springrecipes.nosql;
 
-import java.io.Serializable;
-
-public class Vehicle implements Serializable {
+public class Vehicle {
 
     private String vehicleNo;
     private String color;

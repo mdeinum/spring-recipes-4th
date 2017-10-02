@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.springframework.context.ApplicationEvent;
 
+@SuppressWarnings("serial")
 public class CheckoutEvent extends ApplicationEvent {
 
     private final ShoppingCart cart;

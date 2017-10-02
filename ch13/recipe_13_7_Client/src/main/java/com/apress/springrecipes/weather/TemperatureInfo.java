@@ -1,10 +1,9 @@
 package com.apress.springrecipes.weather;
 
-import java.io.Serializable;
 import java.util.Date;
 
 
-public class TemperatureInfo implements Serializable {
+public class TemperatureInfo {
 
     private String city;
     private Date date;

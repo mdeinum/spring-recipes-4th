@@ -2,9 +2,7 @@ package com.apress.springrecipes.caching;
 
 import java.io.Serializable;
 
-/**
- * Created by marten on 18-08-14.
- */
+@SuppressWarnings("serial")
 public class Customer implements Serializable {
 
     private final long id;
