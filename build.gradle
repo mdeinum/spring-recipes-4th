@@ -51,9 +51,9 @@ subprojects { subproject ->
     ext['apacheCxfVersion'] = '3.1.13'
     ext['neo4jVersion'] = '3.1.6'
 
-	compileJava.options*.compilerArgs = [ '-Xlint:all','-Xlint:-options', '-Xlint:-processing' ]
+	compileJava.options*.compilerArgs = [ '-Xlint:all', '-Xlint:-processing' ]
 
-	compileTestJava.options*.compilerArgs = ["-Xlint:all", "-Xlint:-options", "-Xlint:-processing"]
+	compileTestJava.options*.compilerArgs = ['-Xlint:all', '-Xlint:-processing']
 
     sourceCompatibility=1.8
     targetCompatibility=1.8
