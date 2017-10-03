@@ -44,7 +44,7 @@ subprojects { subproject ->
     ext['spring-social-facebook.version'] = '3.0.0.M3'
     ext['spring-data-releasetrain.version'] = 'Kay-RELEASE'
     ext['spring-amqp.version'] = '2.0.0.RC2'
-    ext['thymeleaf.version'] = '3.0.7.RELEASE'
+    ext['thymeleaf.version'] = '3.0.8.RELEASE'
     ext['mockito.version'] = '2.10.0'
     ext['servlet-api.version'] = '4.0.0'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
