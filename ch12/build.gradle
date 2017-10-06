@@ -138,7 +138,7 @@ project(':ch12:recipe_12_3_iv') {
     // Define dependencies
     dependencies {
         compile group: 'org.neo4j', name: 'neo4j-ogm-core'
-        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0-SNAPSHOT'
+        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0'
         compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
         compile group: 'javax.validation', name: 'validation-api'
     }
@@ -148,7 +148,7 @@ project(':ch12:recipe_12_3_v') {
     // Define dependencies
     dependencies {
         compile group: 'org.neo4j', name: 'neo4j-ogm-core'
-        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0-SNAPSHOT'
+        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0'
         compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
         compile group: 'org.springframework.data', name: 'spring-data-neo4j'
         compile group: 'javax.validation', name: 'validation-api'
@@ -159,7 +159,7 @@ project(':ch12:recipe_12_3_vi') {
     // Define dependencies
     dependencies {
         compile group: 'org.neo4j', name: 'neo4j-ogm-core'
-        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0-SNAPSHOT'
+        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0'
         compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
         compile group: 'org.springframework.data', name: 'spring-data-neo4j'
         compile group: 'javax.validation', name: 'validation-api'
@@ -167,10 +167,10 @@ project(':ch12:recipe_12_3_vi') {
 }
 
 project(':ch12:recipe_12_3_vii') {
-    
+
     dependencies {
         compile group: 'org.neo4j', name: 'neo4j-ogm-core'
-        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0-SNAPSHOT'
+        compile group: 'org.neo4j', name: 'neo4j-ogm-embedded-driver', version: '3.0.0'
         compile group: 'org.neo4j', name: 'neo4j', version: "$neo4jVersion"
         compile group: 'org.springframework.data', name: 'spring-data-neo4j'
         compile group: 'javax.validation', name: 'validation-api'
