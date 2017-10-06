@@ -23,6 +23,7 @@ allprojects {
         // Public Spring artifacts
         maven { url "https://repo.spring.io/release" }
         maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://repo.spring.io/snapshot" }
         maven { url "https://repo.spring.io/libs-snapshot" }
         maven { url "https://repo.spring.io/libs-release"}
         maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
@@ -40,6 +41,7 @@ subprojects { subproject ->
     ext['spring-security.version'] = '5.0.0.M4'
     ext['spring-integration.version'] = '5.0.0.M7'
     ext['spring-social.version'] = '2.0.0.M4'
+    ext['spring-ws.version'] = '3.0.0.BUILD-SNAPSHOT'
     ext['spring-social-twitter.version'] = '2.0.0.M4'
     ext['spring-social-facebook.version'] = '3.0.0.M3'
     ext['spring-data-releasetrain.version'] = 'Kay-RELEASE'
