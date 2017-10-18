@@ -59,8 +59,8 @@ subprojects { subproject ->
 
 	compileTestJava.options*.compilerArgs = ['-Xlint:all', '-Xlint:-processing']
 
-    sourceCompatibility=1.8
-    targetCompatibility=1.8
+    sourceCompatibility=JavaVersion.VERSION_1_8
+    targetCompatibility=JavaVersion.VERSION_1_8
 
 	configurations {
 		// We want to use SLF4J for logging, ban commons-logging
