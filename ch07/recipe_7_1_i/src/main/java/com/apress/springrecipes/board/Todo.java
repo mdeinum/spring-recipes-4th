@@ -1,6 +1,6 @@
 package com.apress.springrecipes.board;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
 
 public class Todo {
 
