@@ -36,7 +36,7 @@ subprojects { subproject ->
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.ben-manes.versions'
 
-    ext['hibernate-validator5.version'] = '6.0.2.Final'
+    ext['hibernate-validator5.version'] = '6.0.4.Final'
 
     ext['spring.version'] = '5.0.1.RELEASE'
     ext['spring-batch.version'] = '4.0.0.M5'
