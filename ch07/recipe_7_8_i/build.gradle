@@ -3,7 +3,7 @@ dependencies {
     providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
 
     compile group: 'org.springframework.security', name: 'spring-security-config'
-    compile group: 'org.springframework.security', name: 'spring-security-webflux'
+    compile group: 'org.springframework.security', name: 'spring-security-web'
     compile group: 'org.springframework', name: 'spring-context'
     compile group: 'org.springframework', name: 'spring-webflux'
 
