@@ -25,7 +25,7 @@ subprojects { subproject ->
     dependencies {
         compile group: 'org.springframework', name: 'spring-context'
         compile group: 'org.springframework', name: 'spring-webmvc'
-        compile group: 'org.springframework.mobile', name: 'spring-mobile-device'
+        compile group: 'org.springframework.mobile', name: 'spring-mobile-device', version: project.ext['spring-mobile.version']
 
         compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec'
         compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl'

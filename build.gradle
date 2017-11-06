@@ -36,24 +36,26 @@ subprojects { subproject ->
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.ben-manes.versions'
 
-    ext['hibernate-validator5.version'] = '6.0.4.Final'
-
     ext['spring.version'] = '5.0.1.RELEASE'
+
+    ext['spring-amqp.version'] = '2.0.0.RELEASE'
     ext['spring-batch.version'] = '4.0.0.M5'
-    ext['spring-security.version'] = '5.0.0.RC1'
+    ext['spring-data-releasetrain.version'] = 'Kay-RELEASE'
     ext['spring-integration.version'] = '5.0.0.RC1'
+    ext['spring-mobile.version'] = '2.0.0.BUILD-SNAPSHOT'
+    ext['spring-security.version'] = '5.0.0.RC1'
     ext['spring-social.version'] = '2.0.0.M4'
-    ext['spring-ws.version'] = '3.0.0.RELEASE'
     ext['spring-social-twitter.version'] = '2.0.0.M4'
     ext['spring-social-facebook.version'] = '3.0.0.M3'
-    ext['spring-data-releasetrain.version'] = 'Kay-RELEASE'
-    ext['spring-amqp.version'] = '2.0.0.RELEASE'
-    ext['thymeleaf.version'] = '3.0.9.RELEASE'
+    ext['spring-ws.version'] = '3.0.0.RELEASE'
+
+    ext['apacheCxfVersion'] = '3.2.0'
+    ext['hibernate-validator5.version'] = '6.0.4.Final'
     ext['mockito.version'] = '2.11.0'
+    ext['neo4jVersion'] = '3.3.0'
     ext['servlet-api.version'] = '4.0.0'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
-    ext['apacheCxfVersion'] = '3.2.0'
-    ext['neo4jVersion'] = '3.3.0'
+    ext['thymeleaf.version'] = '3.0.9.RELEASE'
 
 	compileJava.options*.compilerArgs = [ '-Xlint:all', '-Xlint:-processing' ]
 
