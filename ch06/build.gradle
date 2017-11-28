@@ -31,7 +31,7 @@ subprojects { subproject ->
         compile group: 'org.springframework.social', name: 'spring-social-config'
         compile group: 'org.springframework.social', name: 'spring-social-web'
         compile group: 'org.springframework.social', name: 'spring-social-twitter'
-        compile group: 'org.springframework.social', name: 'spring-social-facebook'
+        compile group: 'org.springframework.social', name: 'spring-social-facebook', version: project.ext['spring-social-facebook.version']
 
         compile group: 'org.apache.taglibs', name: 'taglibs-standard-spec'
         compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl'
