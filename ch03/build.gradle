@@ -84,7 +84,7 @@ project(':ch03:recipe_3_12_i') {
     dependencies {
         compile group: 'javax.validation', name: 'validation-api'
         compile group: 'org.hibernate', name: 'hibernate-validator'
-        compile group: 'com.lowagie', name: 'itext'
+        compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
         compile group: 'org.apache.poi', name: 'poi-ooxml'
     }
 }
@@ -94,7 +94,7 @@ project(':ch03:recipe_3_13') {
     dependencies {
         compile group: 'javax.validation', name: 'validation-api'
         compile group: 'org.hibernate', name: 'hibernate-validator'
-        compile group: 'com.lowagie', name: 'itext'
+        compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
         compile group: 'org.apache.poi', name: 'poi-ooxml'
     }
 }
