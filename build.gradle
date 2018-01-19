@@ -50,8 +50,7 @@ subprojects { subproject ->
     ext['spring-ws.version'] = '3.0.0.RELEASE'
 
     ext['apacheCxfVersion'] = '3.2.0'
-    ext['hibernate-validator5.version'] = '6.0.4.Final'
-    ext['mockito.version'] = '2.11.0'
+    ext['hibernate-validator5.version'] = '6.0.7.Final'
     ext['neo4jVersion'] = '3.3.0'
     ext['servlet-api.version'] = '4.0.0'
     ext['springIOPlatform'] = 'Cairo-BUILD-SNAPSHOT'
