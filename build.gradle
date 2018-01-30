@@ -49,7 +49,7 @@ subprojects { subproject ->
     ext['spring-social-facebook.version'] = '3.0.0.M3'
     ext['spring-ws.version'] = '3.0.0.RELEASE'
 
-    ext['apacheCxfVersion'] = '3.2.0'
+    ext['apacheCxfVersion'] = '3.2.1'
     ext['hibernate-validator5.version'] = '6.0.7.Final'
     ext['neo4jVersion'] = '3.3.0'
     ext['servlet-api.version'] = '4.0.0'
