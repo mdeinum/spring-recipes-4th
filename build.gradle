@@ -40,7 +40,7 @@ subprojects { subproject ->
 
     ext['spring-amqp.version'] = '2.0.2.RELEASE'
     ext['spring-batch.version'] = '4.0.0.RELEASE'
-    ext['spring-data-releasetrain.version'] = 'Kay-SR4'
+    ext['spring-data-releasetrain.version'] = 'Kay-SR5'
     ext['spring-integration.version'] = '5.0.2.RELEASE'
     ext['spring-mobile.version'] = '2.0.0.BUILD-SNAPSHOT'
     ext['spring-security.version'] = '5.0.2.RELEASE'
