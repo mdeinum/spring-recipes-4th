@@ -42,12 +42,13 @@ subprojects { subproject ->
     ext['spring-batch.version'] = '4.0.1.RELEASE'
     ext['spring-data-releasetrain.version'] = 'Kay-SR7'
     ext['spring-integration.version'] = '5.0.5.RELEASE'
-    ext['spring-mobile.version'] = '2.0.0.BUILD-SNAPSHOT'
     ext['spring-security.version'] = '5.0.5.RELEASE'
+    ext['spring-ws.version'] = '3.0.1.RELEASE'
+
+    ext['spring-mobile.version'] = '2.0.0.BUILD-SNAPSHOT'
     ext['spring-social.version'] = '2.0.0.M4'
     ext['spring-social-twitter.version'] = '2.0.0.M4'
     ext['spring-social-facebook.version'] = '3.0.0.M3'
-    ext['spring-ws.version'] = '3.0.1.RELEASE'
 
     ext['apacheCxfVersion'] = '3.2.4'
     ext['hibernate-validator5.version'] = '6.0.9.Final'
@@ -78,14 +79,15 @@ subprojects { subproject ->
 		compile("org.slf4j:jcl-over-slf4j")
 		compile("ch.qos.logback:logback-classic")
 
-        // To suppress compiler warnings.
-        compileOnly group: 'javax.validation', name: 'validation-api'
-        compileOnly group: 'javax.annotation', name: 'javax.annotation-api'
-        compileOnly group: 'com.google.code.findbugs', name: 'jsr305'
-        // Add dependencies for testing (these will only be used for the testing phase)
+    // To suppress compiler warnings.
+    compileOnly group: 'javax.validation', name: 'validation-api'
+    compileOnly group: 'javax.annotation', name: 'javax.annotation-api'
+    compileOnly group: 'com.google.code.findbugs', name: 'jsr305'
+
+    // Add dependencies for testing (these will only be used for the testing phase)
 		testCompile("junit:junit")
 		testCompile("org.mockito:mockito-core")
-        testCompile("org.assertj:assertj-core")
+    testCompile("org.assertj:assertj-core")
 		testCompile("org.springframework:spring-test")
 	}
 
