@@ -36,8 +36,10 @@ subprojects { subproject ->
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.ben-manes.versions'
 
-    ext['spring.version'] = '5.0.6.RELEASE'
+    // Explicit framework version so we can upgrade in a different pace then
+    // the Spring IO Platform.
 
+    ext['spring.version'] = '5.0.6.RELEASE'
     ext['spring-amqp.version'] = '2.0.3.RELEASE'
     ext['spring-batch.version'] = '4.0.1.RELEASE'
     ext['spring-data-releasetrain.version'] = 'Kay-SR7'
@@ -51,10 +53,9 @@ subprojects { subproject ->
     ext['spring-social-facebook.version'] = '3.0.0.M3'
 
     ext['apacheCxfVersion'] = '3.2.4'
-    ext['hibernate-validator5.version'] = '6.0.9.Final'
     ext['neo4jVersion'] = '3.3.0'
     ext['servlet-api.version'] = '4.0.0'
-    ext['springIOPlatform'] = 'Cairo-RC1'
+    ext['springIOPlatform'] = 'Cairo-SR1'
 
 	compileJava.options*.compilerArgs = [ '-Xlint:all', '-Xlint:-processing' ]
 
