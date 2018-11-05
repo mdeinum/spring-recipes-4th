@@ -51,17 +51,17 @@ subprojects { subproject ->
     ext['servlet-api.version'] = '4.0.0'
     ext['springIOPlatform'] = 'Cairo-SR5'
 
-	compileJava.options*.compilerArgs = [ '-Xlint:all', '-Xlint:-processing' ]
+  compileJava.options*.compilerArgs = [ '-Xlint:all', '-Xlint:-processing' ]
 
-	compileTestJava.options*.compilerArgs = ['-Xlint:all', '-Xlint:-processing']
+  compileTestJava.options*.compilerArgs = ['-Xlint:all', '-Xlint:-processing']
 
     sourceCompatibility=JavaVersion.VERSION_1_8
     targetCompatibility=JavaVersion.VERSION_1_8
 
-	configurations {
-		// We want to use SLF4J for logging, ban commons-logging
-		all*.exclude group: 'commons-logging', module: 'commons-logging'
-	}
+  configurations {
+    // We want to use SLF4J for logging, ban commons-logging
+    all*.exclude group: 'commons-logging', module: 'commons-logging'
+  }
 
     dependencyManagement {
         imports {
@@ -69,10 +69,10 @@ subprojects { subproject ->
         }
     }
 
-	dependencies {
-		compile("org.slf4j:slf4j-api")
-		compile("org.slf4j:jcl-over-slf4j")
-		compile("ch.qos.logback:logback-classic")
+  dependencies {
+    compile("org.slf4j:slf4j-api")
+    compile("org.slf4j:jcl-over-slf4j")
+    compile("ch.qos.logback:logback-classic")
 
     // To suppress compiler warnings.
     compileOnly group: 'javax.validation', name: 'validation-api'
@@ -80,16 +80,16 @@ subprojects { subproject ->
     compileOnly group: 'com.google.code.findbugs', name: 'jsr305'
 
     // Add dependencies for testing (these will only be used for the testing phase)
-		testCompile("junit:junit")
-		testCompile("org.mockito:mockito-core")
+    testCompile("junit:junit")
+    testCompile("org.mockito:mockito-core")
     testCompile("org.assertj:assertj-core")
-		testCompile("org.springframework:spring-test")
-	}
+    testCompile("org.springframework:spring-test")
+  }
 
-	task copyDependenciesToLibDir( type: Copy ) {
-		into "$buildDir/libs/lib"
-		from configurations.runtime
-	}
+  task copyDependenciesToLibDir( type: Copy ) {
+    into "$buildDir/libs/lib"
+    from configurations.runtime
+  }
 
     jar {
         // Copy jar dependencies and add to Class-Path.
@@ -97,8 +97,4 @@ subprojects { subproject ->
         def deps = fileTree(dir: "$buildDir/libs/lib", include: '*.jar')
         manifest.attributes("Class-Path": deps.files.collect {'lib/'+it.name}.join(' '))
     }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.7'
 }
