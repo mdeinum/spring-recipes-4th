@@ -33,6 +33,8 @@ allprojects {
 subprojects { subproject ->
 
     apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.ben-manes.versions'
 
