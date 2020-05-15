@@ -54,7 +54,7 @@ subprojects { subproject ->
 
     ext['apacheCxfVersion'] = '3.2.4'
     ext['neo4jVersion'] = '3.3.0'
-    ext['servlet-api.version'] = '4.0.0'
+    ext['servlet-api.version'] = '4.0.1'
     ext['springIOPlatform'] = 'Cairo-SR1'
 
 	compileJava.options*.compilerArgs = [ '-Xlint:all', '-Xlint:-processing' ]
