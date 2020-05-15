@@ -104,7 +104,3 @@ subprojects { subproject ->
         manifest.attributes("Class-Path": deps.files.collect {'lib/'+it.name}.join(' '))
     }
 }
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.7'
-}
