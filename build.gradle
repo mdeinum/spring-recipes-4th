@@ -6,7 +6,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE'
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.17.0'
     }
 }
@@ -33,37 +33,41 @@ allprojects {
 subprojects { subproject ->
 
     apply plugin: 'java'
-    apply plugin: 'eclipse'
-    apply plugin: 'idea'
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.ben-manes.versions'
 
     // Explicit framework version so we can upgrade in a different pace then
     // the Spring IO Platform.
 
-    ext['spring-ws.version'] = '3.0.4.RELEASE'
+    ext['spring.version'] = '5.0.6.RELEASE'
+    ext['spring-amqp.version'] = '2.0.3.RELEASE'
+    ext['spring-batch.version'] = '4.0.1.RELEASE'
+    ext['spring-data-releasetrain.version'] = 'Kay-SR7'
+    ext['spring-integration.version'] = '5.0.5.RELEASE'
+    ext['spring-security.version'] = '5.0.5.RELEASE'
+    ext['spring-ws.version'] = '3.0.1.RELEASE'
 
     ext['spring-mobile.version'] = '2.0.0.BUILD-SNAPSHOT'
     ext['spring-social.version'] = '2.0.0.M4'
     ext['spring-social-twitter.version'] = '2.0.0.M4'
     ext['spring-social-facebook.version'] = '3.0.0.M3'
 
-    ext['apacheCxfVersion'] = '3.2.7'
+    ext['apacheCxfVersion'] = '3.2.4'
     ext['neo4jVersion'] = '3.3.0'
     ext['servlet-api.version'] = '4.0.0'
-    ext['springIOPlatform'] = 'Cairo-SR5'
+    ext['springIOPlatform'] = 'Cairo-SR1'
 
-  compileJava.options*.compilerArgs = [ '-Xlint:all', '-Xlint:-processing' ]
+	compileJava.options*.compilerArgs = [ '-Xlint:all', '-Xlint:-processing' ]
 
-  compileTestJava.options*.compilerArgs = ['-Xlint:all', '-Xlint:-processing']
+	compileTestJava.options*.compilerArgs = ['-Xlint:all', '-Xlint:-processing']
 
     sourceCompatibility=JavaVersion.VERSION_1_8
     targetCompatibility=JavaVersion.VERSION_1_8
 
-  configurations {
-    // We want to use SLF4J for logging, ban commons-logging
-    all*.exclude group: 'commons-logging', module: 'commons-logging'
-  }
+	configurations {
+		// We want to use SLF4J for logging, ban commons-logging
+		all*.exclude group: 'commons-logging', module: 'commons-logging'
+	}
 
     dependencyManagement {
         imports {
@@ -71,10 +75,10 @@ subprojects { subproject ->
         }
     }
 
-  dependencies {
-    compile("org.slf4j:slf4j-api")
-    compile("org.slf4j:jcl-over-slf4j")
-    compile("ch.qos.logback:logback-classic")
+	dependencies {
+		compile("org.slf4j:slf4j-api")
+		compile("org.slf4j:jcl-over-slf4j")
+		compile("ch.qos.logback:logback-classic")
 
     // To suppress compiler warnings.
     compileOnly group: 'javax.validation', name: 'validation-api'
@@ -82,16 +86,16 @@ subprojects { subproject ->
     compileOnly group: 'com.google.code.findbugs', name: 'jsr305'
 
     // Add dependencies for testing (these will only be used for the testing phase)
-    testCompile("junit:junit")
-    testCompile("org.mockito:mockito-core")
+		testCompile("junit:junit")
+		testCompile("org.mockito:mockito-core")
     testCompile("org.assertj:assertj-core")
-    testCompile("org.springframework:spring-test")
-  }
+		testCompile("org.springframework:spring-test")
+	}
 
-  task copyDependenciesToLibDir( type: Copy ) {
-    into "$buildDir/libs/lib"
-    from configurations.runtime
-  }
+	task copyDependenciesToLibDir( type: Copy ) {
+		into "$buildDir/libs/lib"
+		from configurations.runtime
+	}
 
     jar {
         // Copy jar dependencies and add to Class-Path.
@@ -99,4 +103,8 @@ subprojects { subproject ->
         def deps = fileTree(dir: "$buildDir/libs/lib", include: '*.jar')
         manifest.attributes("Class-Path": deps.files.collect {'lib/'+it.name}.join(' '))
     }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.7'
 }
