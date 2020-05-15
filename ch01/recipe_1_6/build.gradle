@@ -5,7 +5,7 @@ defaultTasks 'clean', 'build'
 
 apply plugin: 'java'
 
-ext.springVersion='5.0.0.RC1'
+ext.springVersion='5.0.17.RELEASE'
 
 
 // Define repositorie to get dependencies
