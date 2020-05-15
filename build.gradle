@@ -45,7 +45,7 @@ subprojects { subproject ->
     ext['spring-data-releasetrain.version'] = 'Kay-SR7'
     ext['spring-integration.version'] = '5.0.14.RELEASE'
     ext['spring-security.version'] = '5.0.15.RELEASE'
-    ext['spring-ws.version'] = '3.0.1.RELEASE'
+    ext['spring-ws.version'] = '3.0.9.RELEASE'
 
     ext['spring-mobile.version'] = '2.0.0.BUILD-SNAPSHOT'
     ext['spring-social.version'] = '2.0.0.M4'
