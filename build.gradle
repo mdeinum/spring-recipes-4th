@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath 'io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.17.0'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.28.0'
     }
 }
 
@@ -39,7 +39,7 @@ subprojects { subproject ->
     // Explicit framework version so we can upgrade in a different pace then
     // the Spring IO Platform.
 
-    ext['spring.version'] = '5.0.6.RELEASE'
+    ext['spring.version'] = '5.0.17.RELEASE'
     ext['spring-amqp.version'] = '2.0.3.RELEASE'
     ext['spring-batch.version'] = '4.0.1.RELEASE'
     ext['spring-data-releasetrain.version'] = 'Kay-SR7'
@@ -80,15 +80,15 @@ subprojects { subproject ->
 		compile("org.slf4j:jcl-over-slf4j")
 		compile("ch.qos.logback:logback-classic")
 
-    // To suppress compiler warnings.
-    compileOnly group: 'javax.validation', name: 'validation-api'
-    compileOnly group: 'javax.annotation', name: 'javax.annotation-api'
-    compileOnly group: 'com.google.code.findbugs', name: 'jsr305'
+        // To suppress compiler warnings.
+        compileOnly group: 'javax.validation', name: 'validation-api'
+        compileOnly group: 'javax.annotation', name: 'javax.annotation-api'
+        compileOnly group: 'com.google.code.findbugs', name: 'jsr305'
 
-    // Add dependencies for testing (these will only be used for the testing phase)
+        // Add dependencies for testing (these will only be used for the testing phase)
 		testCompile("junit:junit")
 		testCompile("org.mockito:mockito-core")
-    testCompile("org.assertj:assertj-core")
+        testCompile("org.assertj:assertj-core")
 		testCompile("org.springframework:spring-test")
 	}
 
